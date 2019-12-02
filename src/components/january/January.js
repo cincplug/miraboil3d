@@ -11,197 +11,197 @@ class January {
   }
 
   static options = {
-    obojSelector: '.january__oboj',
-    pozadina: 0xf0f0f0,
-    kolkoSlika: 50,
-    kamera: {
+    colorSelector: '.january__color-switch',
+    background: 0xf0f0f0,
+    imageCount: 50,
+    camera: {
       fov: 80,
       aspect: window.innerWidth / window.innerHeight,
       near: 1,
       far: 3000,
-      položaj: {
+      position: {
         y: 20
       },
       distanceRatio: 2,
-      brzina: 1,
+      speed: 1,
       swing: 100,
-      ljulj: 0.0001
+      nudge: 0.0001
     },
-    podloga: {
-      boja: 0xf0f0ff,
-      širina: 4096,
-      dubina: 19200,
-      visina: 256,
+    ground: {
+      color: 0xf0f0ff,
+      width: 4096,
+      depth: 19200,
+      height: 256,
       angle: 90,
       repeat: {
         width: 4,
         depth: 32
       }
     },
-    slika: {
-      boja: 0xb8b8f8,
-      širina: 512,
-      visina: 1024,
-      razmak: 256,
-      ofset: 512,
-      brzinaPada: 0.006,
-      brzinaRaspada: 0.006,
+    sceneItem: {
+      color: 0xb8b8f8,
+      width: 512,
+      height: 1024,
+      spacing: 256,
+      offset: 512,
+      movementSpeed: 0.006,
+      secondaryMovementSpeed: 0.006,
       reverseSideRate: 2
     },
-    linija: {
-      širina: 20
+    line: {
+      width: 20
     }
   }
 
   _cacheSelectors() {
     this._elements = {
-      oboj: this._element.querySelector(this._options.obojSelector)
+      color: this._element.querySelector(this._options.colorSelector)
     }
   }
   _addEventListeners() {
-    this._element.addEventListener('click', e => this._oboj(e))
+    this._element.addEventListener('click', e => this._color(e))
   }
 
   /**
    * Colors the content according to data-status attribute
    * @param {Object} e - event object
    */
-  _oboj(e) {
+  _color(e) {
     const color = e.target.getAttribute('data-color')
     this._element.setAttribute('data-color', color)
     this.scene.background = new THREE.Color(color)
     this._render()
   }
 
-  _postaviScenu() {
+  _setScene() {
     this.scene = new THREE.Scene()
-    this.scene.background = new THREE.Color(this._options.pozadina)
+    this.scene.background = new THREE.Color(this._options.background)
     this.renderer = new THREE.WebGLRenderer()
     const renderWidth = this._element.offsetWidth
-    const renderHeight = Math.round(renderWidth / this._options.kamera.aspect)
+    const renderHeight = Math.round(renderWidth / this._options.camera.aspect)
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(renderWidth, renderHeight)
     this._element.appendChild(this.renderer.domElement)
-    new THREE.TextureLoader().load('/static/img/podloga.jpg', tekstura =>
-      this._postaviPodlogu(tekstura)
+    new THREE.TextureLoader().load('/static/img/ground.jpg', texture =>
+      this._setGround(texture)
     )
   }
 
-  _postaviPodlogu(tekstura) {
+  _setGround(texture) {
     const { scene, _options } = this
-    const podloga = {
+    const ground = {
       geometry: new THREE.PlaneBufferGeometry(
-        this._options.podloga.širina,
-        this._options.podloga.dubina
+        this._options.ground.width,
+        this._options.ground.depth
       )
     }
-    tekstura.wrapT = tekstura.wrapS = THREE.RepeatWrapping
-    tekstura.offset.set(0, 0)
-    tekstura.repeat.set(
-      _options.podloga.repeat.width,
-      _options.podloga.repeat.depth
+    texture.wrapT = texture.wrapS = THREE.RepeatWrapping
+    texture.offset.set(0, 0)
+    texture.repeat.set(
+      _options.ground.repeat.width,
+      _options.ground.repeat.depth
     )
-    podloga.material = new THREE.MeshBasicMaterial({
-      color: new THREE.Color(_options.podloga.boja),
-      map: tekstura,
+    ground.material = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(_options.ground.color),
+      map: texture,
       side: THREE.DoubleSide
     })
-    podloga.mesh = new THREE.Mesh(podloga.geometry, podloga.material)
-    podloga.mesh.rotation.x = THREE.Math.degToRad(_options.podloga.angle)
-    podloga.mesh.position.y = -_options.podloga.visina
-    podloga.mesh.position.z =
-      (_options.kolkoSlika * _options.slika.razmak) /
-      _options.kamera.distanceRatio
-    scene.add(podloga.mesh)
-    this._postaviSlike()
+    ground.mesh = new THREE.Mesh(ground.geometry, ground.material)
+    ground.mesh.rotation.x = THREE.Math.degToRad(_options.ground.angle)
+    ground.mesh.position.y = -_options.ground.height
+    ground.mesh.position.z =
+      (_options.imageCount * _options.sceneItem.spacing) /
+      _options.camera.distanceRatio
+    scene.add(ground.mesh)
+    this._arrangeSceneItems()
   }
 
-  _postaviSlike() {
+  _arrangeSceneItems() {
     const { scene, _options } = this
-    const slika = {
+    const sceneItem = {
       geometry: new THREE.PlaneBufferGeometry(
-        this._options.slika.širina,
-        this._options.slika.visina
+        this._options.sceneItem.width,
+        this._options.sceneItem.height
       )
     }
-    new THREE.TextureLoader().load(`/static/img/drvo.png`, tekstura => {
-      for (let i = 1; i <= _options.kolkoSlika; i++) {
-        slika.material = new THREE.MeshBasicMaterial({
+    new THREE.TextureLoader().load(`/static/img/tree.png`, texture => {
+      for (let i = 1; i <= _options.imageCount; i++) {
+        sceneItem.material = new THREE.MeshBasicMaterial({
           transparent: true,
-          map: tekstura,
+          map: texture,
           side: THREE.DoubleSide
         })
-        slika.mesh = new THREE.Mesh(slika.geometry, slika.material)
-        slika.mesh.position.z = i * _options.slika.razmak
-        slika.mesh.position.y = -250
-        slika.mesh.position.x = this._isDivisibleBy(
+        sceneItem.mesh = new THREE.Mesh(sceneItem.geometry, sceneItem.material)
+        sceneItem.mesh.position.z = i * _options.sceneItem.spacing
+        sceneItem.mesh.position.y = -250
+        sceneItem.mesh.position.x = this._isDivisibleBy(
           i,
-          _options.slika.reverseSideRate
+          _options.sceneItem.reverseSideRate
         )
-          ? -_options.slika.ofset
-          : _options.slika.ofset
-        slika.mesh.name = `znak-${i}`
-        scene.add(slika.mesh)
+          ? -_options.sceneItem.offset
+          : _options.sceneItem.offset
+        sceneItem.mesh.name = `znak-${i}`
+        scene.add(sceneItem.mesh)
       }
-      this.indeksAktivneSlike = 0
-      this.aktivnaSlika = null
+      this.activeItemIndex = 0
+      this.activeItem = null
       this.f = 0
-      this.kamera = null
-      this._postaviKameru()
+      this.camera = null
+      this._setCamera()
     })
   }
 
-  _postaviKameru() {
-    this.kamera = new THREE.PerspectiveCamera(
-      this._options.kamera.fov,
-      this._options.kamera.aspect,
-      this._options.kamera.near,
-      this._options.kamera.far
+  _setCamera() {
+    this.camera = new THREE.PerspectiveCamera(
+      this._options.camera.fov,
+      this._options.camera.aspect,
+      this._options.camera.near,
+      this._options.camera.far
     )
-    this.kamera.position.z =
-      this._options.kolkoSlika * this._options.slika.razmak +
-      this._options.kamera.far / this._options.kamera.distanceRatio
-    this.kamera.position.y = -this._options.kamera.položaj.y
-    this.scene.add(this.kamera)
+    this.camera.position.z =
+      this._options.imageCount * this._options.sceneItem.spacing +
+      this._options.camera.far / this._options.camera.distanceRatio
+    this.camera.position.y = -this._options.camera.position.y
+    this.scene.add(this.camera)
     this._animate()
   }
 
   _animate = () => {
     // eslint-disable-next-line no-invalid-this
     const self = this
-    const { scene, _options, kamera } = self
-    let { f, aktivnaSlika, indeksAktivneSlike } = self
-    kamera.position.z = kamera.position.z - _options.kamera.brzina
-    kamera.position.y =
-      (f * Math.sin(f / _options.kamera.swing)) / _options.kamera.far
+    const { scene, _options, camera } = self
+    let { f, activeItem, activeItemIndex } = self
+    camera.position.z = camera.position.z - _options.camera.speed
+    camera.position.y =
+      (f * Math.sin(f / _options.camera.swing)) / _options.camera.far
     f++
 
-    const kojaSlika = Math.round(
-      (f / _options.slika.razmak) * _options.kamera.brzina
+    const currentItemIndex = Math.round(
+      (f / _options.sceneItem.spacing) * _options.camera.speed
     )
 
-    if (kojaSlika > indeksAktivneSlike) {
-      indeksAktivneSlike = kojaSlika
+    if (currentItemIndex > activeItemIndex) {
+      activeItemIndex = currentItemIndex
 
-      aktivnaSlika = scene.getObjectByName(
-        `znak-${_options.kolkoSlika - indeksAktivneSlike + 1}`
+      activeItem = scene.getObjectByName(
+        `znak-${_options.imageCount - activeItemIndex + 1}`
       )
-      aktivnaSlika.geometry.needsUpdate = true
+      activeItem.geometry.needsUpdate = true
     }
 
-    self.kamera.rotateY(_options.kamera.ljulj * Math.cos(f))
+    camera.rotateY(_options.camera.nudge * Math.cos(f))
     self._render()
     requestAnimationFrame(self._animate)
   }
 
   _render() {
-    this.renderer.render(this.scene, this.kamera)
+    this.renderer.render(this.scene, this.camera)
   }
 
   _init() {
     this._cacheSelectors()
     this._addEventListeners()
-    this._postaviScenu()
+    this._setScene()
   }
 
   /**
