@@ -6,6 +6,7 @@
     color: $color-white;
     appearance: none;
     padding: 1rem;
+    margin-bottom: 0.2rem;
     &[data-color='red'] {
       background: $color-red;
     }

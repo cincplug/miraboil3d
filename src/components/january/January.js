@@ -11,11 +11,7 @@ class January {
   }
 
   static options = {
-    colorSelector: '.january__color-switch',
-    background: 0xf0f0f0,
-    imageCount: 50,
     camera: {
-      fov: 80,
       aspect: window.innerWidth / window.innerHeight,
       near: 1,
       far: 3000,
@@ -23,7 +19,6 @@ class January {
         y: 20
       },
       distanceRatio: 2,
-      speed: 1,
       swing: 100,
       nudge: 0.0001
     },
@@ -47,15 +42,12 @@ class January {
       movementSpeed: 0.006,
       secondaryMovementSpeed: 0.006,
       reverseSideRate: 2
-    },
-    line: {
-      width: 20
     }
   }
 
   _cacheSelectors() {
     this._elements = {
-      color: this._element.querySelector(this._options.colorSelector)
+      color: this._element.querySelector('.january__color-switch')
     }
   }
   _addEventListeners() {
@@ -67,7 +59,10 @@ class January {
    * @param {Object} e - event object
    */
   _color(e) {
-    const color = e.target.getAttribute('data-color')
+    const color = window
+      .getComputedStyle(e.target)
+      .getPropertyValue('background-color')
+    console.warn(color)
     this._element.setAttribute('data-color', color)
     this.scene.background = new THREE.Color(color)
     this._render()
@@ -124,31 +119,37 @@ class January {
         this._options.sceneItem.height
       )
     }
-    new THREE.TextureLoader().load(`/static/img/tree.png`, texture => {
-      for (let i = 1; i <= _options.imageCount; i++) {
-        sceneItem.material = new THREE.MeshBasicMaterial({
-          transparent: true,
-          map: texture,
-          side: THREE.DoubleSide
-        })
-        sceneItem.mesh = new THREE.Mesh(sceneItem.geometry, sceneItem.material)
-        sceneItem.mesh.position.z = i * _options.sceneItem.spacing
-        sceneItem.mesh.position.y = -250
-        sceneItem.mesh.position.x = this._isDivisibleBy(
-          i,
-          _options.sceneItem.reverseSideRate
-        )
-          ? -_options.sceneItem.offset
-          : _options.sceneItem.offset
-        sceneItem.mesh.name = `znak-${i}`
-        scene.add(sceneItem.mesh)
+    new THREE.TextureLoader().load(
+      `/static/img/${_options.image}.png`,
+      texture => {
+        for (let i = 1; i <= _options.imageCount; i++) {
+          sceneItem.material = new THREE.MeshBasicMaterial({
+            transparent: true,
+            map: texture,
+            side: THREE.DoubleSide
+          })
+          sceneItem.mesh = new THREE.Mesh(
+            sceneItem.geometry,
+            sceneItem.material
+          )
+          sceneItem.mesh.position.z = i * _options.sceneItem.spacing
+          sceneItem.mesh.position.y = -250
+          sceneItem.mesh.position.x = this._isDivisibleBy(
+            i,
+            _options.sceneItem.reverseSideRate
+          )
+            ? -_options.sceneItem.offset
+            : _options.sceneItem.offset
+          sceneItem.mesh.name = `znak-${i}`
+          scene.add(sceneItem.mesh)
+        }
+        this.activeItemIndex = 0
+        this.activeItem = null
+        this.f = 0
+        this.camera = null
+        this._setCamera()
       }
-      this.activeItemIndex = 0
-      this.activeItem = null
-      this.f = 0
-      this.camera = null
-      this._setCamera()
-    })
+    )
   }
 
   _setCamera() {
@@ -171,13 +172,13 @@ class January {
     const self = this
     const { scene, _options, camera } = self
     let { f, activeItem, activeItemIndex } = self
-    camera.position.z = camera.position.z - _options.camera.speed
+    camera.position.z = camera.position.z - _options.speed
     camera.position.y =
       (f * Math.sin(f / _options.camera.swing)) / _options.camera.far
     f++
 
     const currentItemIndex = Math.round(
-      (f / _options.sceneItem.spacing) * _options.camera.speed
+      (f / _options.sceneItem.spacing) * _options.speed
     )
 
     if (currentItemIndex > activeItemIndex) {

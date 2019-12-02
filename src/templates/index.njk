@@ -1,12 +1,27 @@
 {% extends '../layout/default.njk' %}
 
 {% block body %}
-<div class="wrapper">
-  <main>
-    <h1>{{ title }}</h1>
-    <p>{{ body }}</p>
+  <div class="grid">
+    <main>
+      <h1>{{ title }}</h1>
+      <p>{{ body }}</p>
 
-    {% component 'january' %}
-  </main>
-</div>
+      {% component 'january' %}
+
+      <h4>{{ title2 }}</h4>
+      {% component 'january', {
+        background: "tomato",
+        imageCount: 30,
+        speed: 8
+      } %}
+
+      <h4>{{ title3 }}</h4>
+      {% component 'january', {
+        background: "#44AADD",
+        imageCount: 60,
+        speed: 5,
+        image: "big-lukowski"
+      } %}
+    </main>
+  </div>
 {% endblock %}
