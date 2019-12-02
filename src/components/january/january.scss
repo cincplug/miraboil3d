@@ -1,6 +1,9 @@
 .january {
   margin: 3rem;
   width: 500px;
+  @media (min-width: $breakpoint-l) {
+    @include flex-col(40%);
+  }
   &__color-switch {
     background: $color-black;
     color: $color-white;
