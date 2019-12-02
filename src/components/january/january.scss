@@ -1,0 +1,22 @@
+.january {
+  margin: 3rem;
+  width: 500px;
+  &__color-switch {
+    background: $color-black;
+    color: $color-white;
+    appearance: none;
+    padding: 1rem;
+    &[data-color='red'] {
+      background: $color-red;
+    }
+    &[data-color='green'] {
+      background: $color-green;
+    }
+    &[data-color='blue'] {
+      background: $color-blue;
+    }
+    &[data-color='yellow'] {
+      background: $color-yellow;
+    }
+  }
+}

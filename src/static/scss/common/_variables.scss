@@ -1,0 +1,72 @@
+// Breakpoints
+$breakpoint-xxs: 360px;
+$breakpoint-xs: 480px;
+$breakpoint-s: 640px;
+$breakpoint-m: 768px;
+$breakpoint-l: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-xxl: 1440px;
+$breakpoint-xxxl: 1800px;
+
+$breakpoint-h-s: 300px;
+$breakpoint-h-m: 440px;
+$breakpoint-h-l: 560px;
+$breakpoint-h-xl: 700px;
+$breakpoint-h-xxl: 800px;
+$breakpoint-h-xxxl: 1024px;
+
+//typography
+$base-font-family: 'Arial', sans-serif;
+$min_width: 320px;
+$max_width: $breakpoint-xl;
+$min_font: 12px;
+$max_font: 18px;
+$small-font-size: 16px;
+
+// lengths
+// Define horizontal margins in vw fractions, e.g.: 100vw/12, 100vw/11, 100vw/10
+// Define horizontal margins in vh fractions, e.g.: 100vh/12, 100vh/11, 100vh/10
+
+// sometimes the width of an element is 2/5vw
+// sometimes an element has a margin of 1/16vw of another element
+// sometimes the vertical spacing is 1/32vh
+
+$gutter-mobile: 1.33333rem;
+$gutter-desktop: 18px;
+$readability-width-limit: $breakpoint-m;
+
+// Easings
+$ease-in: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-in-qubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+$ease-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-qubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+$ease-in-out: cubic-bezier(1, 0, 0.25, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-in-out-qubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// Durations (generic)
+$d-fast: 0.125s;
+$d-normal: 0.25s;
+$d-slow: 0.5s;
+$d-slower: 1s;
+$d-slowest: 1.5s;
+
+// Border radii
+$border-radius: 3px;
+
+// Orientations
+$portrait: portrait;
+$landscape: landscape;
+
+// Spacing (Starting from mobile)
+$spacing-xxs: rem(4px);
+$spacing-xs: rem(8px);
+$spacing-s: rem(16px);
+$spacing-m: rem(24px);
+$spacing-l: rem(30px);
+$spacing-xl: rem(50px);
+$spacing-xxl: rem(75px);
