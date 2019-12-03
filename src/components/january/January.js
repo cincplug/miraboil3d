@@ -144,7 +144,7 @@ class January {
         }
         this.activeItemIndex = 0
         this.activeItem = null
-        this.f = 0
+        this.currentFrame = 0
         this.camera = null
         this._setCamera()
       }
@@ -170,24 +170,25 @@ class January {
     // eslint-disable-next-line no-invalid-this
     const self = this
     self._moveCamera()
-    self.f++
+    self.currentFrame++
     self._moveItem()
     self._render()
     requestAnimationFrame(self._animate)
   }
 
   _moveCamera() {
-    const { camera, _options, f } = this
+    const { camera, _options, currentFrame } = this
     camera.position.z -= _options.speed
     camera.position.y =
-      (f * Math.sin(f / _options.camera.swing)) / _options.camera.far
-    camera.rotateY(_options.camera.nudge * Math.cos(f))
+      (currentFrame * Math.sin(currentFrame / _options.camera.swing)) /
+      _options.camera.far
+    camera.rotateY(_options.camera.nudge * Math.cos(currentFrame))
   }
 
   _moveItem() {
-    const { scene, _options, f } = this
+    const { scene, _options, currentFrame } = this
     const currentItemIndex = Math.round(
-      (f / _options.sceneItem.spacing) * _options.speed
+      (currentFrame / _options.sceneItem.spacing) * _options.speed
     )
 
     if (currentItemIndex > this.activeItemIndex) {
