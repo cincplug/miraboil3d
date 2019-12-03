@@ -170,26 +170,38 @@ class January {
     // eslint-disable-next-line no-invalid-this
     const self = this
     const { scene, _options, camera } = self
-    let { f, activeItem, activeItemIndex } = self
+
     camera.position.z = camera.position.z - _options.speed
     camera.position.y =
-      (f * Math.sin(f / _options.camera.swing)) / _options.camera.far
-    f++
+      (self.f * Math.sin(self.f / _options.camera.swing)) / _options.camera.far
+    self.f++
 
     const currentItemIndex = Math.round(
-      (f / _options.sceneItem.spacing) * _options.speed
+      (self.f / _options.sceneItem.spacing) * _options.speed
     )
 
-    if (currentItemIndex > activeItemIndex) {
-      activeItemIndex = currentItemIndex
+    if (currentItemIndex > self.activeItemIndex) {
+      self.activeItemIndex = currentItemIndex
 
-      activeItem = scene.getObjectByName(
-        `znak-${_options.imageCount - activeItemIndex + 1}`
+      self.activeItem = scene.getObjectByName(
+        `znak-${_options.imageCount - self.activeItemIndex + 1}`
       )
-      activeItem.geometry.needsUpdate = true
+      self.activeItem.geometry.needsUpdate = true
     }
 
-    camera.rotateY(_options.camera.nudge * Math.cos(f))
+    if (self.activeItem) {
+      self.activeItem.rotateZ(
+        _options.sceneItem.movementSpeed *
+          (self._isDivisibleBy(
+            currentItemIndex,
+            _options.sceneItem.reverseSideRate
+          )
+            ? 1
+            : -1)
+      )
+    }
+
+    camera.rotateY(_options.camera.nudge * Math.cos(self.f))
     self._render()
     requestAnimationFrame(self._animate)
   }
