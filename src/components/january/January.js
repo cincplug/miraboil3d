@@ -54,10 +54,6 @@ class January {
     this._element.addEventListener('click', e => this._color(e))
   }
 
-  /**
-   * Colors the content according to data-status attribute
-   * @param {Object} e - event object
-   */
   _color(e) {
     const color = window
       .getComputedStyle(e.target)
@@ -188,26 +184,32 @@ class January {
     const currentItemIndex = Math.round(
       (currentFrame / _options.sceneItem.spacing) * _options.speed
     )
-
     if (currentItemIndex > this.activeItemIndex) {
       this.activeItemIndex = currentItemIndex
+      if (this.activeItem) {
+        this.previousItem = this.activeItem
+      }
       this.activeItem = scene.getObjectByName(
         `znak-${_options.imageCount - this.activeItemIndex + 1}`
       )
       this.activeItem.geometry.needsUpdate = true
     }
-
     if (this.activeItem) {
-      this.activeItem.rotateZ(
-        _options.sceneItem.movementSpeed *
-          (this._isDivisibleBy(
-            currentItemIndex,
-            _options.sceneItem.reverseSideRate
-          )
-            ? 1
-            : -1)
-      )
+      this.activeItem.rotateZ(this._setItemMovementDirection(currentItemIndex))
+      if (this.previousItem) {
+        this.previousItem.rotateY(
+          this._setItemMovementDirection(currentItemIndex)
+        )
+      }
     }
+  }
+
+  _setItemMovementDirection(index) {
+    const { _options } = this
+    return (
+      _options.sceneItem.movementSpeed *
+      (this._isDivisibleBy(index, _options.sceneItem.reverseSideRate) ? 1 : -1)
+    )
   }
 
   _render() {
