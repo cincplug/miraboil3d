@@ -143,9 +143,7 @@ class January {
           scene.add(sceneItem.mesh)
         }
         this.activeItemIndex = 0
-        this.activeItem = null
         this.currentFrame = 0
-        this.camera = null
         this._setCamera()
       }
     )
@@ -193,7 +191,6 @@ class January {
 
     if (currentItemIndex > this.activeItemIndex) {
       this.activeItemIndex = currentItemIndex
-
       this.activeItem = scene.getObjectByName(
         `znak-${_options.imageCount - this.activeItemIndex + 1}`
       )
