@@ -169,11 +169,9 @@ class January {
   _animate = () => {
     // eslint-disable-next-line no-invalid-this
     const self = this
-    const { scene, _options, camera } = self
+    const { scene, _options } = self
 
-    camera.position.z = camera.position.z - _options.speed
-    camera.position.y =
-      (self.f * Math.sin(self.f / _options.camera.swing)) / _options.camera.far
+    self._moveCamera()
     self.f++
 
     const currentItemIndex = Math.round(
@@ -201,9 +199,16 @@ class January {
       )
     }
 
-    camera.rotateY(_options.camera.nudge * Math.cos(self.f))
     self._render()
     requestAnimationFrame(self._animate)
+  }
+
+  _moveCamera() {
+    const { camera, _options, f } = this
+    camera.position.z -= _options.speed
+    camera.position.y =
+      (f * Math.sin(f / _options.camera.swing)) / _options.camera.far
+    camera.rotateY(_options.camera.nudge * Math.cos(f))
   }
 
   _render() {
