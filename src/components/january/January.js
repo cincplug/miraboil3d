@@ -169,36 +169,9 @@ class January {
   _animate = () => {
     // eslint-disable-next-line no-invalid-this
     const self = this
-    const { scene, _options } = self
-
     self._moveCamera()
     self.f++
-
-    const currentItemIndex = Math.round(
-      (self.f / _options.sceneItem.spacing) * _options.speed
-    )
-
-    if (currentItemIndex > self.activeItemIndex) {
-      self.activeItemIndex = currentItemIndex
-
-      self.activeItem = scene.getObjectByName(
-        `znak-${_options.imageCount - self.activeItemIndex + 1}`
-      )
-      self.activeItem.geometry.needsUpdate = true
-    }
-
-    if (self.activeItem) {
-      self.activeItem.rotateZ(
-        _options.sceneItem.movementSpeed *
-          (self._isDivisibleBy(
-            currentItemIndex,
-            _options.sceneItem.reverseSideRate
-          )
-            ? 1
-            : -1)
-      )
-    }
-
+    self._moveItem()
     self._render()
     requestAnimationFrame(self._animate)
   }
@@ -209,6 +182,34 @@ class January {
     camera.position.y =
       (f * Math.sin(f / _options.camera.swing)) / _options.camera.far
     camera.rotateY(_options.camera.nudge * Math.cos(f))
+  }
+
+  _moveItem() {
+    const { scene, _options, f } = this
+    const currentItemIndex = Math.round(
+      (f / _options.sceneItem.spacing) * _options.speed
+    )
+
+    if (currentItemIndex > this.activeItemIndex) {
+      this.activeItemIndex = currentItemIndex
+
+      this.activeItem = scene.getObjectByName(
+        `znak-${_options.imageCount - this.activeItemIndex + 1}`
+      )
+      this.activeItem.geometry.needsUpdate = true
+    }
+
+    if (this.activeItem) {
+      this.activeItem.rotateZ(
+        _options.sceneItem.movementSpeed *
+          (this._isDivisibleBy(
+            currentItemIndex,
+            _options.sceneItem.reverseSideRate
+          )
+            ? 1
+            : -1)
+      )
+    }
   }
 
   _render() {
