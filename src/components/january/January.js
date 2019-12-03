@@ -62,7 +62,6 @@ class January {
     const color = window
       .getComputedStyle(e.target)
       .getPropertyValue('background-color')
-    console.warn(color)
     this._element.setAttribute('data-color', color)
     this.scene.background = new THREE.Color(color)
     this._render()
