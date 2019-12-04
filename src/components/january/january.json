@@ -1,8 +1,10 @@
 {
   "title": "Default",
-  "background": "lightblue",
-  "imageCount": 50,
-  "speed": 1,
-  "itemOffset": 512,
-  "image": "tree"
+  "options": {
+    "background": "lightblue",
+    "imageCount": 50,
+    "speed": 1,
+    "itemOffset": 512,
+    "image": "tree"
+  }
 }

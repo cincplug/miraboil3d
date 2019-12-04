@@ -6,7 +6,7 @@ import * as THREE from 'three'
 class January {
   constructor(element, options = {}) {
     this._element = element
-    this._options = { ...January.options, ...options }
+    this._options = { ...January.options, ...JSON.parse(options.options) }
     this._init()
   }
 
