@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import * as defaults from './january.json'
+const merge = require('deepmerge')
 
 /**
  * January component
@@ -7,7 +8,7 @@ import * as defaults from './january.json'
 class January {
   constructor(element, options = {}) {
     this._element = element
-    this._options = { ...defaults.options, ...JSON.parse(options.options) }
+    this._options = merge(defaults.options, JSON.parse(options.options))
     this._init()
   }
 
