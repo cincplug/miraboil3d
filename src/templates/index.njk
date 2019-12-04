@@ -1,26 +1,29 @@
 {% extends '../layout/default.njk' %}
 
 {% block body %}
-  <main class="grid">
-    <h1>{{ title }}</h1>
-    <p>{{ body }}</p>
-    <div class="flex">
+  <div class="grid">
+    <header>
+      <h1>{{ title }}</h1>
+      <p>{{ body }}</p>
+    </header>
+    <main class="main-wrap">
 
       {% component 'january' %}
 
       {% component 'january', {
         title: "A little different",
         options: {
-          background: "#00AA88",
+          background: "#0066AA",
           camera: {
             speed: 5
           },
           ground: {
-            color: '#2030e0'
+            color: '#4477e0'
           },
           sceneItem: {
-            count: 6,
+            count: 12,
             image: "big-lukowski",
+            spacing: 320,
             offset: 400
           }
         }
@@ -34,7 +37,7 @@
             speed: 7
           },
           ground: {
-            color: "#dd8844"
+            color: "#888844"
           },
           sceneItem: {
             offset: 360,
@@ -42,7 +45,7 @@
             image: "peca",
             count: 60,
             movementSpeed: -0.004,
-            secondaryMovementSpeed: 0.06,
+            secondaryMovementSpeed: -0.01,
             reverseSideRate: 3
           }
         }

@@ -1,5 +1,5 @@
 .january {
-  margin: 3rem;
+  margin-bottom: 3rem;
   width: 500px;
   @media (min-width: $breakpoint-l) {
     @include flex-col(40%);
