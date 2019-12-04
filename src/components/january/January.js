@@ -38,7 +38,6 @@ class January {
       width: 512,
       height: 1024,
       spacing: 256,
-      offset: 512,
       movementSpeed: 0.006,
       secondaryMovementSpeed: 0.006,
       reverseSideRate: 2
@@ -133,8 +132,8 @@ class January {
             i,
             _options.sceneItem.reverseSideRate
           )
-            ? -_options.sceneItem.offset
-            : _options.sceneItem.offset
+            ? -_options.itemOffset
+            : _options.itemOffset
           sceneItem.mesh.name = `znak-${i}`
           scene.add(sceneItem.mesh)
         }
@@ -192,9 +191,9 @@ class January {
       this.activeItem = scene.getObjectByName(
         `znak-${_options.imageCount - this.activeItemIndex + 1}`
       )
-      this.activeItem.geometry.needsUpdate = true
     }
     if (this.activeItem) {
+      this.activeItem.geometry.needsUpdate = true
       this.activeItem.rotateZ(this._setItemMovementDirection(currentItemIndex))
       if (this.previousItem) {
         this.previousItem.rotateY(
