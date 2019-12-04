@@ -68,7 +68,7 @@ class January {
     ground.mesh.rotation.x = THREE.Math.degToRad(_options.ground.angle)
     ground.mesh.position.y = -_options.ground.height
     ground.mesh.position.z =
-      (_options.count * _options.sceneItem.spacing) /
+      (_options.sceneItem.count * _options.sceneItem.spacing) /
       _options.camera.distanceRatio
     scene.add(ground.mesh)
     this._arrangeSceneItems()
@@ -83,9 +83,9 @@ class January {
       )
     }
     new THREE.TextureLoader().load(
-      `/static/img/${_options.image}.png`,
+      `/static/img/${_options.sceneItem.image}.png`,
       texture => {
-        for (let i = 1; i <= _options.count; i++) {
+        for (let i = 1; i <= _options.sceneItem.count; i++) {
           sceneItem.material = new THREE.MeshBasicMaterial({
             transparent: true,
             map: texture,
@@ -101,8 +101,8 @@ class January {
             i,
             _options.sceneItem.reverseSideRate
           )
-            ? -_options.itemOffset
-            : _options.itemOffset
+            ? -_options.sceneItem.offset
+            : _options.sceneItem.offset
           sceneItem.mesh.name = `znak-${i}`
           scene.add(sceneItem.mesh)
         }
@@ -121,7 +121,7 @@ class January {
       this._options.camera.far
     )
     this.camera.position.z =
-      this._options.count * this._options.sceneItem.spacing +
+      this._options.sceneItem.count * this._options.sceneItem.spacing +
       this._options.camera.far / this._options.camera.distanceRatio
     this.camera.position.y = -this._options.camera.position.y
     this.scene.add(this.camera)
@@ -140,7 +140,7 @@ class January {
 
   _moveCamera() {
     const { camera, _options, currentFrame } = this
-    camera.position.z -= _options.speed
+    camera.position.z -= _options.camera.speed
     camera.position.y =
       (currentFrame * Math.sin(currentFrame / _options.camera.swing)) /
       _options.camera.far
@@ -150,7 +150,7 @@ class January {
   _moveItem() {
     const { scene, _options, currentFrame } = this
     const currentItemIndex = Math.round(
-      (currentFrame / _options.sceneItem.spacing) * _options.speed
+      (currentFrame / _options.sceneItem.spacing) * _options.camera.speed
     )
     if (currentItemIndex > this.activeItemIndex) {
       this.activeItemIndex = currentItemIndex
@@ -158,7 +158,7 @@ class January {
         this.previousItem = this.activeItem
       }
       this.activeItem = scene.getObjectByName(
-        `znak-${_options.count - this.activeItemIndex + 1}`
+        `znak-${_options.sceneItem.count - this.activeItemIndex + 1}`
       )
     }
     if (this.activeItem) {

@@ -12,12 +12,16 @@
         title: "A little different",
         options: {
           background: "#00AA88",
-          count: 6,
-          speed: 5,
-          itemOffset: 400,
-          image: "big-lukowski",
+          camera: {
+            speed: 5
+          },
           ground: {
             color: '#2030e0'
+          },
+          sceneItem: {
+            count: 6,
+            image: "big-lukowski",
+            offset: 400
           }
         }
       } %}
@@ -26,11 +30,17 @@
         title: "Even more little different",
         options: {
           background: "#A02244",
-          count: 60,
-          speed: 7,
-          itemOffset: 360,
-          image: "peca",
+          camera: {
+            speed: 7
+          },
+          ground: {
+            color: "#dd8844"
+          },
           sceneItem: {
+            offset: 360,
+            spacing: 200,
+            image: "peca",
+            count: 60,
             movementSpeed: -0.004,
             secondaryMovementSpeed: 0.06,
             reverseSideRate: 3
