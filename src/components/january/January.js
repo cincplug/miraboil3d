@@ -16,6 +16,7 @@ class January {
       color: this._element.querySelector('.january__color-switch')
     }
   }
+
   _addEventListeners() {
     this._element.addEventListener('click', e => this._color(e))
   }
@@ -161,19 +162,27 @@ class January {
     }
     if (this.activeItem) {
       this.activeItem.geometry.needsUpdate = true
-      this.activeItem.rotateZ(this._setItemMovementDirection(currentItemIndex))
+      this.activeItem.rotateZ(
+        this._setItemMovementDirection(
+          currentItemIndex,
+          _options.sceneItem.movementSpeed
+        )
+      )
       if (this.previousItem) {
         this.previousItem.rotateY(
-          this._setItemMovementDirection(currentItemIndex)
+          this._setItemMovementDirection(
+            currentItemIndex,
+            _options.sceneItem.secondaryMovementSpeed
+          )
         )
       }
     }
   }
 
-  _setItemMovementDirection(index) {
+  _setItemMovementDirection(index, speed) {
     const { _options } = this
     return (
-      _options.sceneItem.movementSpeed *
+      speed *
       (this._isDivisibleBy(index, _options.sceneItem.reverseSideRate) ? 1 : -1)
     )
   }
