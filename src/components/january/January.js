@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import * as defaults from './january.json'
 
 /**
  * January component
@@ -6,42 +7,8 @@ import * as THREE from 'three'
 class January {
   constructor(element, options = {}) {
     this._element = element
-    this._options = { ...January.options, ...JSON.parse(options.options) }
+    this._options = { ...defaults.options, ...JSON.parse(options.options) }
     this._init()
-  }
-
-  static options = {
-    camera: {
-      aspect: window.innerWidth / window.innerHeight,
-      near: 1,
-      far: 3000,
-      position: {
-        y: 20
-      },
-      distanceRatio: 2,
-      swing: 100,
-      nudge: 0.0001
-    },
-    ground: {
-      color: 0xf0f0ff,
-      width: 4096,
-      depth: 19200,
-      height: 256,
-      angle: 90,
-      repeat: {
-        width: 4,
-        depth: 32
-      }
-    },
-    sceneItem: {
-      color: 0xb8b8f8,
-      width: 512,
-      height: 1024,
-      spacing: 256,
-      movementSpeed: 0.006,
-      secondaryMovementSpeed: 0.006,
-      reverseSideRate: 2
-    }
   }
 
   _cacheSelectors() {
@@ -99,7 +66,7 @@ class January {
     ground.mesh.rotation.x = THREE.Math.degToRad(_options.ground.angle)
     ground.mesh.position.y = -_options.ground.height
     ground.mesh.position.z =
-      (_options.imageCount * _options.sceneItem.spacing) /
+      (_options.count * _options.sceneItem.spacing) /
       _options.camera.distanceRatio
     scene.add(ground.mesh)
     this._arrangeSceneItems()
@@ -116,7 +83,7 @@ class January {
     new THREE.TextureLoader().load(
       `/static/img/${_options.image}.png`,
       texture => {
-        for (let i = 1; i <= _options.imageCount; i++) {
+        for (let i = 1; i <= _options.count; i++) {
           sceneItem.material = new THREE.MeshBasicMaterial({
             transparent: true,
             map: texture,
@@ -152,7 +119,7 @@ class January {
       this._options.camera.far
     )
     this.camera.position.z =
-      this._options.imageCount * this._options.sceneItem.spacing +
+      this._options.count * this._options.sceneItem.spacing +
       this._options.camera.far / this._options.camera.distanceRatio
     this.camera.position.y = -this._options.camera.position.y
     this.scene.add(this.camera)
@@ -189,7 +156,7 @@ class January {
         this.previousItem = this.activeItem
       }
       this.activeItem = scene.getObjectByName(
-        `znak-${_options.imageCount - this.activeItemIndex + 1}`
+        `znak-${_options.count - this.activeItemIndex + 1}`
       )
     }
     if (this.activeItem) {

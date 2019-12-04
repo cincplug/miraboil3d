@@ -11,22 +11,42 @@
       {% component 'january', {
         title: "A little different",
         options: {
-          background: "#004488",
-          imageCount: 40,
+          background: "#00AA88",
+          count: 6,
           speed: 5,
           itemOffset: 400,
-          image: "big-lukowski"
+          image: "big-lukowski",
+          ground: {
+            color: '#2030e0',
+            width: 4096,
+            depth: 19200,
+            height: 256,
+            angle: 90,
+            repeat: {
+              width: 4,
+              depth: 32
+            }
+          }
         }
       } %}
 
       {% component 'january', {
         title: "Even more little different",
         options: {
-          background: "#002244",
-          imageCount: 60,
+          background: "#A02244",
+          count: 60,
           speed: 7,
           itemOffset: 360,
-          image: "peca"
+          image: "peca",
+          sceneItem: {
+            color: 12105976,
+            width: 512,
+            height: 1024,
+            spacing: 256,
+            movementSpeed: 0.02,
+            secondaryMovementSpeed: 0.006,
+            reverseSideRate: 2
+          }
         }
       } %}
 
