@@ -1,0 +1,37 @@
+@function rem($px-value, $base-value: $min_font) {
+  @return $px-value / $base-value * 1rem;
+}
+
+@function em($px-value, $base-value: $min_font) {
+  @return $px-value / $base-value * 1em;
+}
+
+@function convert-units($px-values, $unit, $base-value: $min_font) {
+  $values: ();
+
+  @each $value in $px-values {
+    @if $value == 0 or type-of($value) != 'number' {
+      $values: append($values, $value);
+    } @else {
+      $values: append($values, ($value / $base-value) + $unit);
+    }
+  }
+
+  @return $values;
+}
+
+@mixin rem($property, $px-values) {
+  #{$property}: convert-units($px-values, rem);
+}
+
+@mixin em($property, $px-values) {
+  #{$property}: convert-units($px-values, em);
+}
+
+@function width($fraction) {
+  @return 100vw * $fraction;
+}
+
+@function height($fraction) {
+  @return 100vh * $fraction;
+}

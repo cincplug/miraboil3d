@@ -1,0 +1,10 @@
+body {
+  background: $color-dark;
+  color: $color-white;
+}
+
+header {
+  margin: 0 -#{$gutter-mobile} $gutter-mobile;
+  padding: $gutter-mobile;
+  background: $color-black;
+}

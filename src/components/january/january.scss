@@ -2,11 +2,13 @@
   margin-bottom: 3rem;
   width: 500px;
   @media (min-width: $breakpoint-l) {
-    @include flex-col(40%);
+    @include flex-col(45%);
   }
   &__color-switch {
     background: $color-black;
     color: $color-white;
+    border: none;
+    border-radius: $border-radius;
     appearance: none;
     padding: 1rem;
     margin-bottom: 0.2rem;

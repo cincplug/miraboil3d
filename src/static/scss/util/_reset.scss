@@ -1,0 +1,111 @@
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+cite,
+code,
+del,
+em,
+img,
+ins,
+small,
+strong,
+sub,
+sup,
+tt,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+input,
+textarea,
+button,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+@mixin button-reset {
+  appearance: none;
+  background: none;
+  padding: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+.reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}

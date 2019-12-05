@@ -4,10 +4,12 @@
 }
 
 .grid {
-  width: 100%;
-  max-width: $max_width;
+  max-width: calc(100% - #{$gutter-mobile});
   margin-left: auto;
   margin-right: auto;
+  @media (min-width: $max_width) {
+    max-width: calc(100% - #{$gutter-desktop});
+  }
 }
 
 .main-wrap {

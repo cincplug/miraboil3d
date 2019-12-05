@@ -21,7 +21,7 @@
             color: '#4477e0'
           },
           sceneItem: {
-            count: 12,
+            count: 32,
             image: "big-lukowski",
             spacing: 320,
             offset: 400
@@ -32,21 +32,24 @@
       {% component 'january', {
         title: "Even more little different",
         options: {
-          background: "#A02244",
+          background: "#80a6b4",
           camera: {
-            speed: 7
+            speed: 7,
+            position: {
+              y: -280
+            }
           },
           ground: {
             color: "#888844"
           },
           sceneItem: {
-            offset: 360,
-            spacing: 200,
-            image: "peca",
-            count: 60,
-            movementSpeed: -0.004,
-            secondaryMovementSpeed: -0.01,
-            reverseSideRate: 3
+            offset: 460,
+            height: 512,
+            spacing: 300,
+            image: "peca2",
+            count: 20,
+            movementSpeed: 0.007,
+            secondaryMovementSpeed: 0
           }
         }
       } %}
@@ -54,23 +57,21 @@
       {% component 'january', {
         title: "Totally little different",
         options: {
-          background: "#B09654",
+          background: "#A02244",
           camera: {
-            speed: 7
+            speed: 9
           },
           ground: {
-            color: "#885844"
+            color: "#b88844"
           },
           sceneItem: {
-            offset: 460,
+            offset: 360,
             spacing: 200,
-            image: "peca2",
+            image: "peca",
             count: 60,
-            position: {
-              y: 280
-            },
-            movementSpeed: 0.02,
-            secondaryMovementSpeed: 0
+            movementSpeed: -0.01,
+            secondaryMovementSpeed: -0.01,
+            reverseSideRate: 3
           }
         }
       } %}

@@ -31,8 +31,8 @@ $small-font-size: 16px;
 // sometimes an element has a margin of 1/16vw of another element
 // sometimes the vertical spacing is 1/32vh
 
-$gutter-mobile: 1.33333rem;
-$gutter-desktop: 18px;
+$gutter-mobile: 2rem;
+$gutter-desktop: $gutter-mobile;
 $readability-width-limit: $breakpoint-m;
 
 // Easings
