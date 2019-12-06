@@ -10,8 +10,10 @@
     border: none;
     border-radius: $border-radius;
     appearance: none;
-    padding: 1rem;
-    margin-bottom: 0.2rem;
+    padding: 0.7rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.2rem;
+    outline: none;
     &[data-color='red'] {
       background: $color-red;
     }
