@@ -77,10 +77,17 @@ class January {
   _arrangeSceneItems() {
     const { scene, _options } = this
     const sceneItem = {
-      geometry: new THREE.PlaneBufferGeometry(
-        this._options.sceneItem.width,
-        this._options.sceneItem.height
-      )
+      geometry:
+        this._options.sceneItem.shape === 'box'
+          ? new THREE.BoxBufferGeometry(
+              this._options.sceneItem.width,
+              this._options.sceneItem.width,
+              this._options.sceneItem.width
+            )
+          : new THREE.PlaneBufferGeometry(
+              this._options.sceneItem.width,
+              this._options.sceneItem.height
+            )
     }
     new THREE.TextureLoader().load(
       `/static/img/${_options.sceneItem.image}.png`,
