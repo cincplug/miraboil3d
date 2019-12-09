@@ -94,6 +94,7 @@ class January {
       texture => {
         for (let i = 1; i <= _options.sceneItem.count; i++) {
           sceneItem.material = new THREE.MeshBasicMaterial({
+            color: _options.sceneItem.color,
             transparent: true,
             map: texture,
             side: THREE.DoubleSide
@@ -103,7 +104,7 @@ class January {
             sceneItem.material
           )
           sceneItem.mesh.position.z = i * _options.sceneItem.spacing
-          sceneItem.mesh.position.y = -250
+          sceneItem.mesh.position.y = this._options.sceneItem.position.y
           sceneItem.mesh.position.x = this._isDivisibleBy(
             i,
             _options.sceneItem.reverseSideRate

@@ -33,6 +33,9 @@
       "height": 1024,
       "spacing": 256,
       "offset": 512,
+      "position": {
+        "y": -256
+      },
       "movementSpeed": 0.006,
       "secondaryMovementSpeed": 0.006,
       "reverseSideRate": 2
