@@ -12,6 +12,7 @@
       },
       "distanceRatio": 2,
       "swing": 100,
+      "slouch": 0,
       "nudge": 0.0001
     },
     "ground": {
