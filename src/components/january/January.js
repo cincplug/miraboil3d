@@ -23,11 +23,9 @@ class January {
   }
 
   _color(e) {
-    const color = window
-      .getComputedStyle(e.target)
-      .getPropertyValue('background-color')
-    this._element.setAttribute('data-color', color)
-    this.scene.background = new THREE.Color(color)
+    const { color } = e.target.dataset
+    this._element.dataset.color = color
+    this.light.color = this.scene.background = new THREE.Color(color)
     this._render()
   }
 
@@ -44,6 +42,7 @@ class January {
     this._arrangeSceneItems()
     this.activeItemIndex = 0
     this.currentFrame = 0
+    this._setLight()
     this._setCamera()
   }
 
@@ -62,7 +61,7 @@ class January {
         _options.ground.repeat.width,
         _options.ground.repeat.depth
       )
-      ground.material = new THREE.MeshBasicMaterial({
+      ground.material = new THREE.MeshLambertMaterial({
         color: new THREE.Color(_options.ground.color),
         map: texture,
         side: THREE.DoubleSide
@@ -110,7 +109,7 @@ class January {
       `/static/img/${_options.sceneItem.image}.png`,
       texture => {
         for (let i = 1; i <= _options.sceneItem.count; i++) {
-          sceneItem.material = new THREE.MeshBasicMaterial({
+          sceneItem.material = new THREE.MeshLambertMaterial({
             color: _options.sceneItem.color,
             transparent: true,
             map: texture,
@@ -135,6 +134,11 @@ class January {
     )
   }
 
+  _setLight() {
+    this.light = new THREE.AmbientLight(new THREE.Color('#ffffff'))
+    this.scene.add(this.light)
+  }
+
   _setCamera() {
     this.camera = new THREE.PerspectiveCamera(
       this._options.camera.fov,
@@ -146,6 +150,7 @@ class January {
       this._options.sceneItem.count * this._options.sceneItem.spacing +
       this._options.camera.far / this._options.camera.distanceRatio
     this.camera.position.y = -this._options.camera.position.y
+    console.warn('kurac', this.camera.position)
     this.scene.add(this.camera)
     this._animate()
   }
