@@ -65,7 +65,8 @@
         options: {
           background: "#A02244",
           camera: {
-            speed: 6
+            speed: 6,
+            slouch: 40
           },
           ground: {
             color: "#b88844"
@@ -78,6 +79,42 @@
             spacing: 250,
             position: {
               y: 200
+            },
+            image: "peca",
+            count: 40,
+            movementSpeed: -0.01,
+            secondaryMovementSpeed: -0.01,
+            reverseSideRate: 3
+          }
+        }
+      } %}
+
+      {% component 'january', {
+        title: "Ma ajde",
+        options: {
+          background: "#102244",
+          camera: {
+            speed: 6,
+            slouch: 40
+          },
+          ground: {
+            color: "#188844"
+          },
+          sceneItem: {
+            color: "rgba(250, 230, 200, 0.5)",
+            shape: "lathe",
+            shapeOptions: {
+              segments: 10,
+              size: 100,
+              step: 5,
+              x: 20,
+              y: 0.2
+            },
+            width: 600,
+            offset: 460,
+            spacing: 250,
+            position: {
+              y: 80
             },
             image: "peca",
             count: 40,

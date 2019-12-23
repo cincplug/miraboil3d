@@ -79,19 +79,33 @@ class January {
 
   _arrangeSceneItems() {
     const { scene, _options } = this
-    const sceneItem = {
-      geometry:
-        this._options.sceneItem.shape === 'box'
-          ? new THREE.BoxBufferGeometry(
-              this._options.sceneItem.width,
-              this._options.sceneItem.width,
-              this._options.sceneItem.width
-            )
-          : new THREE.PlaneBufferGeometry(
-              this._options.sceneItem.width,
-              this._options.sceneItem.height
-            )
+    const sceneItem = {}
+    if (_options.sceneItem.shape === 'box') {
+      sceneItem.geometry = new THREE.BoxBufferGeometry(
+        this._options.sceneItem.width,
+        this._options.sceneItem.width,
+        this._options.sceneItem.width
+      )
+    } else if (_options.sceneItem.shape === 'lathe') {
+      const points = []
+      const { shapeOptions } = _options.sceneItem
+      for (let i = 0; i < shapeOptions.segments; i++) {
+        points.push(
+          new THREE.Vector2(
+            Math.sin(i * shapeOptions.y) * shapeOptions.size +
+              shapeOptions.step,
+            (i - shapeOptions.step) * shapeOptions.x
+          )
+        )
+      }
+      sceneItem.geometry = new THREE.LatheBufferGeometry(points)
+    } else {
+      sceneItem.geometry = new THREE.PlaneBufferGeometry(
+        this._options.sceneItem.width,
+        this._options.sceneItem.height
+      )
     }
+
     new THREE.TextureLoader().load(
       `/static/img/${_options.sceneItem.image}.png`,
       texture => {
@@ -150,7 +164,8 @@ class January {
     const { camera, _options, currentFrame } = this
     if (_options.camera.slouch) {
       camera.position.x =
-        currentFrame * Math.sin(currentFrame / _options.camera.slouch)
+        _options.sceneItem.spacing *
+        Math.sin(currentFrame / _options.camera.slouch)
     }
     camera.position.y =
       (currentFrame * Math.sin(currentFrame / _options.camera.swing)) /
