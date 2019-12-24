@@ -8,7 +8,13 @@
     </header>
     <main class="main-wrap">
 
-      {% component 'january' %}
+      {% component 'january', {
+        options: {
+          sceneItem: {
+            double: true
+          }
+        }
+      } %}
 
       {% component 'january', {
         title: "A little different",
@@ -26,6 +32,32 @@
             spacing: 320,
             offset: 400,
             secondaryMovementSpeed: 0.002
+          }
+        }
+      } %}
+
+      {% component 'january', {
+        title: "More little different",
+        options: {
+          background: "#2667a2",
+          camera: {
+            speed: 5
+          },
+          ground: {
+            color: '#ffe9b8'
+          },
+          sceneItem: {
+            count: 32,
+            image: "pobednik",
+            width: 256,
+            height: 1024,
+            position: {
+              y: -200
+            },
+            spacing: 320,
+            offset: 400,
+            movementSpeed: 0.025,
+            secondaryMovementSpeed: 0
           }
         }
       } %}

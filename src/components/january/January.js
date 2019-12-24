@@ -150,7 +150,6 @@ class January {
       this._options.sceneItem.count * this._options.sceneItem.spacing +
       this._options.camera.far / this._options.camera.distanceRatio
     this.camera.position.y = -this._options.camera.position.y
-    console.warn('kurac', this.camera.position)
     this.scene.add(this.camera)
     this._animate()
   }
@@ -195,7 +194,7 @@ class January {
       )
     }
     if (this.activeItem) {
-      this.activeItem.geometry.needsUpdate = true
+      // this.activeItem.geometry.needsUpdate = true
       this.activeItem.rotateZ(
         this._setItemMovementDirection(
           currentItemIndex,
