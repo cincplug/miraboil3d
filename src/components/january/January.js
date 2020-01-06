@@ -19,14 +19,21 @@ class January {
   }
 
   _addEventListeners() {
-    this._element.addEventListener('click', e => this._color(e))
+    document.body.addEventListener('click', e => this._handleClick(e))
+    document.addEventListener('scroll', e => this._handleScroll(e))
   }
 
-  _color(e) {
-    const { color } = e.target.dataset
-    this._element.dataset.color = color
-    this.light.color = this.scene.background = new THREE.Color(color)
-    this._render()
+  _handleScroll() {
+    this._isInView()
+  }
+
+  _handleClick(e) {
+    if (e.target.className.match(/\bjanuary__color-switch\b/)) {
+      const { color } = e.target.dataset
+      this._element.dataset.color = color
+      this.light.color = this.scene.background = new THREE.Color(color)
+      this._render()
+    }
   }
 
   _setScene() {
@@ -157,10 +164,12 @@ class January {
   _animate = () => {
     // eslint-disable-next-line no-invalid-this
     const self = this
-    self._moveCamera()
-    self.currentFrame++
-    self._moveItem()
-    self._render()
+    if (self._isInView()) {
+      self._moveCamera()
+      self.currentFrame++
+      self._moveItem()
+      self._render()
+    }
     requestAnimationFrame(self._animate)
   }
 
@@ -238,6 +247,14 @@ class January {
    */
   _isDivisibleBy = (number, divisor) => {
     return number % divisor === 0
+  }
+
+  _isInView() {
+    const isInView =
+      this._element.offsetTop - this._options.visibilityOffset <
+        window.scrollY &&
+      this._element.offsetTop + this._options.visibilityOffset > window.scrollY
+    return isInView
   }
 }
 

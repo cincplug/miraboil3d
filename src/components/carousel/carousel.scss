@@ -1,0 +1,17 @@
+.carousel {
+  display: grid;
+  grid-template-columns: 1fr minmax(max-content, 100vw) 1fr;
+  grid-gap: $gutter-mobile;
+  &__arrow {
+    background: transparent;
+    color: $color-white;
+    font-size: 6rem;
+    grid-row: 1;
+    &--prev {
+      grid-column: 1;
+    }
+    &--next {
+      grid-column: 3;
+    }
+  }
+}

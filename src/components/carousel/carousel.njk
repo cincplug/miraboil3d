@@ -1,0 +1,9 @@
+<div class="carousel" data-module="carousel/Carousel" data-active-item="0">
+  {# <div id="carousel__display" class="carousel__display"></div> #}
+  {% for item in items %}
+    {% component 'january',
+    item %}
+  {% endfor %}
+  <button class="button carousel__arrow carousel__arrow--prev">&uarr;</button>
+  <button class="button carousel__arrow carousel__arrow--next">&darr;</button>
+</div>

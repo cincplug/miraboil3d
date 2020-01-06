@@ -2,6 +2,7 @@
   "title": "Default",
   "options": {
     "background": "lightblue",
+    "visibilityOffset": 500,
     "camera": {
       "aspect": 1.333333333,
       "near": 1,

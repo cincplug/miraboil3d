@@ -1,12 +1,8 @@
 .january {
-  display: none;
-  &.active {
-    display: block;
-    grid-column: 2;
-    width: 100%;
-  }
+  display: block;
+  grid-column: 2;
+  width: 100%;
   margin-bottom: 3rem;
-  width: 500px;
   @media (min-width: $breakpoint-l) {
     @include flex-col(100%);
   }
@@ -37,18 +33,6 @@
     }
     &[data-color='yellow'] {
       background: $color-yellow;
-    }
-  }
-  &__slide {
-    background: transparent;
-    color: $color-white;
-    font-size: 6rem;
-    grid-row: 1;
-    &--prev {
-      grid-column: 1;
-    }
-    &--next {
-      grid-column: 3;
     }
   }
 }

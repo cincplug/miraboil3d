@@ -1,14 +1,14 @@
-{% set activeClass = "active" if isActive else
-  "" %}
-<div class="january {{ activeClass }}" data-module="january/January" data-options="{{ options | dump }}">
-  <div class="january__header">
-    <h3 class="january__title">{{ title }}</h3>
-    <div class="january__color-switches">
-      <button class="january__color-switch" data-color="red"></button>
-      <button class="january__color-switch" data-color="green"></button>
-      <button class="january__color-switch" data-color="blue"></button>
-      <button class="january__color-switch" data-color="yellow"></button>
+{# {% if isActive === true %} #}
+  <div class="january {{ activeClass }}" data-module="january/January" data-options="{{ options | dump }}" data-name="{{ options.sceneItem.image }}">
+    <div class="january__header">
+      <h3 class="january__title">{{ title }}</h3>
+      <div class="january__color-switches">
+        <button class="january__color-switch" data-color="red"></button>
+        <button class="january__color-switch" data-color="green"></button>
+        <button class="january__color-switch" data-color="blue"></button>
+        <button class="january__color-switch" data-color="yellow"></button>
+      </div>
     </div>
+    <div class="january__canvas"></div>
   </div>
-  <div class="january__canvas"></div>
-</div>
+{# {% endif %} #}
