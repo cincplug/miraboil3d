@@ -2,10 +2,7 @@
   display: grid;
   grid-template-columns: 1fr minmax(max-content, 100vw) 1fr;
   grid-gap: $gutter-mobile;
-  &__arrow {
-    background: transparent;
-    color: $color-white;
-    font-size: 6rem;
+  &__control {
     grid-row: 1;
     &--prev {
       grid-column: 1;
@@ -13,5 +10,12 @@
     &--next {
       grid-column: 3;
     }
+  }
+  &__button {
+    background: transparent;
+    color: $color-white;
+    font-size: 6rem;
+    position: sticky;
+    top: 10rem;
   }
 }
