@@ -1,8 +1,20 @@
 .january {
+  display: none;
+  &.active {
+    display: block;
+    grid-column: 2;
+    width: 100%;
+  }
   margin-bottom: 3rem;
   width: 500px;
   @media (min-width: $breakpoint-l) {
-    @include flex-col(75%);
+    @include flex-col(100%);
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: $gutter-mobile / 2;
   }
   &__color-switch {
     background: $color-black;
@@ -25,6 +37,18 @@
     }
     &[data-color='yellow'] {
       background: $color-yellow;
+    }
+  }
+  &__slide {
+    background: transparent;
+    color: $color-white;
+    font-size: 6rem;
+    grid-row: 1;
+    &--prev {
+      grid-column: 1;
+    }
+    &--next {
+      grid-column: 3;
     }
   }
 }

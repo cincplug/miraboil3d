@@ -4,20 +4,14 @@
   <div class="grid">
     <header>
       <h1>{{ title }}</h1>
-      <p>{{ body }}</p>
     </header>
     <main class="main-wrap">
 
-      {% component 'january', {
-        options: {
-          sceneItem: {
-            double: true
-          }
-        }
-      } %}
+      {% component 'january' %}
 
       {% component 'january', {
         title: "A little different",
+        isActive: true,
         options: {
           background: "#2667a2",
           camera: {
@@ -157,6 +151,9 @@
           }
         }
       } %}
+
+      <button class="button january__slide january__slide--prev">&larr;</button>
+      <button class="button january__slide january__slide--next">&rarr;</button>
 
     </main>
   </div>
