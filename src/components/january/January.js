@@ -81,30 +81,39 @@ class January {
   _arrangeSceneItems() {
     const { scene, _options } = this
     const sceneItem = {}
-    if (_options.sceneItem.shape === 'box') {
-      sceneItem.geometry = new THREE.BoxBufferGeometry(
-        this._options.sceneItem.width,
-        this._options.sceneItem.width,
-        this._options.sceneItem.width
-      )
-    } else if (_options.sceneItem.shape === 'lathe') {
-      const points = []
-      const { shapeOptions } = _options.sceneItem
-      for (let i = 0; i < shapeOptions.segments; i++) {
-        points.push(
-          new THREE.Vector2(
-            Math.sin(i * shapeOptions.y) * shapeOptions.size +
-              shapeOptions.step,
-            (i - shapeOptions.step) * shapeOptions.x
-          )
+    switch (_options.sceneItem.shape) {
+      case 'box': {
+        sceneItem.geometry = new THREE.BoxBufferGeometry(
+          this._options.sceneItem.width,
+          this._options.sceneItem.width,
+          this._options.sceneItem.width
         )
+        break
       }
-      sceneItem.geometry = new THREE.LatheBufferGeometry(points)
-    } else {
-      sceneItem.geometry = new THREE.PlaneBufferGeometry(
-        this._options.sceneItem.width,
-        this._options.sceneItem.height
-      )
+
+      case 'lathe': {
+        const points = []
+        const { shapeOptions } = _options.sceneItem
+        for (let i = 0; i < shapeOptions.segments; i++) {
+          points.push(
+            new THREE.Vector2(
+              Math.sin(i * shapeOptions.y) * shapeOptions.size +
+                shapeOptions.step,
+              (i - shapeOptions.step) * shapeOptions.x
+            )
+          )
+        }
+        sceneItem.geometry = new THREE.LatheBufferGeometry(points)
+        break
+      }
+
+      default: {
+        sceneItem.geometry = new THREE.PlaneBufferGeometry(
+          this._options.sceneItem.width,
+          this._options.sceneItem.height
+        )
+        break
+      }
     }
 
     new THREE.TextureLoader().load(
