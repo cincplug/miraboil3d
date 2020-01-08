@@ -20,11 +20,6 @@ class January {
 
   _addEventListeners() {
     this._element.addEventListener('click', e => this._handleClick(e))
-    document.addEventListener('scroll', e => this._handleScroll(e))
-  }
-
-  _handleScroll() {
-    this._isInView()
   }
 
   _handleClick(e) {
