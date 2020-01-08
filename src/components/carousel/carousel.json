@@ -5,8 +5,13 @@
       "title": "Another tree and few different parameters",
       "options": {
         "background": "#d4e0f0",
+        "camera": {
+          "speed": 2
+        },
         "sceneItem": {
-          "image": "tree2"
+          "image": "tree2",
+          "offset": 400,
+          "movementSpeed": 0.011
         }
       }
     },
@@ -95,14 +100,14 @@
       "title": "Geneks",
       "isActive": true,
       "options": {
-        "background": "#8abeed",
+        "background": "#daecfc",
         "camera": {
           "speed": 2,
           "distanceRatio": 3,
           "slouch": 80
         },
         "ground": {
-          "color": "#79c280"
+          "color": "#eee6d2"
         },
         "sceneItem": {
           "count": 18,
@@ -118,6 +123,36 @@
           "movementSpeed": 0.01,
           "secondaryMovementSpeed": 0,
           "reverseSideRate": 1
+        }
+      }
+    },
+    {
+      "title": "Delftse port",
+      "isActive": true,
+      "options": {
+        "background": "#d2d6d7",
+        "camera": {
+          "speed": 3,
+          "distanceRatio": 3,
+          "slouch": 80
+        },
+        "ground": {
+          "color": "#d2d6d7"
+        },
+        "sceneItem": {
+          "count": 18,
+          "image": "delftse",
+          "width": 256,
+          "height": 1024,
+          "position": {
+            "y": -280
+          },
+          "spacing": 180,
+          "offset": 200,
+          "movementType": "rotateY",
+          "movementSpeed": 0.018,
+          "secondaryMovementSpeed": 0.1,
+          "reverseSideRate": 2
         }
       }
     },
@@ -143,38 +178,36 @@
     },
 
     {
-      "title": "Even more little different",
+      "title": "Peca 1",
       "options": {
         "background": "#80a6b4",
         "camera": {
-          "speed": 8,
-          "position": {
-            "y": -180
-          },
-          "slouch": 20
+          "speed": 4,
+          "slouch": 100
         },
         "ground": {
           "color": "#888844",
-          "height": 100
+          "height": 200
         },
         "sceneItem": {
-          "offset": 360,
+          "offset": 260,
           "height": 256,
           "width": 256,
-          "spacing": 300,
+          "spacing": 200,
           "position": {
-            "y": 0
+            "y": -190
           },
           "image": "apolon",
           "count": 60,
-          "movementSpeed": 0.001,
-          "secondaryMovementSpeed": -0.002
+          "movementType": "rotateY",
+          "movementSpeed": -0.01,
+          "secondaryMovementSpeed": 0
         }
       }
     },
 
     {
-      "title": "Totally little different",
+      "title": "Peca 2",
       "options": {
         "background": "#A02244",
         "camera": {
@@ -203,7 +236,7 @@
     },
 
     {
-      "title": "Ma ajde",
+      "title": "Lathe geometry",
       "options": {
         "background": "#feffc3",
         "camera": {

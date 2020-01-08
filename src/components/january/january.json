@@ -18,17 +18,18 @@
     },
     "ground": {
       "color": "#e0e0e0",
+      "image": "ground",
       "width": 4096,
       "depth": 19200,
       "height": 230,
       "angle": 90,
       "repeat": {
-        "width": 4,
-        "depth": 32
+        "width": 16,
+        "depth": 64
       }
     },
     "sceneItem": {
-      "color": "transparent",
+      "color": null,
       "count": 50,
       "image": "tree",
       "width": 512,

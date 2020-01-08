@@ -50,32 +50,35 @@ class January {
 
   _setGround() {
     const { scene, _options } = this
-    new THREE.TextureLoader().load('/static/img/ground.jpg', texture => {
-      const ground = {
-        geometry: new THREE.PlaneBufferGeometry(
-          this._options.ground.width,
-          this._options.ground.depth
+    new THREE.TextureLoader().load(
+      `/static/img/${_options.ground.image}.png`,
+      texture => {
+        const ground = {
+          geometry: new THREE.PlaneBufferGeometry(
+            this._options.ground.width,
+            this._options.ground.depth
+          )
+        }
+        texture.wrapT = texture.wrapS = THREE.RepeatWrapping
+        texture.offset.set(0, 0)
+        texture.repeat.set(
+          _options.ground.repeat.width,
+          _options.ground.repeat.depth
         )
+        ground.material = new THREE.MeshLambertMaterial({
+          color: new THREE.Color(_options.ground.color),
+          map: texture,
+          side: THREE.DoubleSide
+        })
+        ground.mesh = new THREE.Mesh(ground.geometry, ground.material)
+        ground.mesh.rotation.x = THREE.Math.degToRad(_options.ground.angle)
+        ground.mesh.position.y = -_options.ground.height
+        ground.mesh.position.z =
+          (_options.sceneItem.count * _options.sceneItem.spacing) /
+          _options.camera.distanceRatio
+        scene.add(ground.mesh)
       }
-      texture.wrapT = texture.wrapS = THREE.RepeatWrapping
-      texture.offset.set(0, 0)
-      texture.repeat.set(
-        _options.ground.repeat.width,
-        _options.ground.repeat.depth
-      )
-      ground.material = new THREE.MeshLambertMaterial({
-        color: new THREE.Color(_options.ground.color),
-        map: texture,
-        side: THREE.DoubleSide
-      })
-      ground.mesh = new THREE.Mesh(ground.geometry, ground.material)
-      ground.mesh.rotation.x = THREE.Math.degToRad(_options.ground.angle)
-      ground.mesh.position.y = -_options.ground.height
-      ground.mesh.position.z =
-        (_options.sceneItem.count * _options.sceneItem.spacing) /
-        _options.camera.distanceRatio
-      scene.add(ground.mesh)
-    })
+    )
   }
 
   _setSceneItemShape() {
