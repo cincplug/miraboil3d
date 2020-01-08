@@ -207,8 +207,7 @@ class January {
       )
     }
     if (this.activeItem) {
-      // this.activeItem.geometry.needsUpdate = true
-      this.activeItem.rotateZ(
+      this.activeItem[_options.sceneItem.movementType](
         this._setItemMovementDirection(
           currentItemIndex,
           _options.sceneItem.movementSpeed

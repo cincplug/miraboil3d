@@ -47,7 +47,7 @@
           "distanceRatio": 3
         },
         "ground": {
-          "color": "#ffe9b8"
+          "color": "#dbd5be"
         },
         "sceneItem": {
           "count": 32,
@@ -59,14 +59,71 @@
           },
           "spacing": 320,
           "offset": 400,
-          "movementSpeed": 0.01,
+          "movementSpeed": 0.011,
           "secondaryMovementSpeed": 0
+        }
+      }
+    },
+    {
+      "title": "Palace Beogradjanka",
+      "isActive": true,
+      "options": {
+        "background": "#b9cff1",
+        "camera": {
+          "speed": 2,
+          "distanceRatio": 3
+        },
+        "ground": {
+          "color": "#77746d"
+        },
+        "sceneItem": {
+          "count": 32,
+          "image": "beogradjanka",
+          "width": 256,
+          "height": 1024,
+          "position": {
+            "y": -180
+          },
+          "spacing": 320,
+          "offset": 320,
+          "movementSpeed": 0.012,
+          "secondaryMovementSpeed": 0
+        }
+      }
+    },
+    {
+      "title": "Geneks",
+      "isActive": true,
+      "options": {
+        "background": "#8abeed",
+        "camera": {
+          "speed": 2,
+          "distanceRatio": 3,
+          "slouch": 80
+        },
+        "ground": {
+          "color": "#79c280"
+        },
+        "sceneItem": {
+          "count": 18,
+          "image": "geneks",
+          "width": 512,
+          "height": 2048,
+          "position": {
+            "y": -580
+          },
+          "spacing": 180,
+          "offset": 0,
+          "movementType": "rotateX",
+          "movementSpeed": 0.01,
+          "secondaryMovementSpeed": 0,
+          "reverseSideRate": 1
         }
       }
     },
 
     {
-      "title": "A little more different",
+      "title": "Ohoho",
       "options": {
         "background": "#006677",
         "camera": {

@@ -38,6 +38,7 @@
       "position": {
         "y": -256
       },
+      "movementType": "rotateZ",
       "movementSpeed": 0.006,
       "secondaryMovementSpeed": 0.006,
       "reverseSideRate": 2
