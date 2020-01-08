@@ -2,7 +2,7 @@
   "items": [
     {},
     {
-      "title": "Just few parameters",
+      "title": "Another tree and few different parameters",
       "options": {
         "background": "#d4e0f0",
         "sceneItem": {
@@ -11,7 +11,7 @@
       }
     },
     {
-      "title": "A little different",
+      "title": "Victor monument",
       "isActive": true,
       "options": {
         "background": "#2667a2",
@@ -25,6 +25,33 @@
         "sceneItem": {
           "count": 32,
           "image": "pobednik",
+          "width": 256,
+          "height": 1024,
+          "position": {
+            "y": -200
+          },
+          "spacing": 320,
+          "offset": 400,
+          "movementSpeed": 0.01,
+          "secondaryMovementSpeed": 0
+        }
+      }
+    },
+    {
+      "title": "Sava Center",
+      "isActive": true,
+      "options": {
+        "background": "#2667a2",
+        "camera": {
+          "speed": 2,
+          "distanceRatio": 3
+        },
+        "ground": {
+          "color": "#ffe9b8"
+        },
+        "sceneItem": {
+          "count": 32,
+          "image": "sava-centar",
           "width": 256,
           "height": 1024,
           "position": {

@@ -78,19 +78,16 @@ class January {
     })
   }
 
-  _arrangeSceneItems() {
-    const { scene, _options } = this
-    const sceneItem = {}
-    switch (_options.sceneItem.shape) {
+  _setSceneItemShape() {
+    const { _options } = this
+    switch (this._options.sceneItem.shape) {
       case 'box': {
-        sceneItem.geometry = new THREE.BoxBufferGeometry(
+        return new THREE.BoxBufferGeometry(
           this._options.sceneItem.width,
           this._options.sceneItem.width,
           this._options.sceneItem.width
         )
-        break
       }
-
       case 'lathe': {
         const points = []
         const { shapeOptions } = _options.sceneItem
@@ -103,19 +100,22 @@ class January {
             )
           )
         }
-        sceneItem.geometry = new THREE.LatheBufferGeometry(points)
-        break
+        return new THREE.LatheBufferGeometry(points)
       }
-
       default: {
-        sceneItem.geometry = new THREE.PlaneBufferGeometry(
-          this._options.sceneItem.width,
-          this._options.sceneItem.height
+        return new THREE.PlaneBufferGeometry(
+          _options.sceneItem.width,
+          _options.sceneItem.height
         )
-        break
       }
     }
+  }
 
+  _arrangeSceneItems() {
+    const { scene, _options } = this
+    const sceneItem = {
+      geometry: this._setSceneItemShape()
+    }
     new THREE.TextureLoader().load(
       `/static/img/${_options.sceneItem.image}.png`,
       texture => {
@@ -131,7 +131,7 @@ class January {
             sceneItem.material
           )
           sceneItem.mesh.position.z = i * _options.sceneItem.spacing
-          sceneItem.mesh.position.y = this._options.sceneItem.position.y
+          sceneItem.mesh.position.y = _options.sceneItem.position.y
           sceneItem.mesh.position.x = this._isDivisibleBy(
             i,
             _options.sceneItem.reverseSideRate
