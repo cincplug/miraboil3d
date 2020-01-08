@@ -139,7 +139,9 @@
         },
         "ground": {
           "color": "#6869a0",
-          "height": 100
+          "position": {
+            "y": 100
+          }
         },
         "sceneItem": {
           "count": 18,
@@ -219,7 +221,9 @@
         },
         "ground": {
           "color": "#888844",
-          "height": 200
+          "position": {
+            "y": 200
+          }
         },
         "sceneItem": {
           "offset": 260,

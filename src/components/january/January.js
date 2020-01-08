@@ -72,7 +72,7 @@ class January {
         })
         ground.mesh = new THREE.Mesh(ground.geometry, ground.material)
         ground.mesh.rotation.x = THREE.Math.degToRad(_options.ground.angle)
-        ground.mesh.position.y = -_options.ground.height
+        ground.mesh.position.y = -_options.ground.position.y
         ground.mesh.position.z =
           (_options.sceneItem.count * _options.sceneItem.spacing) /
           _options.camera.distanceRatio

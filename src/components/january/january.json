@@ -21,7 +21,9 @@
       "image": "ground",
       "width": 4096,
       "depth": 19200,
-      "height": 230,
+      "position": {
+        "y": 230
+      },
       "angle": 90,
       "repeat": {
         "width": 16,
