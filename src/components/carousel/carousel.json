@@ -2,12 +2,22 @@
   "items": [
     {},
     {
+      "title": "Just few parameters",
+      "options": {
+        "background": "#d4e0f0",
+        "sceneItem": {
+          "image": "tree2"
+        }
+      }
+    },
+    {
       "title": "A little different",
       "isActive": true,
       "options": {
         "background": "#2667a2",
         "camera": {
-          "speed": 2
+          "speed": 2,
+          "distanceRatio": 3
         },
         "ground": {
           "color": "#ffe9b8"
@@ -55,7 +65,7 @@
         "camera": {
           "speed": 8,
           "position": {
-            "y": -280
+            "y": -180
           },
           "slouch": 20
         },
@@ -111,31 +121,30 @@
     {
       "title": "Ma ajde",
       "options": {
-        "background": "#102244",
+        "background": "#feffc3",
         "camera": {
-          "speed": 6,
-          "slouch": 40
+          "speed": 4,
+          "slouch": 60
         },
         "ground": {
           "color": "#188844"
         },
         "sceneItem": {
-          "color": "rgba(250, 230, 200, 0.5)",
           "shape": "lathe",
           "shapeOptions": {
-            "segments": 10,
-            "size": 100,
+            "segments": 20,
+            "size": 200,
             "step": 5,
-            "x": 20,
-            "y": 0.2
+            "x": 100,
+            "y": 1
+          },
+          "position": {
+            "y": -450
           },
           "width": 600,
           "offset": 460,
-          "spacing": 250,
-          "position": {
-            "y": 80
-          },
-          "image": "peca",
+          "spacing": 350,
+          "image": "tree-sky",
           "count": 40,
           "movementSpeed": -0.01,
           "secondaryMovementSpeed": -0.01,

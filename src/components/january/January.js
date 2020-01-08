@@ -19,7 +19,7 @@ class January {
   }
 
   _addEventListeners() {
-    document.body.addEventListener('click', e => this._handleClick(e))
+    this._element.addEventListener('click', e => this._handleClick(e))
     document.addEventListener('scroll', e => this._handleScroll(e))
   }
 
