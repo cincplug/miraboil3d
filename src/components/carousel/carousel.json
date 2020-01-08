@@ -127,6 +127,38 @@
       }
     },
     {
+      "title": "Most",
+      "isActive": true,
+      "options": {
+        "background": "#686970",
+        "camera": {
+          "speed": 2,
+          "distanceRatio": 6,
+          "slouch": 80,
+          "swing": 3000
+        },
+        "ground": {
+          "color": "#6869a0",
+          "height": 100
+        },
+        "sceneItem": {
+          "count": 18,
+          "image": "most",
+          "width": 1024,
+          "height": 256,
+          "position": {
+            "y": -20
+          },
+          "spacing": 280,
+          "offset": 400,
+          "movementType": "rotateZ",
+          "movementSpeed": -0.008,
+          "secondaryMovementSpeed": 0.02,
+          "reverseSideRate": 2
+        }
+      }
+    },
+    {
       "title": "Delftse port",
       "isActive": true,
       "options": {
