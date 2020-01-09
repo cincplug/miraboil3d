@@ -83,35 +83,32 @@ class January {
 
   _setSceneItemShape() {
     const { _options } = this
-    switch (this._options.sceneItem.shape) {
-      case 'box': {
-        const { width, height, depth } = this._options.sceneItem
-        return new THREE.BoxBufferGeometry(width, height, depth)
-      }
-      case 'cube': {
-        const { width } = this._options.sceneItem
-        return new THREE.BoxBufferGeometry(width, width, width)
-      }
-      case 'lathe': {
-        const points = []
-        const { geometry } = _options.sceneItem
-        for (let i = 0; i < geometry.segments; i++) {
-          points.push(
-            new THREE.Vector2(
-              Math.sin(i * geometry.curvature) * geometry.width,
-              i * geometry.height
-            )
+    const { shape } = _options.sceneItem
+    const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
+      1
+    )}BufferGeometry`
+    const geometryParameters = THREE[geometryName]
+      .toString()
+      .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
+      .split(',')
+    const args = geometryParameters.map(param => {
+      return _options.sceneItem.geometry[param.replace(/(.+?):.+$/, '$1')]
+    })
+
+    if (shape === 'lathe') {
+      const points = []
+      const { geometry } = _options.sceneItem
+      for (let i = 0; i < geometry.segments; i++) {
+        points.push(
+          new THREE.Vector2(
+            Math.sin(i * geometry.curvature) * geometry.width,
+            i * geometry.height
           )
-        }
-        return new THREE.LatheBufferGeometry(points)
-      }
-      default: {
-        return new THREE.PlaneBufferGeometry(
-          _options.sceneItem.width,
-          _options.sceneItem.height
         )
       }
+      args[0] = points
     }
+    return new THREE[geometryName](...args)
   }
 
   _arrangeSceneItems() {

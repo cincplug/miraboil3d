@@ -304,9 +304,11 @@
         },
         "sceneItem": {
           "color": "rgba(250, 230, 200, 0.5)",
-          "shape": "cube",
+          "shape": "box",
           "geometry": {
-            "width": 400
+            "width": 400,
+            "height": 400,
+            "depth": 400
           },
           "offset": 460,
           "spacing": 250,

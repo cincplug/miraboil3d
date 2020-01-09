@@ -34,8 +34,11 @@
       "color": null,
       "count": 50,
       "image": "tree",
-      "width": 512,
-      "height": 1024,
+      "shape": "plane",
+      "geometry": {
+        "width": 512,
+        "height": 1024
+      },
       "spacing": 256,
       "offset": 200,
       "position": {
