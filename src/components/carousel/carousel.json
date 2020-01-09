@@ -237,6 +237,42 @@
         }
       }
     },
+    {
+      "title": "30 3d",
+      "isActive": true,
+      "options": {
+        "background": "#d2d6d7",
+        "camera": {
+          "speed": 5,
+          "distanceRatio": 4,
+          "slouch": 280
+        },
+        "ground": {
+          "color": "#d2d6d7"
+        },
+        "sceneItem": {
+          "shape": "torus",
+          "geometry": {
+            "radius": 100,
+            "tube": 40,
+            "radialSegments": 30,
+            "tubularSegments": 30
+          },
+          "color": "#ffcc88",
+          "count": 30,
+          "image": "30",
+          "position": {
+            "y": 100
+          },
+          "spacing": 180,
+          "offset": 250,
+          "movementType": "rotateY",
+          "movementSpeed": 0.18,
+          "secondaryMovementSpeed": 0.03,
+          "reverseSideRate": 2
+        }
+      }
+    },
 
     {
       "title": "Ohoho",
