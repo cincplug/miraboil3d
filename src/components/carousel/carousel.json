@@ -174,19 +174,54 @@
           "color": "#d2d6d7"
         },
         "sceneItem": {
+          "shape": "box",
           "count": 18,
           "image": "delftse",
-          "width": 256,
-          "height": 1024,
+          "width": 199,
+          "height": 973,
+          "depth": 199,
           "position": {
             "y": -280
           },
           "spacing": 180,
-          "offset": 200,
+          "offset": 300,
           "movementType": "rotateY",
           "movementSpeed": 0.018,
           "secondaryMovementSpeed": 0.1,
           "reverseSideRate": 2
+        }
+      }
+    },
+    {
+      "title": "30",
+      "isActive": true,
+      "options": {
+        "background": "#d2d6d7",
+        "camera": {
+          "speed": 6,
+          "distanceRatio": 3,
+          "slouch": 180
+        },
+        "ground": {
+          "color": "#d2d6d7"
+        },
+        "sceneItem": {
+          "shape": "circle",
+          "count": 30,
+          "image": "30",
+          "geometry": {
+            "radius": 80,
+            "segments": 30
+          },
+          "position": {
+            "y": 100
+          },
+          "spacing": 180,
+          "offset": 200,
+          "movementType": "rotateX",
+          "movementSpeed": 0.08,
+          "secondaryMovementSpeed": 0.2,
+          "reverseSideRate": 3
         }
       }
     },
@@ -212,7 +247,7 @@
     },
 
     {
-      "title": "Peca 1",
+      "title": "Peca",
       "options": {
         "background": "#80a6b4",
         "camera": {
@@ -243,7 +278,7 @@
     },
 
     {
-      "title": "Peca 2",
+      "title": "Peca - box shape",
       "options": {
         "background": "#A02244",
         "camera": {
@@ -255,12 +290,12 @@
         },
         "sceneItem": {
           "color": "rgba(250, 230, 200, 0.5)",
-          "shape": "box",
+          "shape": "cube",
           "width": 400,
           "offset": 460,
           "spacing": 250,
           "position": {
-            "y": 200
+            "y": 150
           },
           "image": "peca",
           "count": 40,
@@ -272,7 +307,7 @@
     },
 
     {
-      "title": "Lathe geometry",
+      "title": "Tree - lathe shape",
       "options": {
         "background": "#feffc3",
         "camera": {
@@ -284,7 +319,7 @@
         },
         "sceneItem": {
           "shape": "lathe",
-          "shapeOptions": {
+          "geometry": {
             "segments": 18,
             "width": 80,
             "curvature": 0.5,

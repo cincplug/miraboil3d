@@ -85,20 +85,21 @@ class January {
     const { _options } = this
     switch (this._options.sceneItem.shape) {
       case 'box': {
-        return new THREE.BoxBufferGeometry(
-          this._options.sceneItem.width,
-          this._options.sceneItem.width,
-          this._options.sceneItem.width
-        )
+        const { width, height, depth } = this._options.sceneItem
+        return new THREE.BoxBufferGeometry(width, height, depth)
+      }
+      case 'cube': {
+        const { width } = this._options.sceneItem
+        return new THREE.BoxBufferGeometry(width, width, width)
       }
       case 'lathe': {
         const points = []
-        const { shapeOptions } = _options.sceneItem
-        for (let i = 0; i < shapeOptions.segments; i++) {
+        const { geometry } = _options.sceneItem
+        for (let i = 0; i < geometry.segments; i++) {
           points.push(
             new THREE.Vector2(
-              Math.sin(i * shapeOptions.curvature) * shapeOptions.width,
-              i * shapeOptions.height
+              Math.sin(i * geometry.curvature) * geometry.width,
+              i * geometry.height
             )
           )
         }
