@@ -97,9 +97,8 @@ class January {
         for (let i = 0; i < shapeOptions.segments; i++) {
           points.push(
             new THREE.Vector2(
-              Math.sin(i * shapeOptions.y) * shapeOptions.size +
-                shapeOptions.step,
-              (i - shapeOptions.step) * shapeOptions.x
+              Math.sin(i * shapeOptions.curvature) * shapeOptions.width,
+              i * shapeOptions.height
             )
           )
         }

@@ -285,16 +285,14 @@
         "sceneItem": {
           "shape": "lathe",
           "shapeOptions": {
-            "segments": 20,
-            "size": 200,
-            "step": 5,
-            "x": 100,
-            "y": 1
+            "segments": 18,
+            "width": 80,
+            "curvature": 0.5,
+            "height": 30
           },
           "position": {
-            "y": -450
+            "y": -350
           },
-          "width": 600,
           "offset": 460,
           "spacing": 350,
           "image": "tree-sky",
