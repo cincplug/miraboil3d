@@ -108,6 +108,16 @@ class January {
       }
       args[0] = points
     }
+
+    if (shape === 'parametric') {
+      const { geometry } = _options.sceneItem
+      args[0] = function(u, v, target) {
+        const x = u * geometry.width
+        const y = v * geometry.height
+        const z = Math.sin(v + u) * geometry.curvature
+        target.set(x, y, z)
+      }
+    }
     return new THREE[geometryName](...args)
   }
 

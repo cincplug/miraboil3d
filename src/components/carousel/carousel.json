@@ -391,6 +391,41 @@
           "reverseSideRate": 3
         }
       }
+    },
+
+    {
+      "title": "Tree - lathe shape",
+      "options": {
+        "background": "#feffc3",
+        "camera": {
+          "speed": 3,
+          "distanceRatio": 5
+        },
+        "ground": {
+          "color": "#188844"
+        },
+        "sceneItem": {
+          "shape": "parametric",
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 150,
+            "height": 100,
+            "curvature": 200
+          },
+          "position": {
+            "y": -50
+          },
+          "offset": 150,
+          "spacing": 100,
+          "image": "tree-sky",
+          "movementType": "rotateX",
+          "count": 40,
+          "movementSpeed": -0.001,
+          "secondaryMovementSpeed": -0.005,
+          "reverseSideRate": 2
+        }
+      }
     }
   ]
 }
