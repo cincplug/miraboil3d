@@ -232,7 +232,7 @@
           "offset": 200,
           "movementType": "rotateX",
           "movementSpeed": 0.08,
-          "secondaryMovementSpeed": 0.2,
+          "secondaryMovementSpeed": 0.08,
           "reverseSideRate": 3
         }
       }
@@ -254,21 +254,21 @@
           "shape": "torus",
           "geometry": {
             "radius": 100,
-            "tube": 40,
+            "tube": 20,
             "radialSegments": 30,
             "tubularSegments": 30
           },
           "color": "#ffcc88",
           "count": 30,
-          "image": "30",
+          "image": "guma",
           "position": {
             "y": 100
           },
           "spacing": 180,
-          "offset": 250,
-          "movementType": "rotateY",
-          "movementSpeed": 0.18,
-          "secondaryMovementSpeed": 0.03,
+          "offset": 350,
+          "movementType": "rotateZ",
+          "movementSpeed": 0.08,
+          "secondaryMovementSpeed": 0.08,
           "reverseSideRate": 2
         }
       }
