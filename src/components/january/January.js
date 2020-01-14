@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as defaults from './january.json'
-import { geometryHelpers } from 'utils/helpers/geometry'
+import { geometryHelpers } from 'utils/helpers/geometryHelpers'
 const merge = require('deepmerge')
 
 /**
