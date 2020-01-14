@@ -26,7 +26,7 @@ const geometryHelpers = {
       }
     },
     basket(geometry) {
-      const { emboss, range } = geometry
+      const { depth, range } = geometry
       return function(u, v, target) {
         const x = u * geometry.width
         const y = v * geometry.height
@@ -37,7 +37,7 @@ const geometryHelpers = {
           v > range.startY &&
           v < range.endY
         ) {
-          z += emboss
+          z += depth
         }
         target.set(x, y, z)
       }
@@ -51,19 +51,19 @@ const geometryHelpers = {
       }
     },
     folderBox(geometry) {
-      const { emboss, range } = geometry
+      const { depth, range } = geometry
       return function(u, v, target) {
         const x = u * geometry.width
         let y = v * geometry.height
-        let z = Math.sin(v * geometry.emboss) * geometry.curvature
+        let z = Math.sin(v * geometry.depth) * geometry.curvature
         if (
           u > range.startX &&
           u < range.endX &&
           v > range.startY &&
           v < range.endY
         ) {
-          y += emboss
-          z -= emboss
+          y += depth
+          z -= depth
         }
         target.set(x, y, z)
       }

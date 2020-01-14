@@ -394,7 +394,53 @@
     },
 
     {
-      "title": "Tree - parametric shape",
+      "title": "Parametric - folder box",
+      "options": {
+        "background": "#feffc3",
+        "camera": {
+          "speed": 3,
+          "distanceRatio": 5
+        },
+        "ground": {
+          "color": "#188844"
+        },
+        "sceneItem": {
+          "shape": "parametric",
+          "geometryHelper": { "parametric": "basket" },
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 150,
+            "height": 280,
+            "curvature": 50,
+            "depth": -50,
+            "range": {
+              "startX": 0.1,
+              "endX": 0.9,
+              "startY": 0.1,
+              "endY": 0.9
+            }
+          },
+          "position": {
+            "y": -80
+          },
+          "rotation": {
+            "x": -1
+          },
+          "offset": 200,
+          "spacing": 200,
+          "image": "beogradjanka-basket",
+          "movementType": "rotateX",
+          "count": 40,
+          "movementSpeed": -0.001,
+          "secondaryMovementSpeed": -0.005,
+          "reverseSideRate": 2
+        }
+      }
+    },
+
+    {
+      "title": "Parametric - folder box",
       "options": {
         "background": "#feffc3",
         "camera": {
@@ -413,7 +459,7 @@
             "width": 150,
             "height": 280,
             "curvature": 50,
-            "emboss": -60,
+            "depth": -50,
             "range": {
               "startX": 0.1,
               "endX": 0.9,
