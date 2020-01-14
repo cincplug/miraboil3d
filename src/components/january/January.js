@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as defaults from './january.json'
-import { lathePoints, parametricGeometries } from 'utils/helpers/geometry'
+import { geometryHelpers } from 'utils/helpers/geometry'
 const merge = require('deepmerge')
 
 /**
@@ -84,7 +84,7 @@ class January {
 
   _setSceneItemShape() {
     const { _options } = this
-    const { shape, geometry } = _options.sceneItem
+    const { shape, geometry, geometryHelper } = _options.sceneItem
     const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
       1
     )}BufferGeometry`
@@ -95,11 +95,9 @@ class January {
     const args = geometryParameters.map(param => {
       return _options.sceneItem.geometry[param.replace(/(.+?):.+$/, '$1')]
     })
-    if (shape === 'lathe') {
-      args[0] = lathePoints.treePot(geometry)
-    }
-    if (shape === 'parametric') {
-      args[0] = parametricGeometries.bentPicture(geometry)
+    const helper = geometryHelper[shape]
+    if (helper) {
+      args[0] = geometryHelpers[shape][helper](geometry)
     }
     return new THREE[geometryName](...args)
   }

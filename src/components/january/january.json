@@ -39,6 +39,10 @@
         "width": 512,
         "height": 1024
       },
+      "geometryHelper": {
+        "lathe": "plantPot",
+        "parametric": "bentPicture"
+      },
       "spacing": 256,
       "offset": 200,
       "position": {
