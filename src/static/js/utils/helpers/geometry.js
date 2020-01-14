@@ -1,11 +1,11 @@
-import * as THREE from 'three'
+import { Vector2 } from 'three'
 
 const lathePoints = {
   treePot(geometry) {
     const points = []
     for (let i = 0; i < geometry.segments; i++) {
       points.push(
-        new THREE.Vector2(
+        new Vector2(
           Math.sin(i * geometry.curvature) * geometry.width,
           i * geometry.height
         )
