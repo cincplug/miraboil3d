@@ -421,11 +421,13 @@
               "endY": 0.9
             }
           },
-          "position": {
-            "y": -80
-          },
-          "rotation": {
-            "x": -1
+          "adjustments": {
+            "position": {
+              "y": -80
+            },
+            "rotation": {
+              "x": 1
+            }
           },
           "offset": 200,
           "spacing": 200,

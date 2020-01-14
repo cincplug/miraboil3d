@@ -104,36 +104,55 @@ class January {
 
   _arrangeSceneItems() {
     const { scene, _options } = this
+    const {
+      image,
+      color,
+      count,
+      spacing,
+      reverseSideRate,
+      offset
+    } = _options.sceneItem
     const sceneItem = {
       geometry: this._setSceneItemShape()
     }
-    new THREE.TextureLoader().load(
-      `/static/img/${_options.sceneItem.image}.png`,
-      texture => {
-        for (let i = 1; i <= _options.sceneItem.count; i++) {
-          sceneItem.material = new THREE.MeshLambertMaterial({
-            color: _options.sceneItem.color,
-            transparent: true,
-            map: texture,
-            side: THREE.DoubleSide
-          })
-          sceneItem.mesh = new THREE.Mesh(
-            sceneItem.geometry,
-            sceneItem.material
-          )
-          sceneItem.mesh.position.z = i * _options.sceneItem.spacing
-          sceneItem.mesh.position.y = _options.sceneItem.position.y
-          sceneItem.mesh.position.x = this._isDivisibleBy(
-            i,
-            _options.sceneItem.reverseSideRate
-          )
-            ? -_options.sceneItem.offset
-            : _options.sceneItem.offset
-          sceneItem.mesh.name = `znak-${i}`
-          scene.add(sceneItem.mesh)
+    new THREE.TextureLoader().load(`/static/img/${image}.png`, texture => {
+      const materialProperties = {
+        color,
+        transparent: true,
+        side: THREE.DoubleSide
+      }
+      for (let i = 1; i <= count; i++) {
+        sceneItem.material = new THREE.MeshLambertMaterial({
+          ...materialProperties,
+          ...{ map: texture }
+        })
+        sceneItem.mesh = new THREE.Mesh(sceneItem.geometry, sceneItem.material)
+        sceneItem.mesh.position.z = i * spacing
+        sceneItem.mesh.position.y = _options.sceneItem.position.y
+        sceneItem.mesh.position.x = this._isDivisibleBy(i, reverseSideRate)
+          ? -offset
+          : offset
+
+        this._adjustSceneItem(sceneItem)
+
+        sceneItem.mesh.name = `znak-${i}`
+        scene.add(sceneItem.mesh)
+      }
+    })
+  }
+
+  _adjustSceneItem(sceneItem) {
+    const { adjustments } = this._options.sceneItem
+    for (const property in adjustments) {
+      if (adjustments[property]) {
+        for (const subProperty in adjustments[property]) {
+          if (adjustments[property][subProperty]) {
+            sceneItem.mesh[property][subProperty] =
+              adjustments[property][subProperty]
+          }
         }
       }
-    )
+    }
   }
 
   _setLight() {
