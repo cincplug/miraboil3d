@@ -1,4 +1,23 @@
 .january {
+  display: grid;
+  grid-template-columns: 1fr minmax(max-content, 100vw) 1fr;
+  grid-gap: $gutter-mobile;
+  &__nav-button {
+    grid-row: 1;
+    background: transparent;
+    color: $color-white;
+    font-size: 6rem;
+    position: sticky;
+    top: 10rem;
+    &--prev {
+      grid-column: 1;
+    }
+    &--next {
+      grid-column: 3;
+    }
+  }
+}
+&__inner {
   display: block;
   grid-column: 2;
   width: 100%;

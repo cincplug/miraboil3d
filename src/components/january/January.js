@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import * as carousel from './carousel.json'
 import * as defaults from './january.json'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
 const merge = require('deepmerge')
@@ -15,7 +16,10 @@ class January {
 
   _cacheSelectors() {
     this._elements = {
-      color: this._element.querySelector('.january__color-switch')
+      color: this._element.querySelector('.january__color-switch'),
+      navButton: this._element.querySelector('.january__nav-button'),
+      canvasWrap: this._element.querySelector('.january__canvas-wrap'),
+      canvas: this._element.querySelector('canvas')
     }
   }
 
@@ -30,6 +34,17 @@ class January {
       this.light.color = this.scene.background = new THREE.Color(color)
       this._render()
     }
+    if (e.target.className.match(/\bjanuary__nav-button\b/)) {
+      cancelAnimationFrame(this.requestFrameId)
+      this.canvas.remove()
+      const item = Number(this._element.dataset.item)
+      const nextItem = e.target.className.match(/\b--next\b/)
+        ? item + 1
+        : item - 1
+      this._element.dataset.item = nextItem
+      this._options = merge(defaults.options, carousel.items[nextItem].options)
+      this._setScene()
+    }
   }
 
   _setScene() {
@@ -40,7 +55,9 @@ class January {
     const renderHeight = Math.round(renderWidth / this._options.camera.aspect)
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(renderWidth, renderHeight)
-    this._element.appendChild(this.renderer.domElement)
+    this.canvas = this._elements.canvasWrap.appendChild(
+      this.renderer.domElement
+    )
     this._setGround()
     this._arrangeSceneItems()
     this.activeItemIndex = 0
@@ -183,7 +200,7 @@ class January {
       self._moveItem()
       self._render()
     }
-    requestAnimationFrame(self._animate)
+    self.requestFrameId = requestAnimationFrame(self._animate)
   }
 
   _moveCamera() {
