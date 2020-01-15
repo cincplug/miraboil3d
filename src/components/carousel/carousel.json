@@ -316,6 +316,7 @@
           "offset": 350,
           "movementType": "rotateZ",
           "movementSpeed": 0.08,
+          "secondaryMovementType": "rotateY",
           "secondaryMovementSpeed": 0.08,
           "reverseSideRate": 2
         }

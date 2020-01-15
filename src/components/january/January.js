@@ -223,7 +223,7 @@ class January {
         )
       )
       if (this.previousItem) {
-        this.previousItem.rotateY(
+        this.previousItem[_options.sceneItem.secondaryMovementType](
           this._setItemMovementDirection(
             currentItemIndex,
             _options.sceneItem.secondaryMovementSpeed
