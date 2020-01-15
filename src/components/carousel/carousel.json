@@ -171,7 +171,7 @@
       }
     },
     {
-      "title": "Delftse port",
+      "title": "Delftse port - box",
       "isActive": true,
       "options": {
         "background": "#d2d6d7",
@@ -200,6 +200,40 @@
           "movementType": "rotateY",
           "movementSpeed": 0.018,
           "secondaryMovementSpeed": 0.1,
+          "reverseSideRate": 2
+        }
+      }
+    },
+    {
+      "title": "Delftse port - cylinder",
+      "isActive": true,
+      "options": {
+        "background": "#d2d6d7",
+        "camera": {
+          "speed": 3,
+          "distanceRatio": 2
+        },
+        "ground": {
+          "color": "#d2d6d7"
+        },
+        "sceneItem": {
+          "shape": "cylinder",
+          "count": 18,
+          "image": "nauta",
+          "geometry": {
+            "radiusTop": 180,
+            "radiusBottom": 120,
+            "radialSegments": 30,
+            "height": 773
+          },
+          "position": {
+            "y": -80
+          },
+          "spacing": 280,
+          "offset": 250,
+          "movementType": "rotateX",
+          "movementSpeed": -0.03,
+          "secondaryMovementSpeed": 0.02,
           "reverseSideRate": 2
         }
       }
@@ -426,7 +460,7 @@
               "y": -80
             },
             "rotation": {
-              "x": 1
+              "x": -1
             }
           },
           "offset": 200,
