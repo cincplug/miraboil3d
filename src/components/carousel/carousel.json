@@ -54,9 +54,11 @@
         "sceneItem": {
           "count": 32,
           "image": "sava-centar",
+          "shape": "box",
           "geometry": {
-            "width": 256,
-            "height": 1024
+            "width": 120,
+            "height": 1024,
+            "depth": 120
           },
           "position": {
             "y": -200
@@ -80,7 +82,7 @@
         },
         "sceneItem": {
           "count": 32,
-          "image": "beogradjanka",
+          "image": "beogradjanka-o",
           "geometry": {
             "width": 256,
             "height": 1024
@@ -219,6 +221,37 @@
           "movementType": "rotateX",
           "movementSpeed": -0.03,
           "secondaryMovementSpeed": 0.02,
+          "reverseSideRate": 2
+        }
+      }
+    },
+    {
+      "options": {
+        "background": "#d2d6d7",
+        "camera": {
+          "speed": 3,
+          "distanceRatio": 2
+        },
+        "ground": {
+          "color": "#d2d6d7"
+        },
+        "sceneItem": {
+          "shape": "cone",
+          "count": 18,
+          "image": "nauta",
+          "geometry": {
+            "radius": 220,
+            "radialSegments": 4,
+            "height": 473
+          },
+          "position": {
+            "y": 80
+          },
+          "spacing": 280,
+          "offset": 250,
+          "movementType": "translateX",
+          "movementSpeed": -0.03,
+          "secondaryMovementSpeed": 0,
           "reverseSideRate": 2
         }
       }
@@ -384,6 +417,7 @@
         },
         "sceneItem": {
           "shape": "lathe",
+          "geometryHelper": "plantPot",
           "geometry": {
             "segments": 22,
             "width": 80,
@@ -416,7 +450,7 @@
         },
         "sceneItem": {
           "shape": "parametric",
-          "geometryHelper": { "parametric": "basket" },
+          "geometryHelper": "basket",
           "geometry": {
             "slices": 180,
             "stacks": 200,
@@ -463,7 +497,7 @@
         },
         "sceneItem": {
           "shape": "parametric",
-          "geometryHelper": { "parametric": "folderBox" },
+          "geometryHelper": "folderBox",
           "geometry": {
             "slices": 180,
             "stacks": 200,
@@ -505,7 +539,7 @@
         },
         "sceneItem": {
           "shape": "parametric",
-          "geometryHelper": { "parametric": "trolley" },
+          "geometryHelper": "trolley",
           "geometry": {
             "slices": 180,
             "stacks": 200,
@@ -552,7 +586,7 @@
         },
         "sceneItem": {
           "shape": "parametric",
-          "geometryHelper": { "parametric": "rail" },
+          "geometryHelper": "rail",
           "geometry": {
             "slices": 180,
             "stacks": 200,

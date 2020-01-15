@@ -95,9 +95,8 @@ class January {
     const args = geometryParameters.map(param => {
       return _options.sceneItem.geometry[param.replace(/(.+?):.+$/, '$1')]
     })
-    const helper = geometryHelper[shape]
-    if (helper) {
-      args[0] = geometryHelpers[shape][helper](geometry)
+    if (geometryHelper) {
+      args[0] = geometryHelpers[shape][geometryHelper](geometry)
     }
     return new THREE[geometryName](...args)
   }
