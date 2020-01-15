@@ -46,6 +46,7 @@
       },
       "movementType": "rotateZ",
       "movementSpeed": 0.006,
+      "secondaryMovementType": "rotateY",
       "secondaryMovementSpeed": 0.006,
       "reverseSideRate": 2
     }
