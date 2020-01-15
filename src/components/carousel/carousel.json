@@ -17,7 +17,6 @@
     },
     {
       "title": "Victor monument",
-      "isActive": true,
       "options": {
         "background": "#2667a2",
         "camera": {
@@ -46,7 +45,6 @@
     },
     {
       "title": "Sava Center",
-      "isActive": true,
       "options": {
         "background": "#2667a2",
         "camera": {
@@ -75,7 +73,6 @@
     },
     {
       "title": "Palace Beogradjanka",
-      "isActive": true,
       "options": {
         "background": "#b9cff1",
         "camera": {
@@ -104,7 +101,6 @@
     },
     {
       "title": "Geneks",
-      "isActive": true,
       "options": {
         "background": "#daecfc",
         "camera": {
@@ -136,7 +132,6 @@
     },
     {
       "title": "Most",
-      "isActive": true,
       "options": {
         "background": "#686970",
         "camera": {
@@ -172,7 +167,6 @@
     },
     {
       "title": "Delftse port - box",
-      "isActive": true,
       "options": {
         "background": "#d2d6d7",
         "camera": {
@@ -206,7 +200,6 @@
     },
     {
       "title": "Delftse port - cylinder",
-      "isActive": true,
       "options": {
         "background": "#d2d6d7",
         "camera": {
@@ -240,7 +233,6 @@
     },
     {
       "title": "30",
-      "isActive": true,
       "options": {
         "background": "#d2d6d7",
         "camera": {
@@ -273,7 +265,6 @@
     },
     {
       "title": "30 3d",
-      "isActive": true,
       "options": {
         "background": "#d2d6d7",
         "camera": {
