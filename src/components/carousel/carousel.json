@@ -2,7 +2,6 @@
   "items": [
     {},
     {
-      "title": "Another tree and few different parameters",
       "options": {
         "background": "#d4e0f0",
         "camera": {
@@ -16,7 +15,6 @@
       }
     },
     {
-      "title": "Victor monument",
       "options": {
         "background": "#2667a2",
         "camera": {
@@ -44,7 +42,6 @@
       }
     },
     {
-      "title": "Sava Center",
       "options": {
         "background": "#2667a2",
         "camera": {
@@ -72,7 +69,6 @@
       }
     },
     {
-      "title": "Palace Beogradjanka",
       "options": {
         "background": "#b9cff1",
         "camera": {
@@ -100,7 +96,6 @@
       }
     },
     {
-      "title": "Geneks",
       "options": {
         "background": "#daecfc",
         "camera": {
@@ -131,7 +126,6 @@
       }
     },
     {
-      "title": "Most",
       "options": {
         "background": "#686970",
         "camera": {
@@ -166,7 +160,6 @@
       }
     },
     {
-      "title": "Delftse port - box",
       "options": {
         "background": "#d2d6d7",
         "camera": {
@@ -199,7 +192,6 @@
       }
     },
     {
-      "title": "Delftse port - cylinder",
       "options": {
         "background": "#d2d6d7",
         "camera": {
@@ -232,7 +224,6 @@
       }
     },
     {
-      "title": "30",
       "options": {
         "background": "#d2d6d7",
         "camera": {
@@ -264,7 +255,6 @@
       }
     },
     {
-      "title": "30 3d",
       "options": {
         "background": "#d2d6d7",
         "camera": {
@@ -300,7 +290,6 @@
     },
 
     {
-      "title": "Ohoho",
       "options": {
         "background": "#006677",
         "camera": {
@@ -320,7 +309,6 @@
     },
 
     {
-      "title": "Peca",
       "options": {
         "background": "#80a6b4",
         "camera": {
@@ -353,7 +341,6 @@
     },
 
     {
-      "title": "Peca - box shape",
       "options": {
         "background": "#A02244",
         "camera": {
@@ -386,7 +373,6 @@
     },
 
     {
-      "title": "Tree - lathe shape",
       "options": {
         "background": "#feffc3",
         "camera": {
@@ -419,7 +405,6 @@
     },
 
     {
-      "title": "Parametric - folder box",
       "options": {
         "background": "#feffc3",
         "camera": {
@@ -467,7 +452,6 @@
     },
 
     {
-      "title": "Parametric - folder box",
       "options": {
         "background": "#feffc3",
         "camera": {
@@ -510,7 +494,6 @@
     },
 
     {
-      "title": "Parametric - trolley",
       "options": {
         "background": "#007788",
         "camera": {
@@ -558,7 +541,6 @@
       }
     },
     {
-      "title": "Parametric - hat",
       "options": {
         "background": "#007788",
         "camera": {
@@ -574,34 +556,36 @@
           "geometry": {
             "slices": 180,
             "stacks": 200,
-            "width": 250,
-            "height": 80,
+            "width": 150,
+            "height": 40,
             "curvature": 80,
             "depth": 30,
             "range": {
               "startX": 0.1,
               "endX": 0.9,
-              "startY": 0.3,
+              "startY": 0.1,
               "endY": 0.9
             }
           },
           "adjustments": {
             "rotation": {
               "x": 3.14,
+              "y": -0.0,
               "z": 3.14
             },
             "position": {
-              "y": -170
+              "y": -170,
+              "x": 100
             }
           },
-          "offset": 260,
-          "spacing": 200,
+          "offset": 0,
+          "spacing": 300,
           "image": "delftse",
           "movementType": "rotateY",
           "count": 40,
-          "movementSpeed": -0.002,
-          "secondaryMovementSpeed": -0.003,
-          "reverseSideRate": 2
+          "movementSpeed": -0.001,
+          "secondaryMovementSpeed": 0,
+          "reverseSideRate": 1
         }
       }
     }
