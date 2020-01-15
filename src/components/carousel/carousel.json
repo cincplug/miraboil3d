@@ -507,6 +507,103 @@
           "reverseSideRate": 2
         }
       }
+    },
+
+    {
+      "title": "Parametric - trolley",
+      "options": {
+        "background": "#007788",
+        "camera": {
+          "speed": 4,
+          "distanceRatio": 5
+        },
+        "ground": {
+          "color": "#188844"
+        },
+        "sceneItem": {
+          "shape": "parametric",
+          "geometryHelper": { "parametric": "trolley" },
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 150,
+            "height": 280,
+            "curvature": 80,
+            "depth": -70,
+            "range": {
+              "startX": 0.1,
+              "endX": 0.9,
+              "startY": 0.3,
+              "endY": 0.9
+            }
+          },
+          "adjustments": {
+            "rotation": {
+              "x": 2.2,
+              "z": 3.14
+            },
+            "position": {
+              "y": -200
+            }
+          },
+          "offset": 200,
+          "spacing": 200,
+          "image": "nauta",
+          "movementType": "rotateX",
+          "count": 40,
+          "movementSpeed": -0.001,
+          "secondaryMovementSpeed": -0.005,
+          "reverseSideRate": 2
+        }
+      }
+    },
+    {
+      "title": "Parametric - hat",
+      "options": {
+        "background": "#007788",
+        "camera": {
+          "speed": 4,
+          "distanceRatio": 5
+        },
+        "ground": {
+          "color": "#188844"
+        },
+        "sceneItem": {
+          "shape": "parametric",
+          "geometryHelper": { "parametric": "rail" },
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 250,
+            "height": 80,
+            "curvature": 80,
+            "depth": 30,
+            "range": {
+              "startX": 0.1,
+              "endX": 0.9,
+              "startY": 0.3,
+              "endY": 0.9
+            }
+          },
+          "adjustments": {
+            "rotation": {
+              "x": 3.14,
+              "z": 3.14
+            },
+            "position": {
+              "y": -170
+            }
+          },
+          "offset": 260,
+          "spacing": 200,
+          "image": "delftse",
+          "movementType": "rotateY",
+          "count": 40,
+          "movementSpeed": -0.002,
+          "secondaryMovementSpeed": -0.003,
+          "reverseSideRate": 2
+        }
+      }
     }
   ]
 }
