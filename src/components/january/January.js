@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import * as carousel from './carousel.json'
 import * as defaults from './january.json'
+import * as examples from './examples.json'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
 const merge = require('deepmerge')
 
@@ -16,7 +16,6 @@ class January {
 
   _cacheSelectors() {
     this._elements = {
-      color: this._element.querySelector('.january__color-switch'),
       navButton: this._element.querySelector('.january__nav-button'),
       canvasWrap: this._element.querySelector('.january__canvas-wrap'),
       canvas: this._element.querySelector('canvas')
@@ -42,7 +41,7 @@ class January {
         ? item + 1
         : item - 1
       this._element.dataset.item = nextItem
-      this._options = merge(defaults.options, carousel.items[nextItem].options)
+      this._options = merge(defaults.options, examples[nextItem].options)
       this._setScene()
     }
   }
@@ -51,7 +50,7 @@ class January {
     this.scene = new THREE.Scene()
     this.scene.background = new THREE.Color(this._options.background)
     this.renderer = new THREE.WebGLRenderer()
-    const renderWidth = this._element.offsetWidth
+    const renderWidth = this._elements.canvasWrap.offsetWidth
     const renderHeight = Math.round(renderWidth / this._options.camera.aspect)
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(renderWidth, renderHeight)
