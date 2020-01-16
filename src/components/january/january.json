@@ -12,9 +12,7 @@
         "y": 2
       },
       "distanceRatio": 3,
-      "swing": 100,
-      "slouch": 0,
-      "nudge": 0.0001
+      "swing": null
     },
     "ground": {
       "color": "#e0e0e0",

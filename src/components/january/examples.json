@@ -135,7 +135,8 @@
         "speed": 2,
         "distanceRatio": 6,
         "swing": {
-          "x": 80
+          "x": 80,
+          "y": 120
         }
       },
       "ground": {

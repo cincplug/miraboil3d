@@ -204,14 +204,16 @@ class January {
 
   _moveCamera() {
     const { camera, _options, currentFrame } = this
-    if (_options.camera.swing.x) {
-      camera.position.x =
-        _options.sceneItem.spacing *
-        Math.sin(currentFrame / _options.camera.swing.x)
+    if (_options.camera.swing) {
+      for (const axis in _options.camera.swing) {
+        if (_options.camera.swing[axis]) {
+          camera.position[axis] =
+            _options.sceneItem.spacing *
+            Math.sin(currentFrame / _options.camera.swing[axis])
+        }
+      }
     }
     camera.position.z -= _options.camera.speed
-
-    camera.rotateY(_options.camera.nudge * Math.cos(currentFrame))
   }
 
   _moveItem() {
