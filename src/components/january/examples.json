@@ -102,7 +102,9 @@
       "camera": {
         "speed": 2,
         "distanceRatio": 3,
-        "slouch": 80
+        "swing": {
+          "x": 80
+        }
       },
       "ground": {
         "color": "#eee6d2"
@@ -132,8 +134,9 @@
       "camera": {
         "speed": 2,
         "distanceRatio": 6,
-        "slouch": 80,
-        "swing": 3000
+        "swing": {
+          "x": 80
+        }
       },
       "ground": {
         "color": "#6869a0",
@@ -166,7 +169,9 @@
       "camera": {
         "speed": 3,
         "distanceRatio": 3,
-        "slouch": 80
+        "swing": {
+          "x": 80
+        }
       },
       "ground": {
         "color": "#d2d6d7"
@@ -261,7 +266,9 @@
       "camera": {
         "speed": 6,
         "distanceRatio": 3,
-        "slouch": 180
+        "swing": {
+          "x": 180
+        }
       },
       "ground": {
         "color": "#d2d6d7"
@@ -292,7 +299,9 @@
       "camera": {
         "speed": 5,
         "distanceRatio": 4,
-        "slouch": 280
+        "swing": {
+          "x": 280
+        }
       },
       "ground": {
         "color": "#d2d6d7"
@@ -346,7 +355,9 @@
       "background": "#80a6b4",
       "camera": {
         "speed": 4,
-        "slouch": 100
+        "swing": {
+          "x": 100
+        }
       },
       "ground": {
         "color": "#888844",
@@ -378,7 +389,9 @@
       "background": "#A02244",
       "camera": {
         "speed": 6,
-        "slouch": 40
+        "swing": {
+          "x": 40
+        }
       },
       "ground": {
         "color": "#b88844"
@@ -410,7 +423,9 @@
       "background": "#feffc3",
       "camera": {
         "speed": 4,
-        "slouch": 60
+        "swing": {
+          "x": 60
+        }
       },
       "ground": {
         "color": "#188844"
