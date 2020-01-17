@@ -4,7 +4,7 @@
     {
       "background": "#d4e0f0",
       "camera": { "speed": 2 },
-      "sceneItem": { "image": "tree2", "offset": 400, "movementSpeed": 0.011 }
+      "sceneItem": { "image": "tree2" }
     },
     {
       "background": "#2667a2",
@@ -74,7 +74,7 @@
       "camera": {
         "speed": 2,
         "distanceRatio": 6,
-        "swing": { "x": 80, "y": 120 }
+        "swing": { "y": 40 }
       },
       "ground": { "color": "#6869a0", "position": { "y": 100 } },
       "sceneItem": {
