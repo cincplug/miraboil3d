@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import * as defaults from './january.json'
-import * as examples from './examples.json'
+import { examples } from './examples.json'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
 const merge = require('deepmerge')
 
@@ -10,12 +10,13 @@ const merge = require('deepmerge')
 class January {
   constructor(element, options = {}) {
     this._element = element
-    this._options = merge(defaults.options, JSON.parse(options.options))
+    this._options = merge(defaults, JSON.parse(options.options))
     this._init()
   }
 
   _cacheSelectors() {
     this._elements = {
+      title: this._element.querySelector('.january__title'),
       navButton: this._element.querySelector('.january__nav-button'),
       canvasWrap: this._element.querySelector('.january__canvas-wrap'),
       canvas: this._element.querySelector('canvas')
@@ -34,16 +35,30 @@ class January {
       this._render()
     }
     if (e.target.className.match(/\bjanuary__nav-button\b/)) {
-      cancelAnimationFrame(this.requestFrameId)
-      this.canvas.remove()
-      const item = Number(this._element.dataset.item)
-      const nextItem = e.target.className.match(/\b--next\b/)
-        ? item + 1
-        : item - 1
-      this._element.dataset.item = nextItem
-      this._options = merge(defaults.options, examples[nextItem].options)
-      this._setScene()
+      this._setExample(e.target.dataset.direction)
     }
+  }
+
+  _setExample(direction) {
+    cancelAnimationFrame(this.requestFrameId)
+    this.canvas.remove()
+    let item = Number(this._element.dataset.item)
+    if (direction === 'next') {
+      item++
+      if (item === examples.length) {
+        item = 0
+      }
+    }
+    if (direction === 'prev') {
+      item--
+      if (item < 0) {
+        item = examples.length - 1
+      }
+    }
+    this._element.dataset.item = item
+    this._options = merge(defaults.options, examples[item])
+    this._elements.title.innerHTML = this._options.sceneItem.shape
+    this._setScene()
   }
 
   _setScene() {

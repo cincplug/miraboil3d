@@ -1,124 +1,66 @@
-[
-  {},
-  {
-    "options": {
+{
+  "examples": [
+    {},
+    {
       "background": "#d4e0f0",
-      "camera": {
-        "speed": 2
-      },
-      "sceneItem": {
-        "image": "tree2",
-        "offset": 400,
-        "movementSpeed": 0.011
-      }
-    }
-  },
-  {
-    "options": {
+      "camera": { "speed": 2 },
+      "sceneItem": { "image": "tree2", "offset": 400, "movementSpeed": 0.011 }
+    },
+    {
       "background": "#2667a2",
-      "camera": {
-        "speed": 2,
-        "distanceRatio": 3
-      },
-      "ground": {
-        "color": "#ffe9b8"
-      },
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#ffe9b8" },
       "sceneItem": {
         "count": 32,
         "image": "pobednik",
-        "geometry": {
-          "width": 256,
-          "height": 1024
-        },
-        "position": {
-          "y": -200
-        },
+        "geometry": { "width": 256, "height": 1024 },
+        "position": { "y": -200 },
         "spacing": 320,
         "offset": 400,
         "movementSpeed": 0.01,
         "secondaryMovementSpeed": 0
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#2667a2",
-      "camera": {
-        "speed": 2,
-        "distanceRatio": 3
-      },
-      "ground": {
-        "color": "#dbd5be"
-      },
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#dbd5be" },
       "sceneItem": {
         "count": 32,
         "image": "sava-centar",
         "shape": "box",
-        "geometry": {
-          "width": 120,
-          "height": 1024,
-          "depth": 120
-        },
-        "position": {
-          "y": -200
-        },
+        "geometry": { "width": 120, "height": 1024, "depth": 120 },
+        "position": { "y": -200 },
         "spacing": 320,
         "offset": 400,
         "movementSpeed": 0.011,
         "secondaryMovementSpeed": 0
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#b9cff1",
-      "camera": {
-        "speed": 2,
-        "distanceRatio": 3
-      },
-      "ground": {
-        "color": "#77746d"
-      },
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#77746d" },
       "sceneItem": {
         "count": 32,
         "image": "beogradjanka-o",
-        "geometry": {
-          "width": 256,
-          "height": 1024
-        },
-        "position": {
-          "y": -180
-        },
+        "geometry": { "width": 256, "height": 1024 },
+        "position": { "y": -180 },
         "spacing": 320,
         "offset": 320,
         "movementSpeed": 0.012,
         "secondaryMovementSpeed": 0
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#daecfc",
-      "camera": {
-        "speed": 2,
-        "distanceRatio": 3,
-        "swing": {
-          "x": 80
-        }
-      },
-      "ground": {
-        "color": "#eee6d2"
-      },
+      "camera": { "speed": 2, "distanceRatio": 3, "swing": { "x": 80 } },
+      "ground": { "color": "#eee6d2" },
       "sceneItem": {
         "count": 18,
         "image": "geneks",
-        "geometry": {
-          "width": 512,
-          "height": 2048
-        },
-        "position": {
-          "y": -580
-        },
+        "geometry": { "width": 512, "height": 2048 },
+        "position": { "y": -580 },
         "spacing": 180,
         "offset": 0,
         "movementType": "rotateX",
@@ -126,35 +68,20 @@
         "secondaryMovementSpeed": 0,
         "reverseSideRate": 1
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#686970",
       "camera": {
         "speed": 2,
         "distanceRatio": 6,
-        "swing": {
-          "x": 80,
-          "y": 120
-        }
+        "swing": { "x": 80, "y": 120 }
       },
-      "ground": {
-        "color": "#6869a0",
-        "position": {
-          "y": 100
-        }
-      },
+      "ground": { "color": "#6869a0", "position": { "y": 100 } },
       "sceneItem": {
         "count": 18,
         "image": "most",
-        "geometry": {
-          "width": 1024,
-          "height": 256
-        },
-        "position": {
-          "y": -20
-        },
+        "geometry": { "width": 1024, "height": 256 },
+        "position": { "y": -20 },
         "spacing": 280,
         "offset": 400,
         "movementType": "rotateZ",
@@ -162,33 +89,17 @@
         "secondaryMovementSpeed": 0.02,
         "reverseSideRate": 2
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#d2d6d7",
-      "camera": {
-        "speed": 3,
-        "distanceRatio": 3,
-        "swing": {
-          "x": 80
-        }
-      },
-      "ground": {
-        "color": "#d2d6d7"
-      },
+      "camera": { "speed": 3, "distanceRatio": 3, "swing": { "x": 80 } },
+      "ground": { "color": "#d2d6d7" },
       "sceneItem": {
         "shape": "box",
         "count": 18,
         "image": "delftse",
-        "geometry": {
-          "width": 199,
-          "height": 973,
-          "depth": 199
-        },
-        "position": {
-          "y": -280
-        },
+        "geometry": { "width": 199, "height": 973, "depth": 199 },
+        "position": { "y": -280 },
         "spacing": 180,
         "offset": 300,
         "movementType": "rotateY",
@@ -196,18 +107,11 @@
         "secondaryMovementSpeed": 0.1,
         "reverseSideRate": 2
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#d2d6d7",
-      "camera": {
-        "speed": 3,
-        "distanceRatio": 2
-      },
-      "ground": {
-        "color": "#d2d6d7"
-      },
+      "camera": { "speed": 3, "distanceRatio": 2 },
+      "ground": { "color": "#d2d6d7" },
       "sceneItem": {
         "shape": "cylinder",
         "count": 18,
@@ -218,9 +122,7 @@
           "radialSegments": 30,
           "height": 773
         },
-        "position": {
-          "y": -80
-        },
+        "position": { "y": -80 },
         "spacing": 280,
         "offset": 250,
         "movementType": "rotateX",
@@ -228,30 +130,17 @@
         "secondaryMovementSpeed": 0.02,
         "reverseSideRate": 2
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#d2d6d7",
-      "camera": {
-        "speed": 3,
-        "distanceRatio": 2
-      },
-      "ground": {
-        "color": "#d2d6d7"
-      },
+      "camera": { "speed": 3, "distanceRatio": 2 },
+      "ground": { "color": "#d2d6d7" },
       "sceneItem": {
         "shape": "cone",
         "count": 18,
         "image": "nauta",
-        "geometry": {
-          "radius": 220,
-          "radialSegments": 4,
-          "height": 473
-        },
-        "position": {
-          "y": 80
-        },
+        "geometry": { "radius": 220, "radialSegments": 4, "height": 473 },
+        "position": { "y": 80 },
         "spacing": 280,
         "offset": 250,
         "movementType": "translateX",
@@ -259,32 +148,17 @@
         "secondaryMovementSpeed": 0,
         "reverseSideRate": 2
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#d2d6d7",
-      "camera": {
-        "speed": 6,
-        "distanceRatio": 3,
-        "swing": {
-          "x": 180
-        }
-      },
-      "ground": {
-        "color": "#d2d6d7"
-      },
+      "camera": { "speed": 6, "distanceRatio": 3, "swing": { "x": 180 } },
+      "ground": { "color": "#d2d6d7" },
       "sceneItem": {
         "shape": "circle",
-        "geometry": {
-          "radius": 80,
-          "segments": 30
-        },
+        "geometry": { "radius": 80, "segments": 30 },
         "count": 30,
         "image": "30",
-        "position": {
-          "y": 100
-        },
+        "position": { "y": 100 },
         "spacing": 180,
         "offset": 200,
         "movementType": "rotateX",
@@ -292,21 +166,11 @@
         "secondaryMovementSpeed": 0.08,
         "reverseSideRate": 3
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#d2d6d7",
-      "camera": {
-        "speed": 5,
-        "distanceRatio": 4,
-        "swing": {
-          "x": 280
-        }
-      },
-      "ground": {
-        "color": "#d2d6d7"
-      },
+      "camera": { "speed": 5, "distanceRatio": 4, "swing": { "x": 280 } },
+      "ground": { "color": "#d2d6d7" },
       "sceneItem": {
         "shape": "torus",
         "geometry": {
@@ -318,9 +182,7 @@
         "color": "#ffcc88",
         "count": 30,
         "image": "guma",
-        "position": {
-          "y": 100
-        },
+        "position": { "y": 100 },
         "spacing": 180,
         "offset": 350,
         "movementType": "rotateZ",
@@ -329,18 +191,11 @@
         "secondaryMovementSpeed": 0.08,
         "reverseSideRate": 2
       }
-    }
-  },
-
-  {
-    "options": {
+    },
+    {
       "background": "#006677",
-      "camera": {
-        "speed": 5
-      },
-      "ground": {
-        "color": "#115674"
-      },
+      "camera": { "speed": 5 },
+      "ground": { "color": "#115674" },
       "sceneItem": {
         "count": 32,
         "image": "big-lukowski",
@@ -348,89 +203,45 @@
         "offset": 400,
         "secondaryMovementSpeed": 0.002
       }
-    }
-  },
-
-  {
-    "options": {
+    },
+    {
       "background": "#80a6b4",
-      "camera": {
-        "speed": 4,
-        "swing": {
-          "x": 100
-        }
-      },
-      "ground": {
-        "color": "#888844",
-        "position": {
-          "y": 200
-        }
-      },
+      "camera": { "speed": 4, "swing": { "x": 100 } },
+      "ground": { "color": "#888844", "position": { "y": 200 } },
       "sceneItem": {
         "offset": 260,
-        "geometry": {
-          "width": 256,
-          "height": 256
-        },
+        "geometry": { "width": 256, "height": 256 },
         "spacing": 200,
-        "position": {
-          "y": -190
-        },
+        "position": { "y": -190 },
         "image": "apolon",
         "count": 60,
         "movementType": "rotateY",
         "movementSpeed": -0.01,
         "secondaryMovementSpeed": 0
       }
-    }
-  },
-
-  {
-    "options": {
+    },
+    {
       "background": "#A02244",
-      "camera": {
-        "speed": 6,
-        "swing": {
-          "x": 40
-        }
-      },
-      "ground": {
-        "color": "#b88844"
-      },
+      "camera": { "speed": 6, "swing": { "x": 40 } },
+      "ground": { "color": "#b88844" },
       "sceneItem": {
         "color": "rgba(250, 230, 200, 0.5)",
         "shape": "box",
-        "geometry": {
-          "width": 400,
-          "height": 400,
-          "depth": 400
-        },
+        "geometry": { "width": 400, "height": 400, "depth": 400 },
         "offset": 460,
         "spacing": 250,
-        "position": {
-          "y": 150
-        },
+        "position": { "y": 150 },
         "image": "peca",
         "count": 40,
         "movementSpeed": -0.01,
         "secondaryMovementSpeed": -0.01,
         "reverseSideRate": 3
       }
-    }
-  },
-
-  {
-    "options": {
+    },
+    {
       "background": "#feffc3",
-      "camera": {
-        "speed": 4,
-        "swing": {
-          "x": 60
-        }
-      },
-      "ground": {
-        "color": "#188844"
-      },
+      "camera": { "speed": 4, "swing": { "x": 60 } },
+      "ground": { "color": "#188844" },
       "sceneItem": {
         "shape": "lathe",
         "geometryHelper": "plantPot",
@@ -440,9 +251,7 @@
           "curvature": 0.6,
           "height": 30
         },
-        "position": {
-          "y": -350
-        },
+        "position": { "y": -350 },
         "offset": 460,
         "spacing": 350,
         "image": "tree-sky",
@@ -451,19 +260,11 @@
         "secondaryMovementSpeed": -0.01,
         "reverseSideRate": 3
       }
-    }
-  },
-
-  {
-    "options": {
+    },
+    {
       "background": "#feffc3",
-      "camera": {
-        "speed": 3,
-        "distanceRatio": 5
-      },
-      "ground": {
-        "color": "#188844"
-      },
+      "camera": { "speed": 3, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
       "sceneItem": {
         "shape": "parametric",
         "geometryHelper": "basket",
@@ -474,21 +275,9 @@
           "height": 280,
           "curvature": 50,
           "depth": -50,
-          "range": {
-            "startX": 0.1,
-            "endX": 0.9,
-            "startY": 0.1,
-            "endY": 0.9
-          }
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
         },
-        "adjustments": {
-          "position": {
-            "y": -80
-          },
-          "rotation": {
-            "x": -1
-          }
-        },
+        "adjustments": { "position": { "y": -80 }, "rotation": { "x": -1 } },
         "offset": 200,
         "spacing": 200,
         "image": "beogradjanka-basket",
@@ -498,19 +287,11 @@
         "secondaryMovementSpeed": -0.005,
         "reverseSideRate": 2
       }
-    }
-  },
-
-  {
-    "options": {
+    },
+    {
       "background": "#feffc3",
-      "camera": {
-        "speed": 3,
-        "distanceRatio": 5
-      },
-      "ground": {
-        "color": "#188844"
-      },
+      "camera": { "speed": 3, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
       "sceneItem": {
         "shape": "parametric",
         "geometryHelper": "folderBox",
@@ -521,16 +302,9 @@
           "height": 280,
           "curvature": 50,
           "depth": -50,
-          "range": {
-            "startX": 0.1,
-            "endX": 0.9,
-            "startY": 0.1,
-            "endY": 0.9
-          }
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
         },
-        "position": {
-          "y": -80
-        },
+        "position": { "y": -80 },
         "offset": 200,
         "spacing": 200,
         "image": "delftse",
@@ -540,19 +314,11 @@
         "secondaryMovementSpeed": -0.005,
         "reverseSideRate": 2
       }
-    }
-  },
-
-  {
-    "options": {
+    },
+    {
       "background": "#007788",
-      "camera": {
-        "speed": 4,
-        "distanceRatio": 5
-      },
-      "ground": {
-        "color": "#188844"
-      },
+      "camera": { "speed": 4, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
       "sceneItem": {
         "shape": "parametric",
         "geometryHelper": "trolley",
@@ -563,21 +329,11 @@
           "height": 280,
           "curvature": 80,
           "depth": -70,
-          "range": {
-            "startX": 0.1,
-            "endX": 0.9,
-            "startY": 0.3,
-            "endY": 0.9
-          }
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.3, "endY": 0.9 }
         },
         "adjustments": {
-          "rotation": {
-            "x": 2.2,
-            "z": 3.14
-          },
-          "position": {
-            "y": -200
-          }
+          "rotation": { "x": 2.2, "z": 3.14 },
+          "position": { "y": -200 }
         },
         "offset": 200,
         "spacing": 200,
@@ -588,18 +344,11 @@
         "secondaryMovementSpeed": -0.005,
         "reverseSideRate": 2
       }
-    }
-  },
-  {
-    "options": {
+    },
+    {
       "background": "#007788",
-      "camera": {
-        "speed": 4,
-        "distanceRatio": 5
-      },
-      "ground": {
-        "color": "#188844"
-      },
+      "camera": { "speed": 4, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
       "sceneItem": {
         "shape": "parametric",
         "geometryHelper": "rail",
@@ -610,23 +359,11 @@
           "height": 40,
           "curvature": 80,
           "depth": 30,
-          "range": {
-            "startX": 0.1,
-            "endX": 0.9,
-            "startY": 0.1,
-            "endY": 0.9
-          }
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
         },
         "adjustments": {
-          "rotation": {
-            "x": 3.14,
-            "y": -0.0,
-            "z": 3.14
-          },
-          "position": {
-            "y": -170,
-            "x": 100
-          }
+          "rotation": { "x": 3.14, "y": 0, "z": 3.14 },
+          "position": { "y": -170, "x": 100 }
         },
         "offset": 0,
         "spacing": 300,
@@ -638,5 +375,5 @@
         "reverseSideRate": 1
       }
     }
-  }
-]
+  ]
+}
