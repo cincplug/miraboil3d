@@ -61,9 +61,19 @@ class January {
     this._setScene()
   }
 
+  _setBackground() {
+    if (this._options.background.image) {
+      this.scene.background = new THREE.TextureLoader().load(
+        `/static/img/${this._options.background.image}`
+      )
+    } else {
+      this.scene.background = new THREE.Color(this._options.background)
+    }
+  }
+
   _setScene() {
     this.scene = new THREE.Scene()
-    this.scene.background = new THREE.Color(this._options.background)
+    this._setBackground()
     this.renderer = new THREE.WebGLRenderer()
     const renderWidth = this._elements.canvasWrap.offsetWidth
     const renderHeight = Math.round(renderWidth / this._options.camera.aspect)
@@ -83,7 +93,7 @@ class January {
   _setGround() {
     const { scene, _options } = this
     new THREE.TextureLoader().load(
-      `/static/img/${_options.ground.image}.png`,
+      `/static/img/${_options.ground.image}`,
       texture => {
         const ground = {
           geometry: new THREE.PlaneBufferGeometry(
@@ -145,7 +155,7 @@ class January {
     const sceneItem = {
       geometry: this._setSceneItemShape()
     }
-    new THREE.TextureLoader().load(`/static/img/${image}.png`, texture => {
+    new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
       const materialProperties = {
         color,
         transparent: true,

@@ -2,9 +2,9 @@
   "examples": [
     {},
     {
-      "background": "#d4e0f0",
+      "background": { "image": "cloudy.jpg" },
       "camera": { "speed": 2 },
-      "sceneItem": { "image": "tree2" }
+      "sceneItem": { "image": "tree2.png" }
     },
     {
       "background": "#2667a2",
@@ -12,7 +12,7 @@
       "ground": { "color": "#ffe9b8" },
       "sceneItem": {
         "count": 32,
-        "image": "pobednik",
+        "image": "pobednik.png",
         "geometry": { "width": 256, "height": 1024 },
         "position": { "y": -200 },
         "spacing": 320,
@@ -27,7 +27,7 @@
       "ground": { "color": "#dbd5be" },
       "sceneItem": {
         "count": 32,
-        "image": "sava-centar",
+        "image": "sava-centar.png",
         "shape": "box",
         "geometry": { "width": 120, "height": 1024, "depth": 120 },
         "position": { "y": -200 },
@@ -43,7 +43,7 @@
       "ground": { "color": "#77746d" },
       "sceneItem": {
         "count": 32,
-        "image": "beogradjanka-o",
+        "image": "beogradjanka-o.png",
         "geometry": { "width": 256, "height": 1024 },
         "position": { "y": -180 },
         "spacing": 320,
@@ -58,7 +58,7 @@
       "ground": { "color": "#eee6d2" },
       "sceneItem": {
         "count": 18,
-        "image": "geneks",
+        "image": "geneks.png",
         "geometry": { "width": 512, "height": 2048 },
         "position": { "y": -580 },
         "spacing": 180,
@@ -79,7 +79,7 @@
       "ground": { "color": "#6869a0", "position": { "y": 100 } },
       "sceneItem": {
         "count": 18,
-        "image": "most",
+        "image": "most.png",
         "geometry": { "width": 1024, "height": 256 },
         "position": { "y": -20 },
         "spacing": 280,
@@ -97,7 +97,7 @@
       "sceneItem": {
         "shape": "box",
         "count": 18,
-        "image": "delftse",
+        "image": "delftse.png",
         "geometry": { "width": 199, "height": 973, "depth": 199 },
         "position": { "y": -280 },
         "spacing": 180,
@@ -115,7 +115,7 @@
       "sceneItem": {
         "shape": "cylinder",
         "count": 18,
-        "image": "nauta",
+        "image": "nauta.png",
         "geometry": {
           "radiusTop": 180,
           "radiusBottom": 120,
@@ -138,7 +138,7 @@
       "sceneItem": {
         "shape": "cone",
         "count": 18,
-        "image": "nauta",
+        "image": "nauta.png",
         "geometry": { "radius": 220, "radialSegments": 4, "height": 473 },
         "position": { "y": 80 },
         "spacing": 280,
@@ -157,7 +157,7 @@
         "shape": "circle",
         "geometry": { "radius": 80, "segments": 30 },
         "count": 30,
-        "image": "30",
+        "image": "30.png",
         "position": { "y": 100 },
         "spacing": 180,
         "offset": 200,
@@ -181,7 +181,7 @@
         },
         "color": "#ffcc88",
         "count": 30,
-        "image": "guma",
+        "image": "guma.png",
         "position": { "y": 100 },
         "spacing": 180,
         "offset": 350,
@@ -198,7 +198,7 @@
       "ground": { "color": "#115674" },
       "sceneItem": {
         "count": 32,
-        "image": "big-lukowski",
+        "image": "big-lukowski.png",
         "spacing": 320,
         "offset": 400,
         "secondaryMovementSpeed": 0.002
@@ -213,7 +213,7 @@
         "geometry": { "width": 256, "height": 256 },
         "spacing": 200,
         "position": { "y": -190 },
-        "image": "apolon",
+        "image": "apolon.png",
         "count": 60,
         "movementType": "rotateY",
         "movementSpeed": -0.01,
@@ -231,7 +231,7 @@
         "offset": 460,
         "spacing": 250,
         "position": { "y": 150 },
-        "image": "peca",
+        "image": "peca.png",
         "count": 40,
         "movementSpeed": -0.01,
         "secondaryMovementSpeed": -0.01,
@@ -254,7 +254,7 @@
         "position": { "y": -350 },
         "offset": 460,
         "spacing": 350,
-        "image": "tree-sky",
+        "image": "tree-sky.png",
         "count": 40,
         "movementSpeed": -0.01,
         "secondaryMovementSpeed": -0.01,
@@ -280,7 +280,7 @@
         "adjustments": { "position": { "y": -80 }, "rotation": { "x": -1 } },
         "offset": 200,
         "spacing": 200,
-        "image": "beogradjanka-basket",
+        "image": "beogradjanka-basket.png",
         "movementType": "rotateX",
         "count": 40,
         "movementSpeed": -0.001,
@@ -307,7 +307,7 @@
         "position": { "y": -80 },
         "offset": 200,
         "spacing": 200,
-        "image": "delftse",
+        "image": "delftse.png",
         "movementType": "rotateX",
         "count": 40,
         "movementSpeed": -0.001,
@@ -337,7 +337,7 @@
         },
         "offset": 200,
         "spacing": 200,
-        "image": "nauta",
+        "image": "nauta.png",
         "movementType": "rotateX",
         "count": 40,
         "movementSpeed": -0.001,
@@ -367,7 +367,7 @@
         },
         "offset": 0,
         "spacing": 300,
-        "image": "delftse",
+        "image": "delftse.png",
         "movementType": "rotateY",
         "count": 40,
         "movementSpeed": -0.001,

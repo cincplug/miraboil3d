@@ -15,7 +15,7 @@
     },
     "ground": {
       "color": "#e0e0e0",
-      "image": "ground",
+      "image": "ground.png",
       "width": 4096,
       "depth": 19200,
       "position": {
@@ -30,7 +30,7 @@
     "sceneItem": {
       "color": null,
       "count": 50,
-      "image": "tree",
+      "image": "tree.png",
       "shape": "plane",
       "geometry": {
         "width": 512,
