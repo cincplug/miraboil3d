@@ -3,7 +3,7 @@
     {},
     {
       "background": { "image": "cloudy.jpg" },
-      "camera": { "speed": 2 },
+      "camera": { "speed": 1.5 },
       "sceneItem": { "image": "tree2.png" }
     },
     {
