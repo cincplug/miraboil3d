@@ -43,13 +43,14 @@ class January {
   }
 
   _handleMouseMove(e) {
-    if (!this.cursorPosition) {
-      this.cursorPosition = { x: 0, y: 0 }
+    if (!this.cursorPositionX) {
+      this.cursorPositionX = e.pageX
+      this.cursorPositionY = e.pageY
     } else {
-      this.cursorPosition.x = e.clientX - this.cursorPosition.x
-      this.cursorPosition.y = e.clientY - this.cursorPosition.y
-      this.camera.position.x = this.cursorPosition.x
-      this.camera.position.y = this.cursorPosition.y
+      this.cursorPositionX = e.pageX - this.cursorPositionX
+      this.cursorPositionY = e.pageY - this.cursorPositionY
+      this.camera.position.x += this.cursorPositionX
+      this.camera.position.y += this.cursorPositionY
     }
   }
 
