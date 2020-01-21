@@ -82,7 +82,7 @@ class January {
 
   _handleMouseMove(e) {
     if (this.isMousePressed) {
-      this.camera.position.x = this.cursorPosition.x - e.clientX
+      this.camera.position.x = -(this.cursorPosition.x - e.clientX)
       this.camera.position.y = this.cursorPosition.y - e.clientY
     }
   }
