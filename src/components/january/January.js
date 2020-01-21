@@ -71,13 +71,11 @@ class January {
   }
 
   _handleMouseUp(e) {
-    this.isMousePressed = false
-    this.lastCursorPosition = { x: e.clientX, y: e.clientY }
-    console.warn(this.cursorPosition, this.lastCursorPosition)
+    this._resetCursorPosition(e)
   }
 
-  _handleMouseLeave() {
-    this.isMousePressed = false
+  _handleMouseLeave(e) {
+    this._resetCursorPosition(e)
   }
 
   _handleMouseMove(e) {
@@ -85,6 +83,11 @@ class January {
       this.camera.position.x = -(this.cursorPosition.x - e.clientX)
       this.camera.position.y = this.cursorPosition.y - e.clientY
     }
+  }
+
+  _resetCursorPosition(e) {
+    this.isMousePressed = false
+    this.lastCursorPosition = { x: e.clientX, y: e.clientY }
   }
 
   _setExample(direction) {
