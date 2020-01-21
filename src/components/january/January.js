@@ -64,10 +64,16 @@ class January {
     if (!this.cursorPosition) {
       this.cursorPosition = { x: e.clientX, y: e.clientY }
     }
+    if (this.lastCursorPosition) {
+      this.cursorPosition.x += e.clientX - this.lastCursorPosition.x
+      this.cursorPosition.y += e.clientY - this.lastCursorPosition.y
+    }
   }
 
-  _handleMouseUp() {
+  _handleMouseUp(e) {
     this.isMousePressed = false
+    this.lastCursorPosition = { x: e.clientX, y: e.clientY }
+    console.warn(this.cursorPosition, this.lastCursorPosition)
   }
 
   _handleMouseLeave() {
