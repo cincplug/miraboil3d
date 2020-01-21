@@ -25,8 +25,25 @@ class January {
 
   _addEventListeners() {
     this._element.addEventListener('click', e => this._handleClick(e))
-    this._elements.canvasWrap.addEventListener('mousemove', e =>
-      this._handleMouseMove(e)
+    this._elements.canvasWrap.addEventListener(
+      'mousedown',
+      e => this._handleMouseDown(e),
+      false
+    )
+    this._elements.canvasWrap.addEventListener(
+      'mouseup',
+      e => this._handleMouseUp(e),
+      false
+    )
+    this._elements.canvasWrap.addEventListener(
+      'mouseleave',
+      e => this._handleMouseLeave(e),
+      false
+    )
+    this._elements.canvasWrap.addEventListener(
+      'mousemove',
+      e => this._handleMouseMove(e),
+      false
     )
   }
 
@@ -42,15 +59,26 @@ class January {
     }
   }
 
+  _handleMouseDown(e) {
+    this.isMousePressed = true
+    if (this.cursorPositionX === null) {
+      this.cursorPositionX = e.clientX
+      this.cursorPositionY = e.clientY
+    }
+  }
+
+  _handleMouseUp() {
+    this.isMousePressed = false
+  }
+
+  _handleMouseLeave() {
+    this.isMousePressed = false
+  }
+
   _handleMouseMove(e) {
-    if (!this.cursorPositionX) {
-      this.cursorPositionX = e.pageX
-      this.cursorPositionY = e.pageY
-    } else {
-      this.cursorPositionX = e.pageX - this.cursorPositionX
-      this.cursorPositionY = e.pageY - this.cursorPositionY
-      this.camera.position.x += this.cursorPositionX
-      this.camera.position.y += this.cursorPositionY
+    if (this.isMousePressed) {
+      this.camera.position.x = this.cursorPositionX - e.clientX
+      this.camera.position.y = this.cursorPositionY - e.clientY
     }
   }
 
@@ -101,6 +129,8 @@ class January {
     this._arrangeSceneItems()
     this.activeItemIndex = 0
     this.currentFrame = 0
+    this.cursorPositionX = null
+    this.cursorPositionY = null
     this._setLight()
     this._setCamera()
   }
