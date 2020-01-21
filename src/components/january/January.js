@@ -61,7 +61,7 @@ class January {
 
   _handleMouseDown(e) {
     this.isMousePressed = true
-    if (this.cursorPosition === null) {
+    if (!this.cursorPosition) {
       this.cursorPosition = { x: e.clientX, y: e.clientY }
     }
   }
@@ -128,7 +128,6 @@ class January {
     this._arrangeSceneItems()
     this.activeItemIndex = 0
     this.currentFrame = 0
-    this.cursorPosition = null
     this._setLight()
     this._setCamera()
   }
