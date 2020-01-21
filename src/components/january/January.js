@@ -61,9 +61,8 @@ class January {
 
   _handleMouseDown(e) {
     this.isMousePressed = true
-    if (this.cursorPositionX === null) {
-      this.cursorPositionX = e.clientX
-      this.cursorPositionY = e.clientY
+    if (this.cursorPosition === null) {
+      this.cursorPosition = { x: e.clientX, y: e.clientY }
     }
   }
 
@@ -77,8 +76,8 @@ class January {
 
   _handleMouseMove(e) {
     if (this.isMousePressed) {
-      this.camera.position.x = this.cursorPositionX - e.clientX
-      this.camera.position.y = this.cursorPositionY - e.clientY
+      this.camera.position.x = this.cursorPosition.x - e.clientX
+      this.camera.position.y = this.cursorPosition.y - e.clientY
     }
   }
 
@@ -129,8 +128,7 @@ class January {
     this._arrangeSceneItems()
     this.activeItemIndex = 0
     this.currentFrame = 0
-    this.cursorPositionX = null
-    this.cursorPositionY = null
+    this.cursorPosition = null
     this._setLight()
     this._setCamera()
   }
