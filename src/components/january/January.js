@@ -25,6 +25,9 @@ class January {
 
   _addEventListeners() {
     this._element.addEventListener('click', e => this._handleClick(e))
+    this._elements.canvasWrap.addEventListener('mousemove', e =>
+      this._handleMouseMove(e)
+    )
   }
 
   _handleClick(e) {
@@ -36,6 +39,17 @@ class January {
     }
     if (e.target.className.match(/\bjanuary__nav-button\b/)) {
       this._setExample(e.target.dataset.direction)
+    }
+  }
+
+  _handleMouseMove(e) {
+    if (!this.cursorPosition) {
+      this.cursorPosition = { x: 0, y: 0 }
+    } else {
+      this.cursorPosition.x = e.clientX - this.cursorPosition.x
+      this.cursorPosition.y = e.clientY - this.cursorPosition.y
+      this.camera.position.x = this.cursorPosition.x
+      this.camera.position.y = this.cursorPosition.y
     }
   }
 
