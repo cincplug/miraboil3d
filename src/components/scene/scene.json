@@ -1,0 +1,64 @@
+{
+  "options": {
+    "renderer": {
+      "alpha": true
+    },
+    "background": {
+      "color": "#4ad"
+    },
+    "camera": {
+      "aspect": 1.333333333,
+      "near": 1,
+      "far": 3000,
+      "speed": 1,
+      "position": {
+        "x": 200,
+        "y": 2,
+        "z": 900
+      }
+    },
+    "light": {
+      "color": "#fad"
+    },
+    "sceneItems": [
+      {
+        "color": "#4ad",
+        "count": 50,
+        "image": "tree.png",
+        "shape": "plane",
+        "geometry": {
+          "width": 512,
+          "height": 1024
+        },
+        "adjustments": {
+          "position": {
+            "x": -100,
+            "y": -256,
+            "z": -800
+          }
+        }
+      },
+      {
+        "color": null,
+        "count": 50,
+        "image": "delftse.png",
+        "shape": "box",
+        "geometry": {
+          "width": 256,
+          "height": 512,
+          "depth": 256
+        },
+        "adjustments": {
+          "position": {
+            "x": 280,
+            "y": -80
+          },
+          "rotation": {
+            "x": 0.4,
+            "z": 0.2
+          }
+        }
+      }
+    ]
+  }
+}
