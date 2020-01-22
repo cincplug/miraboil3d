@@ -278,7 +278,7 @@
           "depth": -50,
           "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
         },
-        "adjustments": { "position": { "y": -80 }, "rotation": { "x": -1 } },
+        "properties": { "position": { "y": -80 }, "rotation": { "x": -1 } },
         "offset": 200,
         "spacing": 200,
         "image": "beogradjanka-basket.png",
@@ -332,7 +332,7 @@
           "depth": -70,
           "range": { "startX": 0.1, "endX": 0.9, "startY": 0.3, "endY": 0.9 }
         },
-        "adjustments": {
+        "properties": {
           "rotation": { "x": 2.2, "z": 3.14 },
           "position": { "y": -200 }
         },
@@ -362,7 +362,7 @@
           "depth": 30,
           "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
         },
-        "adjustments": {
+        "properties": {
           "rotation": { "x": 3.14, "y": 0, "z": 3.14 },
           "position": { "y": -170, "x": 100 }
         },

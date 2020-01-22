@@ -30,7 +30,7 @@
           "width": 512,
           "height": 1024
         },
-        "adjustments": {
+        "properties": {
           "position": {
             "x": -100,
             "y": -256,
@@ -48,7 +48,7 @@
           "height": 512,
           "depth": 256
         },
-        "adjustments": {
+        "properties": {
           "position": {
             "x": 280,
             "y": -80

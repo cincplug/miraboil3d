@@ -152,14 +152,13 @@ class Scene {
   }
 
   _adjustSceneItem(sceneItem, index) {
-    const { adjustments } = this._options.sceneItems[index]
-    console.warn(adjustments)
-    for (const property in adjustments) {
-      if (adjustments[property]) {
-        for (const subProperty in adjustments[property]) {
-          if (adjustments[property][subProperty]) {
+    const { properties } = this._options.sceneItems[index]
+    for (const property in properties) {
+      if (properties[property]) {
+        for (const subProperty in properties[property]) {
+          if (properties[property][subProperty]) {
             sceneItem.mesh[property][subProperty] =
-              adjustments[property][subProperty]
+              properties[property][subProperty]
           }
         }
       }
