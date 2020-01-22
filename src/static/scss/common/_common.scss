@@ -7,8 +7,16 @@ header {
   margin: 0 -#{$gutter-mobile} $gutter-mobile;
   padding: $gutter-mobile;
   background: $color-black;
+  @media (min-width: $breakpoint-m) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 h1 {
   margin: 0;
+}
+
+.logo {
+  max-width: 15rem;
 }
