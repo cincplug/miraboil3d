@@ -4,7 +4,7 @@
       "alpha": true
     },
     "background": {
-      "color": "#4ad"
+      "image": "cloudy.jpg"
     },
     "camera": {
       "aspect": 1.333333333,
@@ -18,29 +18,51 @@
       }
     },
     "light": {
-      "color": "#fad"
+      "color": "#fff"
     },
     "sceneItems": [
       {
-        "color": "#4ad",
-        "count": 50,
-        "image": "tree.png",
-        "shape": "plane",
+        "shape": "sphere",
         "geometry": {
-          "width": 512,
-          "height": 1024
+          "radius": 200,
+          "widthSegments": 50,
+          "heightSegments": 50
         },
+        "count": 30,
+        "image": "world-Mercator_projection_Square.jpg",
         "properties": {
           "position": {
-            "x": -100,
-            "y": -256,
-            "z": -800
+            "x": 0,
+            "y": 180
+          },
+          "rotation": {
+            "x": 0.4,
+            "z": 0.2
+          }
+        }
+      },
+      {
+        "shape": "sphere",
+        "geometry": {
+          "radius": 200,
+          "widthSegments": 50,
+          "heightSegments": 50
+        },
+        "count": 30,
+        "image": "world-Equirectangular_projection_SW.jpg",
+        "properties": {
+          "position": {
+            "x": 480,
+            "y": -80
+          },
+          "rotation": {
+            "x": 0.4,
+            "z": 0.2
           }
         }
       },
       {
         "color": null,
-        "count": 50,
         "image": "delftse.png",
         "shape": "box",
         "geometry": {
@@ -56,6 +78,31 @@
           "rotation": {
             "x": 0.4,
             "z": 0.2
+          }
+        }
+      },
+      {
+        "color": "#4ad",
+        "image": "beogradjanka-basket.png",
+        "shape": "parametric",
+        "geometryHelper": "basket",
+        "geometry": {
+          "slices": 180,
+          "stacks": 200,
+          "width": 250,
+          "height": 280,
+          "curvature": 50,
+          "depth": -50,
+          "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
+        },
+        "properties": {
+          "position": {
+            "x": -180,
+            "y": -80
+          },
+          "rotation": {
+            "x": 1.7,
+            "z": 0.1
           }
         }
       }

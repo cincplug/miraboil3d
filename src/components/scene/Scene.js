@@ -74,13 +74,15 @@ class Scene {
   }
 
   _setBackground() {
-    if (this._options.background && this._options.background.image) {
-      this.scene.background = new THREE.TextureLoader().load(
-        `/static/img/${this._options.background.image}`
-      )
-    }
-    if (this._options.background && this._options.background.color) {
-      this.scene.background = new THREE.Color(this._options.background.color)
+    const { background } = this._options
+    if (background) {
+      if (background.image) {
+        this.scene.background = new THREE.TextureLoader().load(
+          `/static/img/${background.image}`
+        )
+      } else if (background.color) {
+        this.scene.background = new THREE.Color(background.color)
+      }
     }
   }
 
