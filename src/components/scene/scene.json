@@ -1,111 +1,109 @@
 {
-  "options": {
-    "renderer": {
-      "alpha": true
-    },
-    "background": {
-      "image": "cloudy.jpg"
-    },
-    "camera": {
-      "aspect": 1.333333333,
-      "near": 1,
-      "far": 3000,
-      "speed": 1,
-      "position": {
-        "x": 200,
-        "y": 2,
-        "z": 900
+  "renderer": {
+    "alpha": true
+  },
+  "background": {
+    "image": "cloudy.jpg"
+  },
+  "camera": {
+    "aspect": 1.333333333,
+    "near": 1,
+    "far": 3000,
+    "speed": 1,
+    "position": {
+      "x": 200,
+      "y": 2,
+      "z": 900
+    }
+  },
+  "light": {
+    "color": "#fff"
+  },
+  "sceneItems": [
+    {
+      "shape": "sphere",
+      "geometry": {
+        "radius": 200,
+        "widthSegments": 50,
+        "heightSegments": 50
+      },
+      "count": 30,
+      "image": "world-Mercator_projection_Square.jpg",
+      "properties": {
+        "position": {
+          "x": 0,
+          "y": 180
+        },
+        "rotation": {
+          "x": 0.4,
+          "z": 0.2
+        }
       }
     },
-    "light": {
-      "color": "#fff"
-    },
-    "sceneItems": [
-      {
-        "shape": "sphere",
-        "geometry": {
-          "radius": 200,
-          "widthSegments": 50,
-          "heightSegments": 50
-        },
-        "count": 30,
-        "image": "world-Mercator_projection_Square.jpg",
-        "properties": {
-          "position": {
-            "x": 0,
-            "y": 180
-          },
-          "rotation": {
-            "x": 0.4,
-            "z": 0.2
-          }
-        }
+    {
+      "shape": "sphere",
+      "geometry": {
+        "radius": 200,
+        "widthSegments": 50,
+        "heightSegments": 50
       },
-      {
-        "shape": "sphere",
-        "geometry": {
-          "radius": 200,
-          "widthSegments": 50,
-          "heightSegments": 50
+      "count": 30,
+      "image": "world-Equirectangular_projection_SW.jpg",
+      "properties": {
+        "position": {
+          "x": 480,
+          "y": -80
         },
-        "count": 30,
-        "image": "world-Equirectangular_projection_SW.jpg",
-        "properties": {
-          "position": {
-            "x": 480,
-            "y": -80
-          },
-          "rotation": {
-            "x": 0.4,
-            "z": 0.2
-          }
-        }
-      },
-      {
-        "color": null,
-        "image": "delftse.png",
-        "shape": "box",
-        "geometry": {
-          "width": 256,
-          "height": 512,
-          "depth": 256
-        },
-        "properties": {
-          "position": {
-            "x": 280,
-            "y": -80
-          },
-          "rotation": {
-            "x": 0.4,
-            "z": 0.2
-          }
-        }
-      },
-      {
-        "color": "#4ad",
-        "image": "beogradjanka-basket.png",
-        "shape": "parametric",
-        "geometryHelper": "basket",
-        "geometry": {
-          "slices": 180,
-          "stacks": 200,
-          "width": 250,
-          "height": 280,
-          "curvature": 50,
-          "depth": -50,
-          "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
-        },
-        "properties": {
-          "position": {
-            "x": -180,
-            "y": -80
-          },
-          "rotation": {
-            "x": 1.7,
-            "z": 0.1
-          }
+        "rotation": {
+          "x": 0.4,
+          "z": 0.2
         }
       }
-    ]
-  }
+    },
+    {
+      "color": null,
+      "image": "delftse.png",
+      "shape": "box",
+      "geometry": {
+        "width": 256,
+        "height": 512,
+        "depth": 256
+      },
+      "properties": {
+        "position": {
+          "x": 280,
+          "y": -80
+        },
+        "rotation": {
+          "x": 0.4,
+          "z": 0.2
+        }
+      }
+    },
+    {
+      "color": "#4ad",
+      "image": "beogradjanka-basket.png",
+      "shape": "parametric",
+      "geometryHelper": "basket",
+      "geometry": {
+        "slices": 180,
+        "stacks": 200,
+        "width": 250,
+        "height": 280,
+        "curvature": 50,
+        "depth": -50,
+        "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
+      },
+      "properties": {
+        "position": {
+          "x": -180,
+          "y": -80
+        },
+        "rotation": {
+          "x": 1.7,
+          "z": 0.1
+        }
+      }
+    }
+  ]
 }

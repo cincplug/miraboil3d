@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
-const merge = require('deepmerge')
+// const merge = require('deepmerge')
 
 /**
  * Scene component
@@ -8,7 +8,7 @@ const merge = require('deepmerge')
 class Scene {
   constructor(element, options = {}) {
     this._element = element
-    this._options = merge(options, JSON.parse(options.options))
+    this._options = { ...Scene.options, ...options }
     this._init()
   }
 

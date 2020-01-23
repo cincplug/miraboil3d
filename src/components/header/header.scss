@@ -1,0 +1,17 @@
+.header {
+  margin: 0 -#{$gutter-mobile} $gutter-mobile;
+  padding: $gutter-mobile;
+  background: $color-black;
+  @media (min-width: $breakpoint-m) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__logo {
+    max-width: 15rem;
+  }
+}

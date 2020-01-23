@@ -11,3 +11,9 @@
     max-width: calc(100% - #{$gutter-desktop});
   }
 }
+
+.grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $gutter-mobile;
+}
