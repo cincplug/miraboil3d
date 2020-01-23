@@ -2,12 +2,10 @@
 
 {% block body %}
   <div class="grid">
-    <header>
-      <img class="logo" src="/static/img/mirabeau-logo-transparent.svg" />
-      <h1>{{ title }}</h1>
-    </header>
+    {% component 'header' %}
     <main class="main-wrap">
       {% component 'scene' %}
+      {% component 'january' %}
     </main>
   </div>
 {% endblock %}
