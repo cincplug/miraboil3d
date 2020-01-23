@@ -1,0 +1,22 @@
+{
+  "renderer": {
+    "alpha": true
+  },
+  "background": {
+    "image": "cloudy.jpg"
+  },
+  "camera": {
+    "aspect": 1.333333333,
+    "near": 1,
+    "far": 3000,
+    "speed": 1,
+    "position": {
+      "x": 200,
+      "y": 2,
+      "z": 900
+    }
+  },
+  "light": {
+    "color": "#fff"
+  }
+}
