@@ -32,7 +32,8 @@
       "properties": {
         "position": {
           "x": 480,
-          "y": -80
+          "y": -80,
+          "z": -1200
         },
         "rotation": {
           "x": 0.4,

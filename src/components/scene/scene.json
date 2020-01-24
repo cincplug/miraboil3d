@@ -2,9 +2,14 @@
   "renderer": {
     "alpha": true
   },
-  "background": {
-    "color": "rgba(100,100,100,0.1)",
-    "image": null
+  "scene": {
+    "background": {
+      "color": "#44aadd",
+      "opacity": 0.1
+    },
+    "fog": {
+      "color": "#a23"
+    }
   },
   "camera": {
     "aspect": 1.333333333,

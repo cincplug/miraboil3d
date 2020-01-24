@@ -74,8 +74,8 @@ class Scene {
     this.lastCursorPosition = { x: e.clientX, y: e.clientY }
   }
 
-  _setBackground() {
-    const { background } = this._options
+  _setSceneBackground() {
+    const { background } = this._options.scene
     if (background) {
       if (background.image) {
         this.scene.background = new THREE.TextureLoader().load(
@@ -88,8 +88,9 @@ class Scene {
   }
 
   _setScene() {
-    this.scene = new THREE.Scene()
-    this._setBackground()
+    const { scene } = this._options
+    this.scene = new THREE.Scene(scene)
+    this._setSceneBackground()
     this.renderer = new THREE.WebGLRenderer(this._options.renderer)
     const renderWidth = this._elements.canvasWrap.offsetWidth
     const renderHeight = Math.round(renderWidth / this._options.camera.aspect)
