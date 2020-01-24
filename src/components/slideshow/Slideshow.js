@@ -1,13 +1,13 @@
 import * as THREE from 'three'
-import * as defaults from './january.json'
+import * as defaults from './slideshow.json'
 import { examples } from './examples.json'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
 const merge = require('deepmerge')
 
 /**
- * January component
+ * Slideshow component
  */
-class January {
+class Slideshow {
   constructor(element, options = {}) {
     this._element = element
     this._options = merge(defaults, JSON.parse(options.options))
@@ -16,9 +16,9 @@ class January {
 
   _cacheSelectors() {
     this._elements = {
-      title: this._element.querySelector('.january__title'),
-      navButton: this._element.querySelector('.january__nav-button'),
-      canvasWrap: this._element.querySelector('.january__canvas-wrap'),
+      title: this._element.querySelector('.slideshow__title'),
+      navButton: this._element.querySelector('.slideshow__nav-button'),
+      canvasWrap: this._element.querySelector('.slideshow__canvas-wrap'),
       canvas: this._element.querySelector('canvas')
     }
   }
@@ -48,13 +48,13 @@ class January {
   }
 
   _handleClick(e) {
-    if (e.target.className.match(/\bjanuary__color-switch\b/)) {
+    if (e.target.className.match(/\bslideshow__color-switch\b/)) {
       const { color } = e.target.dataset
       this._element.dataset.color = color
       this.light.color = this.scene.background = new THREE.Color(color)
       this._render()
     }
-    if (e.target.className.match(/\bjanuary__nav-button\b/)) {
+    if (e.target.className.match(/\bslideshow__nav-button\b/)) {
       this._setExample(e.target.dataset.direction)
     }
   }
@@ -360,4 +360,4 @@ class January {
   }
 }
 
-export default January
+export default Slideshow

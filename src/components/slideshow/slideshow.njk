@@ -1,0 +1,16 @@
+<div class="slideshow {{ activeClass }}" data-item="0" data-module="slideshow/Slideshow" data-options="{{ options | dump }}" data-name="{{ options.mesh.image }}">
+  <div class="slideshow__inner">
+    <div class="slideshow__header">
+      <h3 class="slideshow__title">{{ options.mesh.shape }}</h3>
+      <div class="slideshow__color-switches">
+        <button class="slideshow__color-switch" data-color="red"></button>
+        <button class="slideshow__color-switch" data-color="green"></button>
+        <button class="slideshow__color-switch" data-color="blue"></button>
+        <button class="slideshow__color-switch" data-color="yellow"></button>
+      </div>
+    </div>
+    <div class="slideshow__canvas-wrap"></div>
+  </div>
+  <button class="slideshow__nav-button slideshow__nav-button--prev" data-direction="prev">&larr;</button>
+  <button class="slideshow__nav-button slideshow__nav-button--next" data-direction="next">&rarr;</button>
+</div>
