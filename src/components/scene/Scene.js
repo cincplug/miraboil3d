@@ -107,7 +107,7 @@ class Scene {
   }
 
   /**
-   * Set shape of scene item according to parameters
+   * Set scene item geometry according to parameters
    * @param {Object} sceneItem - the scene item to set shape for
    * @returns {Func} THREE.js geometry for given shape with parameters
    */
@@ -131,7 +131,6 @@ class Scene {
 
   _arrangeSceneItems() {
     const { scene, _options } = this
-
     _options.sceneItems.forEach((item, index) => {
       const { image, color } = item
       const sceneItem = {
