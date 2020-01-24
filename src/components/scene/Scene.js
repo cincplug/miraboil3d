@@ -130,36 +130,36 @@ class Scene {
   }
 
   _arrangeMeshes() {
-    const { scene, _options } = this
+    const { _options } = this
     _options.meshes.forEach((item, index) => {
-      const { image, color } = item
-      const geometry = this._setGeometry(item)
-      const materialProperties = {
-        color,
-        transparent: true,
-        side: THREE.DoubleSide
-      }
+      const { image } = item
       if (image) {
-        new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
-          const material = new THREE.MeshLambertMaterial({
-            ...materialProperties,
-            ...{ map: texture }
-          })
-          const mesh = new THREE.Mesh(geometry, material)
-          this._adjustMesh(mesh, index)
-          mesh.name = `znak-${index}`
-          scene.add(mesh)
-        })
+        new THREE.TextureLoader().load(`/static/img/${image}`, texture =>
+          this._addMesh(texture, item, index)
+        )
       } else {
-        const material = new THREE.MeshLambertMaterial({
-          ...materialProperties
-        })
-        const mesh = new THREE.Mesh(geometry, material)
-        this._adjustMesh(mesh, index)
-        mesh.name = `znak-${index}`
-        scene.add(mesh)
+        this._addMesh(null, item, index)
       }
     })
+  }
+
+  _addMesh(texture, item, index) {
+    const { scene } = this
+    const { color } = item
+    const geometry = this._setGeometry(item)
+    const materialProperties = {
+      color,
+      transparent: true,
+      side: THREE.DoubleSide
+    }
+    const material = new THREE.MeshLambertMaterial({
+      ...materialProperties,
+      ...{ map: texture }
+    })
+    const mesh = new THREE.Mesh(geometry, material)
+    this._adjustMesh(mesh, index)
+    mesh.name = `znak-${index}`
+    scene.add(mesh)
   }
 
   _adjustMesh(mesh, index) {
