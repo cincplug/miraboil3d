@@ -10,6 +10,7 @@
       "color": "#a23"
     }
   },
+  "materialName": "lambert",
   "camera": {
     "aspect": 1.333333333,
     "near": 1,

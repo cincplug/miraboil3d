@@ -87,7 +87,6 @@
         },
         {
           "color": "#4ad",
-          "image": "beogradjanka-basket.png",
           "shape": "parametric",
           "geometryHelper": "basket",
           "geometry": {

@@ -134,21 +134,31 @@ class Scene {
     _options.meshes.forEach((item, index) => {
       const { image, color } = item
       const geometry = this._setGeometry(item)
-      new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
-        const materialProperties = {
-          color,
-          transparent: true,
-          side: THREE.DoubleSide
-        }
+      const materialProperties = {
+        color,
+        transparent: true,
+        side: THREE.DoubleSide
+      }
+      if (image) {
+        new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
+          const material = new THREE.MeshLambertMaterial({
+            ...materialProperties,
+            ...{ map: texture }
+          })
+          const mesh = new THREE.Mesh(geometry, material)
+          this._adjustMesh(mesh, index)
+          mesh.name = `znak-${index}`
+          scene.add(mesh)
+        })
+      } else {
         const material = new THREE.MeshLambertMaterial({
-          ...materialProperties,
-          ...{ map: texture }
+          ...materialProperties
         })
         const mesh = new THREE.Mesh(geometry, material)
         this._adjustMesh(mesh, index)
         mesh.name = `znak-${index}`
         scene.add(mesh)
-      })
+      }
     })
   }
 
