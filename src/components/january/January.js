@@ -174,7 +174,7 @@ class January {
     )
   }
 
-  _setSceneItemShape() {
+  _setGeometry() {
     const { _options } = this
     const { shape, geometry, geometryHelper } = _options.sceneItem
     const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
@@ -204,7 +204,7 @@ class January {
       offset
     } = _options.sceneItem
     const sceneItem = {
-      geometry: this._setSceneItemShape()
+      geometry: this._setGeometry()
     }
     new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
       const materialProperties = {

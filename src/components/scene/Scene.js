@@ -111,7 +111,7 @@ class Scene {
    * @param {Object} sceneItem - the scene item to set shape for
    * @returns {Func} THREE.js geometry for given shape with parameters
    */
-  _setSceneItemShape = sceneItem => {
+  _setGeometry = sceneItem => {
     const { shape, geometry, geometryHelper } = sceneItem
     const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
       1
@@ -135,7 +135,7 @@ class Scene {
     _options.sceneItems.forEach((item, index) => {
       const { image, color } = item
       const sceneItem = {
-        geometry: this._setSceneItemShape(item)
+        geometry: this._setGeometry(item)
       }
       new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
         const materialProperties = {
