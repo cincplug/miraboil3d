@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import * as defaults from './slideshow.json'
-import { examples } from './examples.json'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
 const merge = require('deepmerge')
 
@@ -11,6 +10,7 @@ class Slideshow {
   constructor(element, options = {}) {
     this._element = element
     this._options = merge(defaults, JSON.parse(options.options))
+    this.examples = JSON.parse(options.examples)
     this._init()
   }
 
@@ -91,6 +91,7 @@ class Slideshow {
   }
 
   _setExample(direction) {
+    const { examples } = this
     cancelAnimationFrame(this.requestFrameId)
     this.canvas.remove()
     let item = Number(this._element.dataset.item)
