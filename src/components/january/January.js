@@ -112,16 +112,6 @@ class January {
     this._setScene()
   }
 
-  _setBackground() {
-    if (this._options.background.image) {
-      this.scene.background = new THREE.TextureLoader().load(
-        `/static/img/${this._options.background.image}`
-      )
-    } else {
-      this.scene.background = new THREE.Color(this._options.background)
-    }
-  }
-
   _setScene() {
     this.scene = new THREE.Scene()
     this._setBackground()
@@ -139,6 +129,16 @@ class January {
     this.currentFrame = 0
     this._setLight()
     this._setCamera()
+  }
+
+  _setBackground() {
+    if (this._options.background.image) {
+      this.scene.background = new THREE.TextureLoader().load(
+        `/static/img/${this._options.background.image}`
+      )
+    } else {
+      this.scene.background = new THREE.Color(this._options.background)
+    }
   }
 
   _setGround() {

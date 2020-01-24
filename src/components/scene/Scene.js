@@ -74,19 +74,6 @@ class Scene {
     this.lastCursorPosition = { x: e.clientX, y: e.clientY }
   }
 
-  _setSceneBackground() {
-    const { background } = this._options.scene
-    if (background) {
-      if (background.image) {
-        this.scene.background = new THREE.TextureLoader().load(
-          `/static/img/${background.image}`
-        )
-      } else if (background.color) {
-        this.scene.background = new THREE.Color(background.color)
-      }
-    }
-  }
-
   _setScene() {
     const { scene } = this._options
     this.scene = new THREE.Scene(scene)
@@ -104,6 +91,19 @@ class Scene {
     this.currentFrame = 0
     this._setLight()
     this._setCamera()
+  }
+
+  _setSceneBackground() {
+    const { background } = this._options.scene
+    if (background) {
+      if (background.image) {
+        this.scene.background = new THREE.TextureLoader().load(
+          `/static/img/${background.image}`
+        )
+      } else if (background.color) {
+        this.scene.background = new THREE.Color(background.color)
+      }
+    }
   }
 
   /**
