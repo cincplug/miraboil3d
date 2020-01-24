@@ -27,7 +27,7 @@
         "depth": 64
       }
     },
-    "sceneItem": {
+    "mesh": {
       "color": null,
       "count": 50,
       "image": "tree.png",

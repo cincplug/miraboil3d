@@ -86,7 +86,7 @@ class Scene {
     this.canvas = this._elements.canvasWrap.appendChild(
       this.renderer.domElement
     )
-    this._arrangeSceneItems()
+    this._arrangeMeshes()
     this.activeItemIndex = 0
     this.currentFrame = 0
     this._setLight()
@@ -108,11 +108,11 @@ class Scene {
 
   /**
    * Set scene item geometry according to parameters
-   * @param {Object} sceneItem - the scene item to set shape for
+   * @param {Object} mesh - the scene item to set shape for
    * @returns {Func} THREE.js geometry for given shape with parameters
    */
-  _setGeometry = sceneItem => {
-    const { shape, geometry, geometryHelper } = sceneItem
+  _setGeometry = mesh => {
+    const { shape, geometry, geometryHelper } = mesh
     const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
       1
     )}BufferGeometry`
@@ -121,7 +121,7 @@ class Scene {
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
       .split(',')
     const args = geometryParameters.map(param => {
-      return sceneItem.geometry[param.replace(/(.+?):.+$/, '$1')]
+      return mesh.geometry[param.replace(/(.+?):.+$/, '$1')]
     })
     if (geometryHelper) {
       args[0] = geometryHelpers[shape][geometryHelper](geometry)
@@ -129,39 +129,36 @@ class Scene {
     return new THREE[geometryName](...args)
   }
 
-  _arrangeSceneItems() {
+  _arrangeMeshes() {
     const { scene, _options } = this
-    _options.sceneItems.forEach((item, index) => {
+    _options.meshes.forEach((item, index) => {
       const { image, color } = item
-      const sceneItem = {
-        geometry: this._setGeometry(item)
-      }
+      const geometry = this._setGeometry(item)
       new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
         const materialProperties = {
           color,
           transparent: true,
           side: THREE.DoubleSide
         }
-        sceneItem.material = new THREE.MeshLambertMaterial({
+        const material = new THREE.MeshLambertMaterial({
           ...materialProperties,
           ...{ map: texture }
         })
-        sceneItem.mesh = new THREE.Mesh(sceneItem.geometry, sceneItem.material)
-        this._adjustSceneItem(sceneItem, index)
-        sceneItem.mesh.name = `znak-${index}`
-        scene.add(sceneItem.mesh)
+        const mesh = new THREE.Mesh(geometry, material)
+        this._adjustMesh(mesh, index)
+        mesh.name = `znak-${index}`
+        scene.add(mesh)
       })
     })
   }
 
-  _adjustSceneItem(sceneItem, index) {
-    const { properties } = this._options.sceneItems[index]
+  _adjustMesh(mesh, index) {
+    const { properties } = this._options.meshes[index]
     for (const property in properties) {
       if (properties[property]) {
         for (const subProperty in properties[property]) {
           if (properties[property][subProperty]) {
-            sceneItem.mesh[property][subProperty] =
-              properties[property][subProperty]
+            mesh[property][subProperty] = properties[property][subProperty]
           }
         }
       }

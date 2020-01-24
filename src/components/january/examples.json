@@ -5,13 +5,13 @@
       "background": { "image": "cloudy.jpg" },
       "ground": { "image": "cloudy.jpg", "repeat": { "width": 1, "depth": 4 } },
       "camera": { "speed": 1.5 },
-      "sceneItem": { "image": "tree2.png" }
+      "mesh": { "image": "tree2.png" }
     },
     {
       "background": "#2667a2",
       "camera": { "speed": 2, "distanceRatio": 3 },
       "ground": { "color": "#ffe9b8" },
-      "sceneItem": {
+      "mesh": {
         "count": 32,
         "image": "pobednik.png",
         "geometry": { "width": 256, "height": 1024 },
@@ -26,7 +26,7 @@
       "background": "#2667a2",
       "camera": { "speed": 2, "distanceRatio": 3 },
       "ground": { "color": "#dbd5be" },
-      "sceneItem": {
+      "mesh": {
         "count": 32,
         "image": "sava-centar.png",
         "shape": "box",
@@ -42,7 +42,7 @@
       "background": "#b9cff1",
       "camera": { "speed": 2, "distanceRatio": 3 },
       "ground": { "color": "#77746d" },
-      "sceneItem": {
+      "mesh": {
         "count": 32,
         "image": "beogradjanka-o.png",
         "geometry": { "width": 256, "height": 1024 },
@@ -57,7 +57,7 @@
       "background": "#daecfc",
       "camera": { "speed": 2, "distanceRatio": 3, "swing": { "x": 80 } },
       "ground": { "color": "#eee6d2" },
-      "sceneItem": {
+      "mesh": {
         "count": 18,
         "image": "geneks.png",
         "geometry": { "width": 512, "height": 2048 },
@@ -78,7 +78,7 @@
         "swing": { "y": 40 }
       },
       "ground": { "color": "#6869a0", "position": { "y": 100 } },
-      "sceneItem": {
+      "mesh": {
         "count": 18,
         "image": "most.png",
         "geometry": { "width": 1024, "height": 256 },
@@ -95,7 +95,7 @@
       "background": "#d2d6d7",
       "camera": { "speed": 3, "distanceRatio": 3, "swing": { "x": 80 } },
       "ground": { "color": "#d2d6d7" },
-      "sceneItem": {
+      "mesh": {
         "shape": "box",
         "count": 18,
         "image": "delftse.png",
@@ -113,7 +113,7 @@
       "background": "#d2d6d7",
       "camera": { "speed": 3, "distanceRatio": 2 },
       "ground": { "color": "#d2d6d7" },
-      "sceneItem": {
+      "mesh": {
         "shape": "cylinder",
         "count": 18,
         "image": "nauta.png",
@@ -136,7 +136,7 @@
       "background": "#d2d6d7",
       "camera": { "speed": 3, "distanceRatio": 2 },
       "ground": { "color": "#d2d6d7" },
-      "sceneItem": {
+      "mesh": {
         "shape": "cone",
         "count": 18,
         "image": "nauta.png",
@@ -154,7 +154,7 @@
       "background": "#d2d6d7",
       "camera": { "speed": 6, "distanceRatio": 3, "swing": { "x": 180 } },
       "ground": { "color": "#d2d6d7" },
-      "sceneItem": {
+      "mesh": {
         "shape": "circle",
         "geometry": { "radius": 80, "segments": 30 },
         "count": 30,
@@ -172,7 +172,7 @@
       "background": "#d2d6d7",
       "camera": { "speed": 5, "distanceRatio": 4, "swing": { "x": 280 } },
       "ground": { "color": "#d2d6d7" },
-      "sceneItem": {
+      "mesh": {
         "shape": "torus",
         "geometry": {
           "radius": 100,
@@ -197,7 +197,7 @@
       "background": "#006677",
       "camera": { "speed": 5 },
       "ground": { "color": "#115674" },
-      "sceneItem": {
+      "mesh": {
         "count": 32,
         "image": "big-lukowski.png",
         "spacing": 320,
@@ -209,7 +209,7 @@
       "background": "#80a6b4",
       "camera": { "speed": 4, "swing": { "x": 100 } },
       "ground": { "color": "#888844", "position": { "y": 200 } },
-      "sceneItem": {
+      "mesh": {
         "offset": 260,
         "geometry": { "width": 256, "height": 256 },
         "spacing": 200,
@@ -225,7 +225,7 @@
       "background": "#A02244",
       "camera": { "speed": 6, "swing": { "x": 40 } },
       "ground": { "color": "#b88844" },
-      "sceneItem": {
+      "mesh": {
         "color": "rgba(250, 230, 200, 0.5)",
         "shape": "box",
         "geometry": { "width": 400, "height": 400, "depth": 400 },
@@ -243,7 +243,7 @@
       "background": "#feffc3",
       "camera": { "speed": 4, "swing": { "x": 60 } },
       "ground": { "color": "#188844" },
-      "sceneItem": {
+      "mesh": {
         "shape": "lathe",
         "geometryHelper": "plantPot",
         "geometry": {
@@ -266,7 +266,7 @@
       "background": "#feffc3",
       "camera": { "speed": 3, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
-      "sceneItem": {
+      "mesh": {
         "shape": "parametric",
         "geometryHelper": "basket",
         "geometry": {
@@ -293,7 +293,7 @@
       "background": "#feffc3",
       "camera": { "speed": 3, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
-      "sceneItem": {
+      "mesh": {
         "shape": "parametric",
         "geometryHelper": "folderBox",
         "geometry": {
@@ -320,7 +320,7 @@
       "background": "#007788",
       "camera": { "speed": 4, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
-      "sceneItem": {
+      "mesh": {
         "shape": "parametric",
         "geometryHelper": "trolley",
         "geometry": {
@@ -350,7 +350,7 @@
       "background": "#007788",
       "camera": { "speed": 4, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
-      "sceneItem": {
+      "mesh": {
         "shape": "parametric",
         "geometryHelper": "rail",
         "geometry": {

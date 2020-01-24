@@ -108,7 +108,7 @@ class January {
     }
     this._element.dataset.item = item
     this._options = merge(defaults.options, examples[item])
-    this._elements.title.innerHTML = this._options.sceneItem.shape
+    this._elements.title.innerHTML = this._options.mesh.shape
     this._setScene()
   }
 
@@ -124,7 +124,7 @@ class January {
       this.renderer.domElement
     )
     this._setGround()
-    this._arrangeSceneItems()
+    this._arrangeMeshes()
     this.activeItemIndex = 0
     this.currentFrame = 0
     this._setLight()
@@ -167,7 +167,7 @@ class January {
         ground.mesh.rotation.x = THREE.Math.degToRad(_options.ground.angle)
         ground.mesh.position.y = -_options.ground.position.y
         ground.mesh.position.z =
-          (_options.sceneItem.count * _options.sceneItem.spacing) /
+          (_options.mesh.count * _options.mesh.spacing) /
           _options.camera.distanceRatio
         scene.add(ground.mesh)
       }
@@ -176,7 +176,7 @@ class January {
 
   _setGeometry() {
     const { _options } = this
-    const { shape, geometry, geometryHelper } = _options.sceneItem
+    const { shape, geometry, geometryHelper } = _options.mesh
     const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
       1
     )}BufferGeometry`
@@ -185,7 +185,7 @@ class January {
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
       .split(',')
     const args = geometryParameters.map(param => {
-      return _options.sceneItem.geometry[param.replace(/(.+?):.+$/, '$1')]
+      return _options.mesh.geometry[param.replace(/(.+?):.+$/, '$1')]
     })
     if (geometryHelper) {
       args[0] = geometryHelpers[shape][geometryHelper](geometry)
@@ -193,7 +193,7 @@ class January {
     return new THREE[geometryName](...args)
   }
 
-  _arrangeSceneItems() {
+  _arrangeMeshes() {
     const { scene, _options } = this
     const {
       image,
@@ -202,8 +202,8 @@ class January {
       spacing,
       reverseSideRate,
       offset
-    } = _options.sceneItem
-    const sceneItem = {
+    } = _options.mesh
+    const mesh = {
       geometry: this._setGeometry()
     }
     new THREE.TextureLoader().load(`/static/img/${image}`, texture => {
@@ -213,33 +213,32 @@ class January {
         side: THREE.DoubleSide
       }
       for (let i = 1; i <= count; i++) {
-        sceneItem.material = new THREE.MeshLambertMaterial({
+        mesh.material = new THREE.MeshLambertMaterial({
           ...materialProperties,
           ...{ map: texture }
         })
-        sceneItem.mesh = new THREE.Mesh(sceneItem.geometry, sceneItem.material)
-        sceneItem.mesh.position.z = i * spacing
-        sceneItem.mesh.position.y = _options.sceneItem.position.y
-        sceneItem.mesh.position.x = this._isDivisibleBy(i, reverseSideRate)
+        mesh.mesh = new THREE.Mesh(mesh.geometry, mesh.material)
+        mesh.mesh.position.z = i * spacing
+        mesh.mesh.position.y = _options.mesh.position.y
+        mesh.mesh.position.x = this._isDivisibleBy(i, reverseSideRate)
           ? -offset
           : offset
 
-        this._adjustSceneItem(sceneItem)
+        this._adjustMesh(mesh)
 
-        sceneItem.mesh.name = `znak-${i}`
-        scene.add(sceneItem.mesh)
+        mesh.mesh.name = `znak-${i}`
+        scene.add(mesh.mesh)
       }
     })
   }
 
-  _adjustSceneItem(sceneItem) {
-    const { properties } = this._options.sceneItem
+  _adjustMesh(mesh) {
+    const { properties } = this._options.mesh
     for (const property in properties) {
       if (properties[property]) {
         for (const subProperty in properties[property]) {
           if (properties[property][subProperty]) {
-            sceneItem.mesh[property][subProperty] =
-              properties[property][subProperty]
+            mesh.mesh[property][subProperty] = properties[property][subProperty]
           }
         }
       }
@@ -259,7 +258,7 @@ class January {
       this._options.camera.far
     )
     this.camera.position.z =
-      this._options.sceneItem.count * this._options.sceneItem.spacing +
+      this._options.mesh.count * this._options.mesh.spacing +
       this._options.camera.far / this._options.camera.distanceRatio
     this.camera.position.y = -this._options.camera.position.y
     this.scene.add(this.camera)
@@ -284,7 +283,7 @@ class January {
       for (const axis in _options.camera.swing) {
         if (_options.camera.swing[axis]) {
           camera.position[axis] =
-            _options.sceneItem.spacing *
+            _options.mesh.spacing *
             Math.sin(currentFrame / _options.camera.swing[axis])
         }
       }
@@ -295,7 +294,7 @@ class January {
   _moveItem() {
     const { scene, _options, currentFrame } = this
     const currentItemIndex = Math.round(
-      (currentFrame / _options.sceneItem.spacing) * _options.camera.speed
+      (currentFrame / _options.mesh.spacing) * _options.camera.speed
     )
     if (currentItemIndex > this.activeItemIndex) {
       this.activeItemIndex = currentItemIndex
@@ -303,21 +302,21 @@ class January {
         this.previousItem = this.activeItem
       }
       this.activeItem = scene.getObjectByName(
-        `znak-${_options.sceneItem.count - this.activeItemIndex + 1}`
+        `znak-${_options.mesh.count - this.activeItemIndex + 1}`
       )
     }
     if (this.activeItem) {
-      this.activeItem[_options.sceneItem.movementType](
+      this.activeItem[_options.mesh.movementType](
         this._setItemMovementDirection(
           currentItemIndex,
-          _options.sceneItem.movementSpeed
+          _options.mesh.movementSpeed
         )
       )
       if (this.previousItem) {
-        this.previousItem[_options.sceneItem.secondaryMovementType](
+        this.previousItem[_options.mesh.secondaryMovementType](
           this._setItemMovementDirection(
             currentItemIndex,
-            _options.sceneItem.secondaryMovementSpeed
+            _options.mesh.secondaryMovementSpeed
           )
         )
       }
@@ -328,7 +327,7 @@ class January {
     const { _options } = this
     return (
       speed *
-      (this._isDivisibleBy(index, _options.sceneItem.reverseSideRate) ? 1 : -1)
+      (this._isDivisibleBy(index, _options.mesh.reverseSideRate) ? 1 : -1)
     )
   }
 
