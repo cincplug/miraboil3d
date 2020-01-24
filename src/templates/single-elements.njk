@@ -6,7 +6,11 @@
     <main class="main-wrap grid-wrap">
       {% for shape in shapes %}
         <div class="column">
-          {% component 'scene' %}
+          {% component 'scene', {
+            options: {
+              sceneItems: [shape]
+            }
+          } %}
         </div>
       {% endfor %}
     </main>
