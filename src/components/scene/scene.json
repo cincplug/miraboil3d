@@ -4,8 +4,7 @@
   },
   "scene": {
     "background": {
-      "color": "#44aadd",
-      "opacity": 0.1
+      "color": "#303030"
     },
     "fog": {
       "color": "#a23"

@@ -1,5 +1,5 @@
 {
-  "shapes": [
+  "meshes": [
     {
       "shape": "sphere",
       "geometry": {
@@ -7,7 +7,6 @@
         "widthSegments": 50,
         "heightSegments": 50
       },
-      "count": 30,
       "image": "world-Mercator_projection_Square.jpg",
       "properties": {
         "position": {
@@ -27,11 +26,10 @@
         "widthSegments": 50,
         "heightSegments": 50
       },
-      "count": 30,
       "image": "world-Equirectangular_projection_SW.jpg",
       "properties": {
         "position": {
-          "x": 480,
+          "x": 680,
           "y": -80,
           "z": -1200
         },

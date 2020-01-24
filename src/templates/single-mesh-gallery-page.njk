@@ -1,0 +1,18 @@
+{% extends '../layout/default.njk' %}
+
+{% block body %}
+  <div class="grid">
+    {% component 'header' %}
+    <main class="main-wrap grid-wrap">
+      {% for mesh in meshes %}
+        <div class="column">
+          {% component 'scene', {
+            options: {
+              meshes: [mesh]
+            }
+          } %}
+        </div>
+      {% endfor %}
+    </main>
+  </div>
+{% endblock %}
