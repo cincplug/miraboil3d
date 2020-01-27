@@ -10,6 +10,25 @@
       "color": "#a23"
     }
   },
+  "lights": [
+    {
+      "type": "directional",
+      "color": "#a0d0d0",
+      "intensity": 0.8,
+      "properties": {
+        "position": {
+          "x": 1,
+          "y": 0,
+          "z": 1
+        }
+      }
+    },
+    {
+      "type": "ambient",
+      "color": "#f0d0d0",
+      "intensity": 0.8
+    }
+  ],
   "materialName": "lambert",
   "material": {},
   "camera": {

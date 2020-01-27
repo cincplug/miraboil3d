@@ -186,10 +186,18 @@ class Scene {
   }
 
   _setLight() {
-    this.light = new THREE.AmbientLight(
-      new THREE.Color(this._options.light.color)
-    )
-    this.scene.add(this.light)
+    const { lights } = this._options
+    lights.forEach(light => {
+      if (light && light.type) {
+        const sceneLightName = `${helpers.capitalize(light.type)}Light`
+        this.scene.add(
+          new THREE[sceneLightName](
+            new THREE.Color(light.color),
+            light.intensity
+          )
+        )
+      }
+    })
   }
 
   _setCamera() {
