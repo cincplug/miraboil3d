@@ -21,6 +21,15 @@
           "x": 200,
           "y": 2,
           "z": 900
+        },
+        "frameMovement": {
+          "position": {
+            "x": 0.1,
+            "y": 1
+          },
+          "rotation": {
+            "z": 0.001
+          }
         }
       },
       "light": {
@@ -86,6 +95,15 @@
             "rotation": {
               "x": 0.4,
               "z": 0.2
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "rotation": {
+              "z": 0.001
             }
           }
         },
@@ -179,6 +197,11 @@
               "x": 0.4,
               "z": 0.2
             }
+          },
+          "frameMovement": {
+            "rotation": {
+              "y": 0.003
+            }
           }
         },
         {
@@ -223,6 +246,16 @@
             "rotation": {
               "x": 1.7,
               "z": 0.1
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "x": 2,
+              "y": 0.8
+            },
+            "rotation": {
+              "x": 0.0004,
+              "z": 0.0002
             }
           }
         }

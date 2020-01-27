@@ -174,15 +174,7 @@ class Scene {
 
   _adjustMesh(mesh, index) {
     const { properties } = this._options.meshes[index]
-    for (const property in properties) {
-      if (properties[property]) {
-        for (const subProperty in properties[property]) {
-          if (properties[property][subProperty]) {
-            mesh[property][subProperty] = properties[property][subProperty]
-          }
-        }
-      }
-    }
+    this._mapProperties(properties, mesh)
   }
 
   _setLight() {
@@ -215,9 +207,38 @@ class Scene {
     this._animate()
   }
 
+  /**
+   * Iterate through two nesting levels of object
+   * @param {Object} properties - set of properties to implement
+   * @param {Object} target - target object to apply properties and sub-properties
+   */
+  _mapProperties = (properties, target) => {
+    for (const property in properties) {
+      if (properties[property]) {
+        for (const subProperty in properties[property]) {
+          if (properties[property][subProperty]) {
+            target[property][subProperty] += properties[property][subProperty]
+          }
+        }
+      }
+    }
+  }
+
   _animate = () => {
     // eslint-disable-next-line no-invalid-this
     const self = this
+    const { meshes } = self._options
+    meshes.forEach((mesh, index) => {
+      const targetMesh = self.scene.getObjectByName(`znak-${index}`)
+      if (mesh.frameMovement && targetMesh) {
+        self._mapProperties(
+          mesh.frameMovement,
+          self.scene.getObjectByName(`znak-${index}`)
+        )
+      }
+    })
+    self._mapProperties(self._options.camera.frameMovement, self.camera)
+
     self.requestFrameId = requestAnimationFrame(self._animate)
     self._render()
   }

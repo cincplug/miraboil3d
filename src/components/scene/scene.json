@@ -13,7 +13,7 @@
   "lights": [
     {
       "type": "directional",
-      "color": "#a0d0d0",
+      "color": "#e0b0d0",
       "intensity": 0.8,
       "properties": {
         "position": {
@@ -41,8 +41,5 @@
       "y": 2,
       "z": 900
     }
-  },
-  "light": {
-    "color": "#fff"
   }
 }
