@@ -177,11 +177,11 @@ class Slideshow {
 
   _setGeometry() {
     const { _options } = this
-    const { shape, geometry, geometryHelper } = _options.mesh
-    const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
-      1
-    )}BufferGeometry`
-    const geometryParameters = THREE[geometryName]
+    const { geometryName, geometry, geometryHelper } = _options.mesh
+    const meshGeometryName = `${geometryName
+      .charAt(0)
+      .toUpperCase()}${geometryName.slice(1)}BufferGeometry`
+    const geometryParameters = THREE[meshGeometryName]
       .toString()
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
       .split(',')
@@ -189,9 +189,9 @@ class Slideshow {
       return _options.mesh.geometry[param.replace(/(.+?):.+$/, '$1')]
     })
     if (geometryHelper) {
-      args[0] = geometryHelpers[shape][geometryHelper](geometry)
+      args[0] = geometryHelpers[geometryName][geometryHelper](geometry)
     }
-    return new THREE[geometryName](...args)
+    return new THREE[meshGeometryName](...args)
   }
 
   _arrangeMeshes() {
