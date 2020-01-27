@@ -107,13 +107,9 @@ class Scene {
     }
   }
 
-  /**
-   * Set scene item geometry according to parameters
-   * @param {Object} mesh - the scene item to set shape for
-   * @returns {Func} THREE.js geometry for given shape with parameters
-   */
-  _setGeometry = mesh => {
-    const { geometryName, geometry, geometryHelper } = mesh
+  _setGeometry(mesh) {
+    const { geometryName, geometryHelper } = mesh
+    const geometry = mesh.geometry || this._options.geometry
     const meshGeometryName = `${helpers.capitalize(geometryName)}BufferGeometry`
     const geometryParameters = THREE[meshGeometryName]
       .toString()
@@ -126,6 +122,30 @@ class Scene {
       args[0] = geometryHelpers[geometryName][geometryHelper](geometry)
     }
     return new THREE[meshGeometryName](...args)
+  }
+
+  _setMaterial(item, texture) {
+    const { color } = item
+    const materialName = item.materialName || this._options.materialName
+    const material = item.material || this._options.material
+    const materialProperties = {
+      ...{
+        color,
+        transparent: true,
+        side: THREE.DoubleSide
+      },
+      ...material
+    }
+    const meshMaterialName = `Mesh${helpers.capitalize(materialName)}Material`
+    const meshMaterial = new THREE[meshMaterialName](
+      texture
+        ? {
+            ...materialProperties,
+            ...{ map: texture }
+          }
+        : materialProperties
+    )
+    return meshMaterial
   }
 
   _arrangeMeshes() {
@@ -144,23 +164,8 @@ class Scene {
 
   _addMesh(texture, item, index) {
     const { scene } = this
-    const { color } = item
     const meshGeometry = this._setGeometry(item)
-    const materialName = item.materialName || this._options.materialName
-    const material = item.material || this._options.material
-    const materialProperties = {
-      ...{
-        color,
-        transparent: true,
-        side: THREE.DoubleSide
-      },
-      ...material
-    }
-    const meshMaterialName = `Mesh${helpers.capitalize(materialName)}Material`
-    const meshMaterial = new THREE[meshMaterialName]({
-      ...materialProperties,
-      ...{ map: texture }
-    })
+    const meshMaterial = this._setMaterial(item, texture)
     const mesh = new THREE.Mesh(meshGeometry, meshMaterial)
     this._adjustMesh(mesh, index)
     mesh.name = `znak-${index}`
