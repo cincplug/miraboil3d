@@ -31,7 +31,7 @@
       "color": null,
       "count": 50,
       "image": "tree.png",
-      "shape": "plane",
+      "geometryName": "plane",
       "geometry": {
         "width": 512,
         "height": 1024

@@ -112,11 +112,11 @@ class Scene {
    * @returns {Func} THREE.js geometry for given shape with parameters
    */
   _setGeometry = mesh => {
-    const { shape, geometry, geometryHelper } = mesh
-    const geometryName = `${shape.charAt(0).toUpperCase()}${shape.slice(
-      1
-    )}BufferGeometry`
-    const geometryParameters = THREE[geometryName]
+    const { geometryName, geometry, geometryHelper } = mesh
+    const meshGeometryName = `${geometryName
+      .charAt(0)
+      .toUpperCase()}${geometryName.slice(1)}BufferGeometry`
+    const geometryParameters = THREE[meshGeometryName]
       .toString()
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
       .split(',')
@@ -124,9 +124,9 @@ class Scene {
       return mesh.geometry[param.replace(/(.+?):.+$/, '$1')]
     })
     if (geometryHelper) {
-      args[0] = geometryHelpers[shape][geometryHelper](geometry)
+      args[0] = geometryHelpers[geometryName][geometryHelper](geometry)
     }
-    return new THREE[geometryName](...args)
+    return new THREE[meshGeometryName](...args)
   }
 
   _arrangeMeshes() {
@@ -146,17 +146,25 @@ class Scene {
   _addMesh(texture, item, index) {
     const { scene } = this
     const { color } = item
-    const geometry = this._setGeometry(item)
+    const meshGeometry = this._setGeometry(item)
+    const materialName = item.materialName || this._options.materialName
+    const material = item.material || this._options.material
     const materialProperties = {
-      color,
-      transparent: true,
-      side: THREE.DoubleSide
+      ...{
+        color,
+        transparent: true,
+        side: THREE.DoubleSide
+      },
+      ...material
     }
-    const material = new THREE.MeshLambertMaterial({
+    const meshMaterialName = `Mesh${materialName
+      .charAt(0)
+      .toUpperCase()}${materialName.slice(1)}Material`
+    const meshMaterial = new THREE[meshMaterialName]({
       ...materialProperties,
       ...{ map: texture }
     })
-    const mesh = new THREE.Mesh(geometry, material)
+    const mesh = new THREE.Mesh(meshGeometry, meshMaterial)
     this._adjustMesh(mesh, index)
     mesh.name = `znak-${index}`
     scene.add(mesh)

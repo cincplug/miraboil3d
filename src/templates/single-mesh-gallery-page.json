@@ -1,7 +1,7 @@
 {
   "meshes": [
     {
-      "shape": "sphere",
+      "geometryName": "sphere",
       "geometry": {
         "radius": 200,
         "widthSegments": 50,
@@ -20,7 +20,7 @@
       }
     },
     {
-      "shape": "sphere",
+      "geometryName": "sphere",
       "geometry": {
         "radius": 200,
         "widthSegments": 50,
@@ -42,7 +42,7 @@
     {
       "color": null,
       "image": "delftse.png",
-      "shape": "box",
+      "geometryName": "box",
       "geometry": {
         "width": 256,
         "height": 512,
@@ -62,7 +62,7 @@
     {
       "color": "#4ad",
       "image": "beogradjanka-basket.png",
-      "shape": "parametric",
+      "geometryName": "parametric",
       "geometryHelper": "basket",
       "geometry": {
         "slices": 180,

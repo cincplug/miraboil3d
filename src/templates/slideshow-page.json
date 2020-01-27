@@ -29,7 +29,7 @@
       "mesh": {
         "count": 32,
         "image": "sava-centar.png",
-        "shape": "box",
+        "geometryName": "box",
         "geometry": { "width": 120, "height": 1024, "depth": 120 },
         "position": { "y": -200 },
         "spacing": 320,
@@ -96,7 +96,7 @@
       "camera": { "speed": 3, "distanceRatio": 3, "swing": { "x": 80 } },
       "ground": { "color": "#d2d6d7" },
       "mesh": {
-        "shape": "box",
+        "geometryName": "box",
         "count": 18,
         "image": "delftse.png",
         "geometry": { "width": 199, "height": 973, "depth": 199 },
@@ -114,7 +114,7 @@
       "camera": { "speed": 3, "distanceRatio": 2 },
       "ground": { "color": "#d2d6d7" },
       "mesh": {
-        "shape": "cylinder",
+        "geometryName": "cylinder",
         "count": 18,
         "image": "nauta.png",
         "geometry": {
@@ -137,7 +137,7 @@
       "camera": { "speed": 3, "distanceRatio": 2 },
       "ground": { "color": "#d2d6d7" },
       "mesh": {
-        "shape": "cone",
+        "geometryName": "cone",
         "count": 18,
         "image": "nauta.png",
         "geometry": { "radius": 220, "radialSegments": 4, "height": 473 },
@@ -155,7 +155,7 @@
       "camera": { "speed": 6, "distanceRatio": 3, "swing": { "x": 180 } },
       "ground": { "color": "#d2d6d7" },
       "mesh": {
-        "shape": "circle",
+        "geometryName": "circle",
         "geometry": { "radius": 80, "segments": 30 },
         "count": 30,
         "image": "30.png",
@@ -173,7 +173,7 @@
       "camera": { "speed": 5, "distanceRatio": 4, "swing": { "x": 280 } },
       "ground": { "color": "#d2d6d7" },
       "mesh": {
-        "shape": "torus",
+        "geometryName": "torus",
         "geometry": {
           "radius": 100,
           "tube": 20,
@@ -227,7 +227,7 @@
       "ground": { "color": "#b88844" },
       "mesh": {
         "color": "rgba(250, 230, 200, 0.5)",
-        "shape": "box",
+        "geometryName": "box",
         "geometry": { "width": 400, "height": 400, "depth": 400 },
         "offset": 460,
         "spacing": 250,
@@ -244,7 +244,7 @@
       "camera": { "speed": 4, "swing": { "x": 60 } },
       "ground": { "color": "#188844" },
       "mesh": {
-        "shape": "lathe",
+        "geometryName": "lathe",
         "geometryHelper": "plantPot",
         "geometry": {
           "segments": 22,
@@ -267,7 +267,7 @@
       "camera": { "speed": 3, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
       "mesh": {
-        "shape": "parametric",
+        "geometryName": "parametric",
         "geometryHelper": "basket",
         "geometry": {
           "slices": 180,
@@ -294,7 +294,7 @@
       "camera": { "speed": 3, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
       "mesh": {
-        "shape": "parametric",
+        "geometryName": "parametric",
         "geometryHelper": "folderBox",
         "geometry": {
           "slices": 180,
@@ -321,7 +321,7 @@
       "camera": { "speed": 4, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
       "mesh": {
-        "shape": "parametric",
+        "geometryName": "parametric",
         "geometryHelper": "trolley",
         "geometry": {
           "slices": 180,
@@ -351,7 +351,7 @@
       "camera": { "speed": 4, "distanceRatio": 5 },
       "ground": { "color": "#188844" },
       "mesh": {
-        "shape": "parametric",
+        "geometryName": "parametric",
         "geometryHelper": "rail",
         "geometry": {
           "slices": 180,

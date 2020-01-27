@@ -11,6 +11,7 @@
     }
   },
   "materialName": "lambert",
+  "material": {},
   "camera": {
     "aspect": 1.333333333,
     "near": 1,
