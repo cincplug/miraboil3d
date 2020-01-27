@@ -10,12 +10,19 @@
       "image": "world-Mercator_projection_Square.jpg",
       "properties": {
         "position": {
-          "x": 0,
-          "y": 180
+          "x": 100,
+          "y": 80,
+          "z": 200
         },
         "rotation": {
           "x": 0.4,
           "z": 0.2
+        }
+      },
+      "frameMovement": {
+        "rotation": {
+          "x": 0.0004,
+          "z": 0.002
         }
       }
     },
@@ -36,6 +43,16 @@
         "rotation": {
           "x": 0.4,
           "z": 0.2
+        }
+      },
+      "frameMovement": {
+        "position": {
+          "x": -0.6,
+          "z": 4
+        },
+        "rotation": {
+          "x": 0.0004,
+          "y": 0.02
         }
       }
     },
@@ -60,7 +77,7 @@
       }
     },
     {
-      "color": "#4ad",
+      "color": "#fad",
       "image": "beogradjanka-basket.png",
       "geometryName": "parametric",
       "geometryHelper": "basket",
@@ -69,18 +86,25 @@
         "stacks": 200,
         "width": 250,
         "height": 280,
-        "curvature": 50,
-        "depth": -50,
+        "curvature": 30,
+        "depth": -150,
         "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
       },
       "properties": {
         "position": {
-          "x": -180,
-          "y": -80
+          "x": 80,
+          "y": 80,
+          "z": 200
         },
         "rotation": {
-          "x": 1.7,
-          "z": 0.1
+          "x": 2.7,
+          "z": 3
+        }
+      },
+      "frameMovement": {
+        "rotation": {
+          "x": 0.0004,
+          "y": 0.002
         }
       }
     }
