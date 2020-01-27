@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { helpers } from 'utils/helpers/helpers'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
 import * as defaults from './scene.json'
 const merge = require('deepmerge')
@@ -113,9 +114,7 @@ class Scene {
    */
   _setGeometry = mesh => {
     const { geometryName, geometry, geometryHelper } = mesh
-    const meshGeometryName = `${geometryName
-      .charAt(0)
-      .toUpperCase()}${geometryName.slice(1)}BufferGeometry`
+    const meshGeometryName = `${helpers.capitalize(geometryName)}BufferGeometry`
     const geometryParameters = THREE[meshGeometryName]
       .toString()
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
@@ -157,9 +156,7 @@ class Scene {
       },
       ...material
     }
-    const meshMaterialName = `Mesh${materialName
-      .charAt(0)
-      .toUpperCase()}${materialName.slice(1)}Material`
+    const meshMaterialName = `Mesh${helpers.capitalize(materialName)}Material`
     const meshMaterial = new THREE[meshMaterialName]({
       ...materialProperties,
       ...{ map: texture }
