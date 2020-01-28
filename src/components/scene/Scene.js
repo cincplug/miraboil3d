@@ -199,16 +199,17 @@ class Scene {
   }
 
   _setCamera() {
-    this.camera = new THREE.PerspectiveCamera(
-      this._options.camera.fov,
-      this._options.camera.aspect,
-      this._options.camera.near,
-      this._options.camera.far
+    const { cameraName, camera } = this._options
+    const sceneCameraName = `${helpers.capitalize(cameraName)}Camera`
+    this.camera = new THREE[sceneCameraName](
+      camera.fov,
+      camera.aspect,
+      camera.near,
+      camera.far
     )
-
-    this.camera.position.x = this._options.camera.position.x
-    this.camera.position.y = this._options.camera.position.y
-    this.camera.position.z = this._options.camera.position.z
+    this.camera.position.x = camera.position.x
+    this.camera.position.y = camera.position.y
+    this.camera.position.z = camera.position.z
     this.scene.add(this.camera)
   }
 
