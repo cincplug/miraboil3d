@@ -75,23 +75,29 @@ class Scene {
     this.lastCursorPosition = { x: e.clientX, y: e.clientY }
   }
 
-  _setScene() {
-    const { scene } = this._options
-    this.scene = new THREE.Scene(scene)
-    this._setSceneBackground()
-    this.renderer = new THREE.WebGLRenderer(this._options.renderer)
+  _setRenderer() {
+    const { renderer, camera } = this._options
+    this.renderer = new THREE.WebGLRenderer(renderer)
     const renderWidth = this._elements.canvasWrap.offsetWidth
-    const renderHeight = Math.round(renderWidth / this._options.camera.aspect)
+    const renderHeight = Math.round(renderWidth / camera.aspect)
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(renderWidth, renderHeight)
     this.canvas = this._elements.canvasWrap.appendChild(
       this.renderer.domElement
     )
+  }
+
+  _setScene() {
+    const { scene } = this._options
+    this._setRenderer()
+    this.scene = new THREE.Scene(scene)
+    this._setSceneBackground()
     this._arrangeMeshes()
     this.activeItemIndex = 0
     this.currentFrame = 0
-    this._setLight()
+    this._setLights()
     this._setCamera()
+    this._animate()
   }
 
   _setSceneBackground() {
@@ -124,7 +130,7 @@ class Scene {
     return new THREE[meshGeometryName](...args)
   }
 
-  _setMaterial(item, texture) {
+  _setMaterial(item, texture = null) {
     const { color } = item
     const materialName = item.materialName || this._options.materialName
     const material = item.material || this._options.material
@@ -177,7 +183,7 @@ class Scene {
     this._mapProperties(properties, mesh)
   }
 
-  _setLight() {
+  _setLights() {
     const { lights } = this._options
     lights.forEach(light => {
       if (light && light.type) {
@@ -204,7 +210,6 @@ class Scene {
     this.camera.position.y = this._options.camera.position.y
     this.camera.position.z = this._options.camera.position.z
     this.scene.add(this.camera)
-    this._animate()
   }
 
   /**
