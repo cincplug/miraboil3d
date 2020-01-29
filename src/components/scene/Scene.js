@@ -116,8 +116,10 @@ class Scene {
   _setGeometry(mesh) {
     const { geometryName, geometryHelper } = mesh
     const geometry = mesh.geometry || this._options.geometry
-    const meshGeometryName = `${helpers.capitalize(geometryName)}BufferGeometry`
-    const geometryParameters = THREE[meshGeometryName]
+    const threeGeometryName = `${helpers.capitalize(
+      geometryName
+    )}BufferGeometry`
+    const geometryParameters = THREE[threeGeometryName]
       .toString()
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
       .split(',')
@@ -127,7 +129,7 @@ class Scene {
     if (geometryHelper) {
       args[0] = geometryHelpers[geometryName][geometryHelper](geometry)
     }
-    return new THREE[meshGeometryName](...args)
+    return new THREE[threeGeometryName](...args)
   }
 
   _setMaterial(item, texture = null) {
@@ -142,8 +144,8 @@ class Scene {
       },
       ...material
     }
-    const meshMaterialName = `Mesh${helpers.capitalize(materialName)}Material`
-    const meshMaterial = new THREE[meshMaterialName](
+    const threeMaterialName = `Mesh${helpers.capitalize(materialName)}Material`
+    const meshMaterial = new THREE[threeMaterialName](
       texture
         ? {
             ...materialProperties,
@@ -187,9 +189,9 @@ class Scene {
     const { lights } = this._options
     lights.forEach(light => {
       if (light && light.type) {
-        const sceneLightName = `${helpers.capitalize(light.type)}Light`
+        const threeLightName = `${helpers.capitalize(light.type)}Light`
         this.scene.add(
-          new THREE[sceneLightName](
+          new THREE[threeLightName](
             new THREE.Color(light.color),
             light.intensity
           )
@@ -200,8 +202,8 @@ class Scene {
 
   _setCamera() {
     const { cameraName, camera } = this._options
-    const sceneCameraName = `${helpers.capitalize(cameraName)}Camera`
-    this.camera = new THREE[sceneCameraName](
+    const threeCameraName = `${helpers.capitalize(cameraName)}Camera`
+    this.camera = new THREE[threeCameraName](
       camera.fov,
       camera.aspect,
       camera.near,
