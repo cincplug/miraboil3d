@@ -29,9 +29,9 @@
       "intensity": 0.8
     }
   ],
-  "geometry": {
-    "isBuffer": true
-  },
+  "isBufferGeometry": true,
+  "geometryName": "plane",
+  "geometry": {},
   "materialName": "lambert",
   "material": {},
   "cameraName": "perspective",

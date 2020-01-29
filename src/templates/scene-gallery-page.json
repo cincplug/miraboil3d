@@ -227,8 +227,8 @@
           "image": "nauta.png",
           "geometryName": "parametric",
           "geometryHelper": "folderBox",
+          "isBufferGeometry": false,
           "geometry": {
-            "isBuffer": false,
             "slices": 180,
             "stacks": 200,
             "width": 250,

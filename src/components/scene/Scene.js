@@ -125,9 +125,10 @@ class Scene {
 
     const { geometryName, geometryHelper } = mesh
     const geometry = merge(this._options.geometry, mesh.geometry)
-    const isBuffer = geometry && geometry.isBuffer
+    const isBufferGeometry =
+      this._options.isBufferGeometry && mesh.isBufferGeometry !== false
     const threeGeometryName = `${helpers.capitalize(geometryName)}${
-      isBuffer ? 'Buffer' : ''
+      isBufferGeometry ? 'Buffer' : ''
     }Geometry`
     console.warn(threeGeometryName)
     const geometryParameters = THREE[threeGeometryName]
