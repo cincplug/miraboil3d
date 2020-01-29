@@ -76,6 +76,7 @@ class Scene {
   }
 
   _setRenderer() {
+    // reference: https://threejs.org/docs/#api/en/renderers/WebGLRenderer
     const { renderer, camera } = this._options
     this.renderer = new THREE.WebGLRenderer(renderer)
     const renderWidth = this._elements.canvasWrap.offsetWidth
@@ -88,6 +89,7 @@ class Scene {
   }
 
   _setScene() {
+    // reference: https://threejs.org/docs/#api/en/scenes/Scene
     const { scene } = this._options
     this._setRenderer()
     this.scene = new THREE.Scene(scene)
@@ -114,6 +116,8 @@ class Scene {
   }
 
   _setGeometry(mesh) {
+    // reference: https://threejs.org/docs/#api/en/core/Geometry
+    // reference: https://threejs.org/docs/#api/en/core/BufferGeometry
     const { geometryName, geometryHelper } = mesh
     const geometry = mesh.geometry || this._options.geometry
     const threeGeometryName = `${helpers.capitalize(
@@ -133,6 +137,7 @@ class Scene {
   }
 
   _setMaterial(item, texture = null) {
+    // reference: https://threejs.org/docs/#api/en/materials/Material
     const { color } = item
     const materialName = item.materialName || this._options.materialName
     const material = item.material || this._options.material
@@ -171,6 +176,7 @@ class Scene {
   }
 
   _addMesh(texture, item, index) {
+    // reference: https://threejs.org/docs/#api/en/objects/Mesh
     const { scene } = this
     const meshGeometry = this._setGeometry(item)
     const meshMaterial = this._setMaterial(item, texture)
@@ -186,6 +192,7 @@ class Scene {
   }
 
   _setLights() {
+    // reference: https://threejs.org/docs/#api/en/lights/Light
     const { lights } = this._options
     lights.forEach(light => {
       if (light && light.type) {
@@ -201,6 +208,7 @@ class Scene {
   }
 
   _setCamera() {
+    // reference: https://threejs.org/docs/#api/en/cameras/Camera
     const { cameraName, camera } = this._options
     const threeCameraName = `${helpers.capitalize(cameraName)}Camera`
     this.camera = new THREE[threeCameraName](
