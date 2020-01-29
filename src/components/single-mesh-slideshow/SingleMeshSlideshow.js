@@ -1,0 +1,102 @@
+import * as THREE from 'three'
+import * as defaults from './single-mesh-slideshow.json'
+import Scene from '../scene/Scene'
+const merge = require('deepmerge')
+
+/**
+ * Slideshow component
+ */
+class Slideshow extends Scene {
+  constructor(element, options = {}) {
+    super(element, options)
+    this.examples = JSON.parse(options.examples)
+  }
+
+  _cacheSelectors() {
+    this._elements = {
+      title: this._element.querySelector('.slideshow__title'),
+      navButton: this._element.querySelector('.slideshow__nav-button'),
+      canvasWrap: this._element.querySelector('.slideshow__canvas-wrap'),
+      canvas: this._element.querySelector('canvas')
+    }
+  }
+
+  _addEventListeners() {
+    this._element.addEventListener('click', e => this._handleClick(e))
+    this._elements.canvasWrap.addEventListener(
+      'mousedown',
+      e => this._handleMouseDown(e),
+      false
+    )
+    this._elements.canvasWrap.addEventListener(
+      'mouseup',
+      e => this._handleMouseUp(e),
+      false
+    )
+    this._elements.canvasWrap.addEventListener(
+      'mouseleave',
+      e => this._handleMouseLeave(e),
+      false
+    )
+    this._elements.canvasWrap.addEventListener(
+      'mousemove',
+      e => this._handleMouseMove(e),
+      false
+    )
+  }
+
+  _handleClick(e) {
+    if (e.target.className.match(/\bslideshow__color-switch\b/)) {
+      const { color } = e.target.dataset
+      this._element.dataset.color = color
+      this.light.color = this.scene.background = new THREE.Color(color)
+      this._render()
+    }
+    if (e.target.className.match(/\bslideshow__nav-button\b/)) {
+      this._setExample(e.target.dataset.direction)
+    }
+  }
+
+  _setExample(direction) {
+    const { examples } = this
+    cancelAnimationFrame(this.requestFrameId)
+    this.canvas.remove()
+    let item = Number(this._element.dataset.item)
+    if (direction === 'next') {
+      item++
+      if (item === examples.length) {
+        item = 0
+      }
+    }
+    if (direction === 'prev') {
+      item--
+      if (item < 0) {
+        item = examples.length - 1
+      }
+    }
+    this._element.dataset.item = item
+    this._options = merge(defaults.options, examples[item])
+    // this._elements.title.innerHTML = this._options.mesh.geometryName
+    this._setScene()
+  }
+
+  /**
+   * Check if number is divisible by given divisor
+   * @param {Number} number - number to check
+   * @param {Number} divisor - divisor against which check is performed
+   * @returns {Boolean}
+   */
+  _isDivisibleBy = (number, divisor) => {
+    return number % divisor === 0
+  }
+
+  _isInView() {
+    const isInView =
+      this._element.offsetTop - this._options.visibilityOffset <
+        window.scrollY &&
+      this._element.offsetTop + this._options.visibilityOffset > window.scrollY
+    return isInView
+  }
+}
+
+export default Slideshow

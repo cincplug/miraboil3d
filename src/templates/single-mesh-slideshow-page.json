@@ -1,0 +1,52 @@
+{
+  "examples": [
+    {
+      "scene": { "background": { "image": "cloudy.jpg" } },
+      "ground": { "image": "cloudy.jpg", "repeat": { "width": 1, "depth": 4 } },
+      "camera": { "speed": 1.5 },
+      "materialName": "lambert",
+
+      "meshes": [{ "image": "tree2.png", "geometryName": "box" }]
+    },
+    {
+      "scene": { "background": { "color": "#2667a2" } },
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#ffe9b8" },
+      "materialName": "lambert",
+      "geometryName": "box",
+      "meshes": [
+        {
+          "count": 32,
+          "image": "pobednik.png",
+          "geometryName": "plane",
+          "geometry": { "width": 256, "height": 1024 },
+          "position": { "y": -200 },
+          "spacing": 320,
+          "offset": 400,
+          "movementSpeed": 0.01,
+          "secondaryMovementSpeed": 0
+        }
+      ]
+    },
+    {
+      "scene": { "background": { "color": "#2667a2" } },
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#dbd5be" },
+      "materialName": "lambert",
+      "geometryName": "box",
+      "meshes": [
+        {
+          "count": 32,
+          "image": "sava-centar.png",
+          "geometryName": "box",
+          "geometry": { "width": 120, "height": 1024, "depth": 120 },
+          "position": { "y": -200 },
+          "spacing": 320,
+          "offset": 400,
+          "movementSpeed": 0.011,
+          "secondaryMovementSpeed": 0
+        }
+      ]
+    }
+  ]
+}

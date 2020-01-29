@@ -130,7 +130,6 @@ class Scene {
     const threeGeometryName = `${helpers.capitalize(geometryName)}${
       isBufferGeometry ? 'Buffer' : ''
     }Geometry`
-    console.warn(threeGeometryName)
     const geometryParameters = THREE[threeGeometryName]
       .toString()
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')

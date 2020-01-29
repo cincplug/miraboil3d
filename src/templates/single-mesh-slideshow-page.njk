@@ -1,0 +1,10 @@
+{% extends '../layout/default.njk' %}
+
+{% block body %}
+  <div class="grid">
+    {% component 'header' %}
+    <main class="main-wrap">
+      {% component 'single-mesh-slideshow', { examples: examples } %}
+    </main>
+  </div>
+{% endblock %}
