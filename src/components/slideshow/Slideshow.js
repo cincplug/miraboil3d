@@ -1,3 +1,6 @@
+// This component uses older version of Scene component's code
+// It will die when it's code gets refactored in SingleMeshSlideshow component which extends Scene component
+
 import * as THREE from 'three'
 import * as defaults from './slideshow.json'
 import { geometryHelpers } from 'utils/helpers/geometryHelpers'
