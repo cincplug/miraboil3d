@@ -213,23 +213,17 @@ class Scene {
     this.scene.add(this.camera)
   }
 
-  _animate = () => {
-    // eslint-disable-next-line no-invalid-this
-    const self = this
-    const { meshes } = self._options
+  _animate() {
+    const { meshes } = this._options
     meshes.forEach((mesh, index) => {
-      const targetMesh = self.scene.getObjectByName(`znak-${index}`)
+      const targetMesh = this.scene.getObjectByName(`znak-${index}`)
       if (mesh.frameMovement && targetMesh) {
-        helpers.mapProperties(
-          mesh.frameMovement,
-          self.scene.getObjectByName(`znak-${index}`)
-        )
+        helpers.mapProperties(mesh.frameMovement, targetMesh)
       }
     })
-    helpers.mapProperties(self._options.camera.frameMovement, self.camera)
-
-    self.requestFrameId = requestAnimationFrame(self._animate)
-    self._render()
+    helpers.mapProperties(this._options.camera.frameMovement, this.camera)
+    this.requestFrameId = requestAnimationFrame(() => this._animate())
+    this._render()
   }
 
   _render() {
