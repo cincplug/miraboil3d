@@ -29,6 +29,9 @@
       "intensity": 0.8
     }
   ],
+  "geometry": {
+    "isBuffer": true
+  },
   "materialName": "lambert",
   "material": {},
   "cameraName": "perspective",

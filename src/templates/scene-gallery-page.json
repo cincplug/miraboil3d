@@ -228,6 +228,7 @@
           "geometryName": "parametric",
           "geometryHelper": "folderBox",
           "geometry": {
+            "isBuffer": false,
             "slices": 180,
             "stacks": 200,
             "width": 250,

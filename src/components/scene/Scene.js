@@ -118,11 +118,18 @@ class Scene {
   _setGeometry(mesh) {
     // reference: https://threejs.org/docs/#api/en/core/Geometry
     // reference: https://threejs.org/docs/#api/en/core/BufferGeometry
+
+    // By default we use buffer geometry here because of better performance
+    // That's why parameter geometry.isBuffer is true by default
+    // If you need non-buffered geometry, set this parameter to false
+
     const { geometryName, geometryHelper } = mesh
-    const geometry = mesh.geometry || this._options.geometry
-    const threeGeometryName = `${helpers.capitalize(
-      geometryName
-    )}BufferGeometry`
+    const geometry = merge(this._options.geometry, mesh.geometry)
+    const isBuffer = geometry && geometry.isBuffer
+    const threeGeometryName = `${helpers.capitalize(geometryName)}${
+      isBuffer ? 'Buffer' : ''
+    }Geometry`
+    console.warn(threeGeometryName)
     const geometryParameters = THREE[threeGeometryName]
       .toString()
       .replace(/(.+?this\.parameters={)(.+?)(}.+?)$/, '$2')
