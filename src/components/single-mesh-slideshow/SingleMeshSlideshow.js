@@ -9,7 +9,6 @@ const merge = require('deepmerge')
 class Slideshow extends Scene {
   constructor(element, options = {}) {
     super(element, options)
-    this.examples = JSON.parse(options.examples)
   }
 
   _cacheSelectors() {
@@ -57,10 +56,16 @@ class Slideshow extends Scene {
     }
   }
 
+  _resetExistingExample() {
+    const { canvas, requestFrameId } = this
+    if (requestFrameId) cancelAnimationFrame(requestFrameId)
+    if (canvas) canvas.remove()
+  }
+
   _setExample(direction) {
     const { examples } = this
-    cancelAnimationFrame(this.requestFrameId)
-    this.canvas.remove()
+    const { options } = defaults
+    this._resetExistingExample()
     let item = Number(this._element.dataset.item)
     if (direction === 'next') {
       item++
@@ -75,8 +80,8 @@ class Slideshow extends Scene {
       }
     }
     this._element.dataset.item = item
-    this._options = merge(defaults.options, examples[item])
-    // this._elements.title.innerHTML = this._options.mesh.geometryName
+    const example = examples[item]
+    this._options = merge(options, example)
     this._setScene()
   }
 

@@ -11,6 +11,7 @@ class Scene {
   constructor(element, options = {}) {
     this._element = element
     this._options = merge(defaults, JSON.parse(options.options))
+    this.examples = JSON.parse(options.examples)
     this._init()
   }
 
@@ -250,7 +251,11 @@ class Scene {
   _init() {
     this._cacheSelectors()
     this._addEventListeners()
-    this._setScene()
+    if (this.examples && this._setExample) {
+      this._setExample('next')
+    } else {
+      this._setScene()
+    }
   }
 }
 

@@ -1,50 +1,387 @@
 {
   "examples": [
     {
-      "scene": { "background": { "image": "cloudy.jpg" } },
-      "ground": { "image": "cloudy.jpg", "repeat": { "width": 1, "depth": 4 } },
-      "camera": { "speed": 1.5 },
-      "materialName": "lambert",
-
-      "meshes": [{ "image": "tree2.png", "geometryName": "box" }]
-    },
-    {
-      "scene": { "background": { "color": "#2667a2" } },
-      "camera": { "speed": 2, "distanceRatio": 3 },
-      "ground": { "color": "#ffe9b8" },
-      "materialName": "lambert",
-      "geometryName": "box",
+      "renderer": {
+        "alpha": true
+      },
+      "scene": {
+        "background": {
+          "color": "#a03030"
+        },
+        "fog": {
+          "color": "#a23"
+        }
+      },
+      "camera": {
+        "aspect": 1.333333333,
+        "near": 1,
+        "far": 3000,
+        "position": {
+          "x": 200,
+          "y": 2,
+          "z": 900
+        },
+        "frameMovement": {
+          "position": {
+            "x": 0.1,
+            "y": 1
+          },
+          "rotation": {
+            "z": 0.001
+          }
+        }
+      },
+      "light": {
+        "color": "#fff"
+      },
       "meshes": [
         {
-          "count": 32,
-          "image": "pobednik.png",
-          "geometryName": "plane",
-          "geometry": { "width": 256, "height": 1024 },
-          "position": { "y": -200 },
-          "spacing": 320,
-          "offset": 400,
-          "movementSpeed": 0.01,
-          "secondaryMovementSpeed": 0
+          "geometryName": "circle",
+          "geometry": {
+            "radius": 200,
+            "segments": 30
+          },
+          "image": "world-Mercator_projection_Square.jpg",
+          "properties": {
+            "position": {
+              "x": 0,
+              "y": 180
+            },
+            "rotation": {
+              "x": 1.4,
+              "z": 0.2
+            }
+          }
+        },
+        {
+          "geometryName": "sphere",
+          "geometry": {
+            "radius": 200,
+            "widthSegments": 50,
+            "heightSegments": 50
+          },
+          "image": "world-Equirectangular_projection_SW.jpg",
+          "properties": {
+            "position": {
+              "x": 680,
+              "y": -80,
+              "z": -1200
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 0.2
+            }
+          }
+        },
+        {
+          "color": null,
+          "image": "delftse.png",
+          "geometryName": "box",
+          "geometry": {
+            "width": 256,
+            "height": 512,
+            "depth": 256
+          },
+          "materialName": "physical",
+          "material": {
+            "reflectivity": 0.5
+          },
+          "properties": {
+            "position": {
+              "x": 280,
+              "y": -80
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 0.2
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "rotation": {
+              "z": 0.001
+            }
+          }
+        },
+        {
+          "color": "#4ad",
+          "geometryName": "parametric",
+          "geometryHelper": "basket",
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 250,
+            "height": 280,
+            "curvature": 50,
+            "depth": -50,
+            "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
+          },
+          "properties": {
+            "position": {
+              "x": -180,
+              "y": -80
+            },
+            "rotation": {
+              "x": 1.7,
+              "z": 0.1
+            }
+          }
         }
       ]
     },
     {
-      "scene": { "background": { "color": "#2667a2" } },
-      "camera": { "speed": 2, "distanceRatio": 3 },
-      "ground": { "color": "#dbd5be" },
-      "materialName": "lambert",
-      "geometryName": "box",
+      "renderer": {
+        "alpha": true
+      },
+      "scene": {
+        "background": {
+          "color": "#2030f0"
+        },
+        "fog": {
+          "color": "#a23"
+        }
+      },
+      "camera": {
+        "aspect": 1.333333333,
+        "near": 1,
+        "far": 3000,
+        "position": {
+          "x": 200,
+          "y": 2,
+          "z": 900
+        }
+      },
+      "light": {
+        "color": "#fff"
+      },
       "meshes": [
         {
-          "count": 32,
-          "image": "sava-centar.png",
+          "geometryName": "sphere",
+          "geometry": {
+            "radius": 200,
+            "widthSegments": 50,
+            "heightSegments": 50
+          },
+          "image": "world-Mercator_projection_Square.jpg",
+          "properties": {
+            "position": {
+              "x": 0,
+              "y": 180
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 0.2
+            }
+          }
+        },
+        {
+          "geometryName": "sphere",
+          "geometry": {
+            "radius": 200,
+            "widthSegments": 50,
+            "heightSegments": 50
+          },
+          "image": "world-Equirectangular_projection_SW.jpg",
+          "properties": {
+            "position": {
+              "x": 380,
+              "y": -80,
+              "z": 200
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 0.2
+            }
+          },
+          "frameMovement": {
+            "rotation": {
+              "y": 0.003
+            }
+          }
+        },
+        {
+          "color": null,
+          "image": "delftse.png",
           "geometryName": "box",
-          "geometry": { "width": 120, "height": 1024, "depth": 120 },
-          "position": { "y": -200 },
-          "spacing": 320,
-          "offset": 400,
-          "movementSpeed": 0.011,
-          "secondaryMovementSpeed": 0
+          "geometry": {
+            "width": 256,
+            "height": 512,
+            "depth": 256
+          },
+          "properties": {
+            "position": {
+              "x": 280,
+              "y": -80
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 0.2
+            }
+          }
+        },
+        {
+          "color": "#8ff",
+          "image": "nauta.png",
+          "geometryName": "parametric",
+          "geometryHelper": "folderBox",
+          "isBufferGeometry": false,
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 250,
+            "height": 280,
+            "curvature": 50,
+            "depth": -50,
+            "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
+          },
+          "properties": {
+            "position": {
+              "x": -180,
+              "y": -80
+            },
+            "rotation": {
+              "x": 1.7,
+              "z": 0.1
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "x": 2,
+              "y": 0.8
+            },
+            "rotation": {
+              "x": 0.0004,
+              "z": 0.0002
+            }
+          }
+        }
+      ]
+    },
+    {
+      "renderer": {
+        "alpha": true
+      },
+      "scene": {
+        "fog": {
+          "color": "#a23"
+        }
+      },
+      "camera": {
+        "aspect": 1.333333333,
+        "near": 1,
+        "far": 3000,
+        "position": {
+          "x": 200,
+          "y": 2,
+          "z": 900
+        },
+        "frameMovement": {
+          "rotation": {
+            "z": 0.001
+          }
+        }
+      },
+      "light": {
+        "color": "#fff"
+      },
+      "meshes": [
+        {
+          "geometryName": "plane",
+          "geometry": {
+            "width": 400,
+            "height": 300
+          },
+          "image": "world-Mercator_projection_Square.jpg",
+          "properties": {
+            "position": {
+              "x": 0,
+              "y": 180
+            },
+            "rotation": {
+              "x": 0,
+              "z": 0
+            }
+          }
+        },
+        {
+          "geometryName": "sphere",
+          "geometry": {
+            "radius": 600,
+            "widthSegments": 50,
+            "heightSegments": 50
+          },
+          "image": "nauta.png",
+          "properties": {
+            "position": {
+              "x": 680,
+              "y": -80,
+              "z": -1200
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 0.2
+            }
+          }
+        },
+        {
+          "color": null,
+          "image": "delftse.png",
+          "geometryName": "box",
+          "geometry": {
+            "width": 256,
+            "height": 1024,
+            "depth": 256
+          },
+          "materialName": "physical",
+          "material": {
+            "reflectivity": 0.5
+          },
+          "properties": {
+            "position": {
+              "x": 280,
+              "y": -80
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 3.2
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "rotation": {
+              "z": 0.001
+            }
+          }
+        },
+        {
+          "color": "#a9d",
+          "geometryName": "parametric",
+          "geometryHelper": "basket",
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 250,
+            "height": 280,
+            "curvature": 50,
+            "depth": -50,
+            "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
+          },
+          "properties": {
+            "position": {
+              "x": -180,
+              "y": -80
+            },
+            "rotation": {
+              "x": 1.7,
+              "z": 0.1
+            }
+          }
         }
       ]
     }
