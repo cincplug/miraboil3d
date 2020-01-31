@@ -11,7 +11,7 @@ class Scene {
   constructor(element, options = {}) {
     this._element = element
     this._options = merge(defaults, JSON.parse(options.options))
-    this.examples = JSON.parse(options.examples)
+    this.examples = JSON.parse(options.scenes || '{}')
     this._init()
   }
 
@@ -202,15 +202,15 @@ class Scene {
   _setLights() {
     // reference: https://threejs.org/docs/#api/en/lights/Light
     const { lights } = this._options
-    lights.forEach(light => {
+    lights.forEach((light, index) => {
       if (light && light.type) {
         const threeLightName = `${helpers.capitalize(light.type)}Light`
-        this.scene.add(
-          new THREE[threeLightName](
-            new THREE.Color(light.color),
-            light.intensity
-          )
+        const newLight = new THREE[threeLightName](
+          new THREE.Color(light.color),
+          light.intensity
         )
+        newLight.name = `svetlo-${index}`
+        this.scene.add(newLight)
       }
     })
   }

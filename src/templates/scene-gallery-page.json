@@ -259,6 +259,131 @@
           }
         }
       ]
+    },
+    {
+      "renderer": {
+        "alpha": true
+      },
+      "scene": {
+        "fog": {
+          "color": "#a23"
+        }
+      },
+      "camera": {
+        "aspect": 1.333333333,
+        "near": 1,
+        "far": 3000,
+        "position": {
+          "x": 200,
+          "y": 2,
+          "z": 900
+        },
+        "frameMovement": {
+          "rotation": {
+            "z": 0.001
+          }
+        }
+      },
+      "light": {
+        "color": "#fff"
+      },
+      "meshes": [
+        {
+          "geometryName": "plane",
+          "geometry": {
+            "width": 400,
+            "height": 300
+          },
+          "image": "world-Mercator_projection_Square.jpg",
+          "properties": {
+            "position": {
+              "x": 0,
+              "y": 180
+            },
+            "rotation": {
+              "x": 0,
+              "z": 0
+            }
+          }
+        },
+        {
+          "geometryName": "sphere",
+          "geometry": {
+            "radius": 600,
+            "widthSegments": 50,
+            "heightSegments": 50
+          },
+          "image": "nauta.png",
+          "properties": {
+            "position": {
+              "x": 680,
+              "y": -80,
+              "z": -1200
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 0.2
+            }
+          }
+        },
+        {
+          "color": null,
+          "image": "delftse.png",
+          "geometryName": "box",
+          "geometry": {
+            "width": 256,
+            "height": 1024,
+            "depth": 256
+          },
+          "materialName": "physical",
+          "material": {
+            "reflectivity": 0.5
+          },
+          "properties": {
+            "position": {
+              "x": 280,
+              "y": -80
+            },
+            "rotation": {
+              "x": 0.4,
+              "z": 3.2
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "rotation": {
+              "z": 0.001
+            }
+          }
+        },
+        {
+          "color": "#a9d",
+          "geometryName": "parametric",
+          "geometryHelper": "basket",
+          "geometry": {
+            "slices": 180,
+            "stacks": 200,
+            "width": 250,
+            "height": 280,
+            "curvature": 50,
+            "depth": -50,
+            "range": { "startX": 0.2, "endX": 0.8, "startY": 0.2, "endY": 0.8 }
+          },
+          "properties": {
+            "position": {
+              "x": -180,
+              "y": -80
+            },
+            "rotation": {
+              "x": 1.7,
+              "z": 0.1
+            }
+          }
+        }
+      ]
     }
   ]
 }

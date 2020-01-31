@@ -48,7 +48,13 @@ class Slideshow extends Scene {
     if (e.target.className.match(/\bslideshow__color-switch\b/)) {
       const { color } = e.target.dataset
       this._element.dataset.color = color
-      this.light.color = this.scene.background = new THREE.Color(color)
+      const threeColor = new THREE.Color(color)
+      this.scene.background = threeColor
+      this._options.lights.forEach((light, index) => {
+        if (light) {
+          this.scene.getObjectByName(`svetlo-${index}`).color = threeColor
+        }
+      })
       this._render()
     }
     if (e.target.className.match(/\bslideshow__nav-button\b/)) {

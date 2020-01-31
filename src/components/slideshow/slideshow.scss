@@ -45,17 +45,5 @@
     margin-bottom: 0.3rem;
     margin-right: 0.2rem;
     outline: none;
-    &[data-color='red'] {
-      background: $color-red;
-    }
-    &[data-color='green'] {
-      background: $color-green;
-    }
-    &[data-color='blue'] {
-      background: $color-blue;
-    }
-    &[data-color='yellow'] {
-      background: $color-yellow;
-    }
   }
 }
