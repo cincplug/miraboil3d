@@ -27,7 +27,7 @@
             "y": 1
           },
           "rotation": {
-            "z": 0.001
+            "z": 0.00001
           }
         }
       },
@@ -35,6 +35,40 @@
         "color": "#fff"
       },
       "meshes": [
+        {
+          "geometryName": "plane",
+          "geometry": {
+            "width": 4096,
+            "height": 19200
+          },
+          "color": "#e0e0e0",
+          "image": "ground.png",
+          "repeat": {
+            "width": 16,
+            "height": 64
+          },
+          "materialName": "physical",
+          "material": {
+            "reflectivity": 0.5
+          },
+          "properties": {
+            "position": {
+              "x": 180,
+              "y": -80
+            },
+            "rotation": {
+              "x": 1.8
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "z": 1
+            },
+            "rotation": {
+              "z": 0.00001
+            }
+          }
+        },
         {
           "geometryName": "circle",
           "geometry": {

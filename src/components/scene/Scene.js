@@ -187,16 +187,15 @@ class Scene {
     // reference: https://threejs.org/docs/#api/en/objects/Mesh
     const { scene } = this
     const meshGeometry = this._setGeometry(item)
-    const meshMaterial = this._setMaterial(item, texture)
+    const meshMaterial = this._setMaterial(
+      item,
+      item.repeat ? helpers.makePattern(item, texture) : texture
+    )
     const mesh = new THREE.Mesh(meshGeometry, meshMaterial)
-    this._adjustMesh(mesh, index)
-    mesh.name = `znak-${index}`
-    scene.add(mesh)
-  }
-
-  _adjustMesh(mesh, index) {
     const { properties } = this._options.meshes[index]
     helpers.mapProperties(properties, mesh)
+    mesh.name = `znak-${index}`
+    scene.add(mesh)
   }
 
   _setLights() {

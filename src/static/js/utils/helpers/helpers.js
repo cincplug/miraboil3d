@@ -1,3 +1,5 @@
+import { RepeatWrapping } from 'three'
+
 const helpers = {
   capitalize: string => {
     return `${string.charAt(0).toUpperCase()}${string.slice(1)}`
@@ -18,6 +20,13 @@ const helpers = {
         }
       }
     }
+  },
+
+  makePattern: (item, texture) => {
+    texture.wrapT = texture.wrapS = RepeatWrapping
+    texture.offset.set(0, 0)
+    texture.repeat.set(item.repeat.width, item.repeat.height)
+    return texture
   }
 }
 
