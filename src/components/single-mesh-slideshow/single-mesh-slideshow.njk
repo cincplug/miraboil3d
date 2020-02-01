@@ -4,9 +4,19 @@
     <div class="slideshow__header">
       <h3 class="slideshow__title">{{ options.mesh.shape }}</h3>
       <div class="slideshow__color-switches">
-      {% for color in ['blue', 'red', 'magenta', 'lime', 'cyan', 'yellow', 'orange', 'pink', 'tomato'] %}
-        <button class="slideshow__color-switch" data-color="{{ color }}" style="background: {{ color }}"></button>
-      {% endfor %}
+        {% for color in[
+          'blue',
+          'red',
+          'magenta',
+          'lime',
+          'cyan',
+          'yellow',
+          'orange',
+          'pink',
+          'tomato'
+        ] %}
+          <button class="slideshow__color-switch" data-color="{{ color }}" style="background: {{ color }}"></button>
+        {% endfor %}
       </div>
     </div>
   </div>
