@@ -1,7 +1,12 @@
 {
   "options": {
-    "background": "#a8b8db",
+    "scene": {
+      "background": {
+        "color": "#a8b8db"
+      }
+    },
     "visibilityOffset": 500,
+    "cameraName": "perspective",
     "camera": {
       "aspect": 1.333333333,
       "near": 1,
@@ -10,9 +15,34 @@
       "position": {
         "y": 2
       },
+      "frameMovement": {
+        "position": {
+          "z": 1
+        }
+      },
       "distanceRatio": 3,
       "swing": null
     },
+    "materialName": "lambert",
+    "lights": [
+      {
+        "type": "directional",
+        "color": "#e0b0d0",
+        "intensity": 0.8,
+        "properties": {
+          "position": {
+            "x": 1,
+            "y": 0,
+            "z": 1
+          }
+        }
+      },
+      {
+        "type": "ambient",
+        "color": "#f0d0d0",
+        "intensity": 0.8
+      }
+    ],
     "ground": {
       "color": "#e0e0e0",
       "image": "ground.png",
@@ -27,25 +57,6 @@
         "depth": 64
       }
     },
-    "mesh": {
-      "color": null,
-      "count": 50,
-      "image": "tree.png",
-      "geometryName": "plane",
-      "geometry": {
-        "width": 512,
-        "height": 1024
-      },
-      "spacing": 256,
-      "offset": 256,
-      "position": {
-        "y": -256
-      },
-      "movementType": "rotateZ",
-      "movementSpeed": 0.006,
-      "secondaryMovementType": "rotateY",
-      "secondaryMovementSpeed": 0.006,
-      "reverseSideRate": 2
-    }
+    "meshes": []
   }
 }

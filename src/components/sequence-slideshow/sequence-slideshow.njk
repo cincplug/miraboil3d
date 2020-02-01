@@ -1,6 +1,5 @@
-<div class="slideshow {{ activeClass }}" data-item="-1" data-scenes="{{ scenes | dump }}" data-module="single-mesh-slideshow/SingleMeshSlideshow" data-options="{{ options | dump }}" data-name="{{ options.mesh.image }}">
+<div class="slideshow {{ activeClass }}" data-item="0" data-examples="{{ examples | dump }}" data-module="sequence-slideshow/SequenceSlideshow" data-options="{{ options | dump }}" data-name="{{ options.mesh.image }}">
   <div class="slideshow__inner">
-    <div class="slideshow__canvas-wrap"></div>
     <div class="slideshow__header">
       <h3 class="slideshow__title">{{ options.mesh.shape }}</h3>
       <div class="slideshow__color-switches">
@@ -19,6 +18,7 @@
         {% endfor %}
       </div>
     </div>
+    <div class="slideshow__canvas-wrap"></div>
   </div>
   <button class="slideshow__nav-button slideshow__nav-button--prev" data-direction="prev">&larr;</button>
   <button class="slideshow__nav-button slideshow__nav-button--next" data-direction="next">&rarr;</button>

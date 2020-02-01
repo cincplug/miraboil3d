@@ -1,0 +1,51 @@
+{
+  "options": {
+    "background": "#a8b8db",
+    "visibilityOffset": 500,
+    "camera": {
+      "aspect": 1.333333333,
+      "near": 1,
+      "far": 3000,
+      "speed": 1,
+      "position": {
+        "y": 2
+      },
+      "distanceRatio": 3,
+      "swing": null
+    },
+    "ground": {
+      "color": "#e0e0e0",
+      "image": "ground.png",
+      "width": 4096,
+      "depth": 19200,
+      "position": {
+        "y": 230
+      },
+      "angle": 90,
+      "repeat": {
+        "width": 16,
+        "depth": 64
+      }
+    },
+    "mesh": {
+      "color": null,
+      "count": 50,
+      "image": "tree.png",
+      "geometryName": "plane",
+      "geometry": {
+        "width": 512,
+        "height": 1024
+      },
+      "spacing": 256,
+      "offset": 256,
+      "position": {
+        "y": -256
+      },
+      "movementType": "rotateZ",
+      "movementSpeed": 0.006,
+      "secondaryMovementType": "rotateY",
+      "secondaryMovementSpeed": 0.006,
+      "reverseSideRate": 2
+    }
+  }
+}

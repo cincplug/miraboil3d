@@ -1,0 +1,380 @@
+{
+  "examples": [
+    {},
+    {
+      "background": { "image": "cloudy.jpg" },
+      "ground": { "image": "cloudy.jpg", "repeat": { "width": 1, "depth": 4 } },
+      "camera": { "speed": 1.5 },
+      "mesh": { "image": "tree2.png" }
+    },
+    {
+      "background": "#2667a2",
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#ffe9b8" },
+      "mesh": {
+        "count": 32,
+        "image": "pobednik.png",
+        "geometry": { "width": 256, "height": 1024 },
+        "position": { "y": -200 },
+        "spacing": 320,
+        "offset": 400,
+        "movementSpeed": 0.01,
+        "secondaryMovementSpeed": 0
+      }
+    },
+    {
+      "background": "#2667a2",
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#dbd5be" },
+      "mesh": {
+        "count": 32,
+        "image": "sava-centar.png",
+        "geometryName": "box",
+        "geometry": { "width": 120, "height": 1024, "depth": 120 },
+        "position": { "y": -200 },
+        "spacing": 320,
+        "offset": 400,
+        "movementSpeed": 0.011,
+        "secondaryMovementSpeed": 0
+      }
+    },
+    {
+      "background": "#b9cff1",
+      "camera": { "speed": 2, "distanceRatio": 3 },
+      "ground": { "color": "#77746d" },
+      "mesh": {
+        "count": 32,
+        "image": "beogradjanka-o.png",
+        "geometry": { "width": 256, "height": 1024 },
+        "position": { "y": -180 },
+        "spacing": 320,
+        "offset": 320,
+        "movementSpeed": 0.012,
+        "secondaryMovementSpeed": 0
+      }
+    },
+    {
+      "background": "#daecfc",
+      "camera": { "speed": 2, "distanceRatio": 3, "swing": { "x": 80 } },
+      "ground": { "color": "#eee6d2" },
+      "mesh": {
+        "count": 18,
+        "image": "geneks.png",
+        "geometry": { "width": 512, "height": 2048 },
+        "position": { "y": -580 },
+        "spacing": 180,
+        "offset": 0,
+        "movementType": "rotateX",
+        "movementSpeed": 0.01,
+        "secondaryMovementSpeed": 0,
+        "reverseSideRate": 1
+      }
+    },
+    {
+      "background": "#686970",
+      "camera": {
+        "speed": 2,
+        "distanceRatio": 6,
+        "swing": { "y": 40 }
+      },
+      "ground": { "color": "#6869a0", "position": { "y": 100 } },
+      "mesh": {
+        "count": 18,
+        "image": "most.png",
+        "geometry": { "width": 1024, "height": 256 },
+        "position": { "y": -20 },
+        "spacing": 280,
+        "offset": 400,
+        "movementType": "rotateZ",
+        "movementSpeed": -0.008,
+        "secondaryMovementSpeed": 0.02,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#d2d6d7",
+      "camera": { "speed": 3, "distanceRatio": 3, "swing": { "x": 80 } },
+      "ground": { "color": "#d2d6d7" },
+      "mesh": {
+        "geometryName": "box",
+        "count": 18,
+        "image": "delftse.png",
+        "geometry": { "width": 199, "height": 973, "depth": 199 },
+        "position": { "y": -280 },
+        "spacing": 180,
+        "offset": 300,
+        "movementType": "rotateY",
+        "movementSpeed": 0.018,
+        "secondaryMovementSpeed": 0.1,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#d2d6d7",
+      "camera": { "speed": 3, "distanceRatio": 2 },
+      "ground": { "color": "#d2d6d7" },
+      "mesh": {
+        "geometryName": "cylinder",
+        "count": 18,
+        "image": "nauta.png",
+        "geometry": {
+          "radiusTop": 180,
+          "radiusBottom": 120,
+          "radialSegments": 30,
+          "height": 773
+        },
+        "position": { "y": -80 },
+        "spacing": 280,
+        "offset": 250,
+        "movementType": "rotateX",
+        "movementSpeed": -0.03,
+        "secondaryMovementSpeed": 0.02,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#d2d6d7",
+      "camera": { "speed": 3, "distanceRatio": 2 },
+      "ground": { "color": "#d2d6d7" },
+      "mesh": {
+        "geometryName": "cone",
+        "count": 18,
+        "image": "nauta.png",
+        "geometry": { "radius": 220, "radialSegments": 4, "height": 473 },
+        "position": { "y": 80 },
+        "spacing": 280,
+        "offset": 250,
+        "movementType": "translateX",
+        "movementSpeed": -0.03,
+        "secondaryMovementSpeed": 0,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#d2d6d7",
+      "camera": { "speed": 6, "distanceRatio": 3, "swing": { "x": 180 } },
+      "ground": { "color": "#d2d6d7" },
+      "mesh": {
+        "geometryName": "circle",
+        "geometry": { "radius": 80, "segments": 30 },
+        "count": 30,
+        "image": "30.png",
+        "position": { "y": 100 },
+        "spacing": 180,
+        "offset": 200,
+        "movementType": "rotateX",
+        "movementSpeed": 0.08,
+        "secondaryMovementSpeed": 0.08,
+        "reverseSideRate": 3
+      }
+    },
+    {
+      "background": "#d2d6d7",
+      "camera": { "speed": 5, "distanceRatio": 4, "swing": { "x": 280 } },
+      "ground": { "color": "#d2d6d7" },
+      "mesh": {
+        "geometryName": "torus",
+        "geometry": {
+          "radius": 100,
+          "tube": 20,
+          "radialSegments": 30,
+          "tubularSegments": 30
+        },
+        "color": "#ffcc88",
+        "count": 30,
+        "image": "guma.png",
+        "position": { "y": 100 },
+        "spacing": 180,
+        "offset": 350,
+        "movementType": "rotateZ",
+        "movementSpeed": 0.08,
+        "secondaryMovementType": "rotateY",
+        "secondaryMovementSpeed": 0.08,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#006677",
+      "camera": { "speed": 5 },
+      "ground": { "color": "#115674" },
+      "mesh": {
+        "count": 32,
+        "image": "big-lukowski.png",
+        "spacing": 320,
+        "offset": 400,
+        "secondaryMovementSpeed": 0.002
+      }
+    },
+    {
+      "background": "#80a6b4",
+      "camera": { "speed": 4, "swing": { "x": 100 } },
+      "ground": { "color": "#888844", "position": { "y": 200 } },
+      "mesh": {
+        "offset": 260,
+        "geometry": { "width": 256, "height": 256 },
+        "spacing": 200,
+        "position": { "y": -190 },
+        "image": "apolon.png",
+        "count": 60,
+        "movementType": "rotateY",
+        "movementSpeed": -0.01,
+        "secondaryMovementSpeed": 0
+      }
+    },
+    {
+      "background": "#A02244",
+      "camera": { "speed": 6, "swing": { "x": 40 } },
+      "ground": { "color": "#b88844" },
+      "mesh": {
+        "color": "rgba(250, 230, 200, 0.5)",
+        "geometryName": "box",
+        "geometry": { "width": 400, "height": 400, "depth": 400 },
+        "offset": 460,
+        "spacing": 250,
+        "position": { "y": 150 },
+        "image": "peca.png",
+        "count": 40,
+        "movementSpeed": -0.01,
+        "secondaryMovementSpeed": -0.01,
+        "reverseSideRate": 3
+      }
+    },
+    {
+      "background": "#feffc3",
+      "camera": { "speed": 4, "swing": { "x": 60 } },
+      "ground": { "color": "#188844" },
+      "mesh": {
+        "geometryName": "lathe",
+        "geometryHelper": "plantPot",
+        "geometry": {
+          "segments": 22,
+          "width": 80,
+          "curvature": 0.6,
+          "height": 30
+        },
+        "position": { "y": -350 },
+        "offset": 460,
+        "spacing": 350,
+        "image": "tree-sky.png",
+        "count": 40,
+        "movementSpeed": -0.01,
+        "secondaryMovementSpeed": -0.01,
+        "reverseSideRate": 3
+      }
+    },
+    {
+      "background": "#feffc3",
+      "camera": { "speed": 3, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
+      "mesh": {
+        "geometryName": "parametric",
+        "geometryHelper": "basket",
+        "geometry": {
+          "slices": 180,
+          "stacks": 200,
+          "width": 150,
+          "height": 280,
+          "curvature": 50,
+          "depth": -50,
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
+        },
+        "properties": { "position": { "y": -80 }, "rotation": { "x": -1 } },
+        "offset": 200,
+        "spacing": 200,
+        "image": "beogradjanka-basket.png",
+        "movementType": "rotateX",
+        "count": 40,
+        "movementSpeed": -0.001,
+        "secondaryMovementSpeed": -0.005,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#feffc3",
+      "camera": { "speed": 3, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
+      "mesh": {
+        "geometryName": "parametric",
+        "geometryHelper": "folderBox",
+        "geometry": {
+          "slices": 180,
+          "stacks": 200,
+          "width": 150,
+          "height": 280,
+          "curvature": 50,
+          "depth": -50,
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
+        },
+        "position": { "y": -80 },
+        "offset": 200,
+        "spacing": 200,
+        "image": "delftse.png",
+        "movementType": "rotateX",
+        "count": 40,
+        "movementSpeed": -0.001,
+        "secondaryMovementSpeed": -0.005,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#007788",
+      "camera": { "speed": 4, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
+      "mesh": {
+        "geometryName": "parametric",
+        "geometryHelper": "trolley",
+        "geometry": {
+          "slices": 180,
+          "stacks": 200,
+          "width": 150,
+          "height": 280,
+          "curvature": 80,
+          "depth": -70,
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.3, "endY": 0.9 }
+        },
+        "properties": {
+          "rotation": { "x": 2.2, "z": 3.14 },
+          "position": { "y": -200 }
+        },
+        "offset": 200,
+        "spacing": 200,
+        "image": "nauta.png",
+        "movementType": "rotateX",
+        "count": 40,
+        "movementSpeed": -0.001,
+        "secondaryMovementSpeed": -0.005,
+        "reverseSideRate": 2
+      }
+    },
+    {
+      "background": "#007788",
+      "camera": { "speed": 4, "distanceRatio": 5 },
+      "ground": { "color": "#188844" },
+      "mesh": {
+        "geometryName": "parametric",
+        "geometryHelper": "rail",
+        "geometry": {
+          "slices": 180,
+          "stacks": 200,
+          "width": 150,
+          "height": 40,
+          "curvature": 80,
+          "depth": 30,
+          "range": { "startX": 0.1, "endX": 0.9, "startY": 0.1, "endY": 0.9 }
+        },
+        "properties": {
+          "rotation": { "x": 3.14, "y": 0, "z": 3.14 },
+          "position": { "y": -170, "x": 100 }
+        },
+        "offset": 0,
+        "spacing": 300,
+        "image": "delftse.png",
+        "movementType": "rotateY",
+        "count": 40,
+        "movementSpeed": -0.001,
+        "secondaryMovementSpeed": 0,
+        "reverseSideRate": 1
+      }
+    }
+  ]
+}
