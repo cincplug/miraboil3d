@@ -93,11 +93,10 @@ class Scene {
     // reference: https://threejs.org/docs/#api/en/scenes/Scene
     const { scene } = this._options
     this._setRenderer()
+    this.currentFrame = 0
     this.scene = new THREE.Scene(scene)
     this._setSceneBackground()
-    this._arrangeMeshes()
-    this.activeItemIndex = 0
-    this.currentFrame = 0
+    this._setSceneItems()
     this._setLights()
     this._setCamera()
     this._animate()
@@ -169,21 +168,21 @@ class Scene {
     return meshMaterial
   }
 
-  _arrangeMeshes() {
+  _setSceneItems() {
     const { _options } = this
     _options.meshes.forEach((item, index) => {
       const { image } = item
       if (image) {
         new THREE.TextureLoader().load(`/static/img/${image}`, texture =>
-          this._addMesh(texture, item, index)
+          this._addSceneItem(texture, item, index)
         )
       } else {
-        this._addMesh(null, item, index)
+        this._addSceneItem(null, item, index)
       }
     })
   }
 
-  _addMesh(texture, item, index) {
+  _addSceneItem(texture, item, index) {
     // reference: https://threejs.org/docs/#api/en/objects/Mesh
     const { scene } = this
     const meshGeometry = this._setGeometry(item)
@@ -191,11 +190,17 @@ class Scene {
       item,
       item.repeat ? helpers.makePattern(item, texture) : texture
     )
-    const mesh = new THREE.Mesh(meshGeometry, meshMaterial)
-    const { properties } = this._options.meshes[index]
-    helpers.mapProperties(properties, mesh)
-    mesh.name = `znak-${index}`
-    scene.add(mesh)
+    const group = new THREE.Group()
+    for (let i = 0; i < (item.count || 1); i++) {
+      const mesh = new THREE.Mesh(meshGeometry, meshMaterial)
+      const { properties } = this._options.meshes[index]
+      helpers.mapProperties(properties, mesh)
+      // eslint-disable-next-line no-magic-numbers
+      mesh.position.z += i * 200
+      group.add(mesh)
+    }
+    group.name = `znak-${index}`
+    scene.add(group)
   }
 
   _setLights() {
