@@ -6,16 +6,18 @@ const helpers = {
   },
 
   /**
-   * Iterate through two nesting levels of object
+   * Iterate through two nesting levels of object and implement properties on another object
    * @param {Object} properties - set of properties to implement
    * @param {Object} target - target object to apply properties and sub-properties
+   * @param {Number} modifierIndex - coefficient with which to multiply sequence transformation properties
    */
-  mapProperties: (properties, target) => {
+  mapProperties: (properties, target, modifierIndex = 0) => {
     for (const property in properties) {
       if (properties[property]) {
         for (const subProperty in properties[property]) {
           if (properties[property][subProperty]) {
-            target[property][subProperty] += properties[property][subProperty]
+            target[property][subProperty] +=
+              properties[property][subProperty] * (modifierIndex + 1)
           }
         }
       }

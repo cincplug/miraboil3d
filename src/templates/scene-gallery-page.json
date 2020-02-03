@@ -71,6 +71,15 @@
         },
         {
           "count": 20,
+          "sequence": {
+            "position": {
+              "z": 150
+            },
+            "rotation": {
+              "x": -0.1,
+              "z": 0.2
+            }
+          },
           "geometryName": "circle",
           "geometry": {
             "radius": 200,
@@ -213,27 +222,31 @@
           }
         },
         {
-          "geometryName": "sphere",
+          "geometryName": "box",
           "geometry": {
-            "radius": 200,
-            "widthSegments": 50,
-            "heightSegments": 50
+            "width": 200,
+            "height": 200,
+            "depth": 200
           },
-          "image": "world-Equirectangular_projection_SW.jpg",
+          "image": "periswijk.jpg",
           "properties": {
             "position": {
               "x": 380,
               "y": -80,
-              "z": 200
+              "z": 400
             },
             "rotation": {
-              "x": 0.4,
+              "x": -0.04,
               "z": 0.2
             }
           },
           "frameMovement": {
+            "position": {
+              "x": -1,
+              "z": 1
+            },
             "rotation": {
-              "y": 0.003
+              "y": 0.03
             }
           }
         },
