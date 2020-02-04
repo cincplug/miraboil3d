@@ -222,31 +222,27 @@
           }
         },
         {
-          "geometryName": "box",
+          "geometryName": "sphere",
           "geometry": {
-            "width": 200,
-            "height": 200,
-            "depth": 200
+            "radius": 200,
+            "widthSegments": 50,
+            "heightSegments": 50
           },
-          "image": "periswijk.jpg",
+          "image": "world-Equirectangular_projection_SW.jpg",
           "properties": {
             "position": {
               "x": 380,
               "y": -80,
-              "z": 400
+              "z": 200
             },
             "rotation": {
-              "x": -0.04,
+              "x": 0.4,
               "z": 0.2
             }
           },
           "frameMovement": {
-            "position": {
-              "x": -1,
-              "z": 1
-            },
             "rotation": {
-              "y": 0.03
+              "y": 0.003
             }
           }
         },
@@ -375,35 +371,31 @@
           }
         },
         {
-          "color": null,
-          "image": "delftse.png",
           "geometryName": "box",
           "geometry": {
-            "width": 256,
-            "height": 1024,
-            "depth": 256
+            "width": 200,
+            "height": 200,
+            "depth": 200
           },
-          "materialName": "physical",
-          "material": {
-            "reflectivity": 0.5
-          },
+          "image": "periswijk.jpg",
           "properties": {
             "position": {
-              "x": 280,
-              "y": -80
+              "x": 380,
+              "y": -80,
+              "z": 400
             },
             "rotation": {
-              "x": 0.4,
-              "z": 3.2
+              "x": -0.04,
+              "z": 0.2
             }
           },
           "frameMovement": {
             "position": {
-              "x": 1,
-              "y": 1
+              "x": -1,
+              "z": 1
             },
             "rotation": {
-              "z": 0.001
+              "y": 0.03
             }
           }
         },
