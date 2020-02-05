@@ -371,35 +371,6 @@
           }
         },
         {
-          "geometryName": "box",
-          "geometry": {
-            "width": 200,
-            "height": 200,
-            "depth": 200
-          },
-          "image": "periswijk.jpg",
-          "properties": {
-            "position": {
-              "x": 380,
-              "y": -80,
-              "z": 400
-            },
-            "rotation": {
-              "x": -0.04,
-              "z": 0.2
-            }
-          },
-          "frameMovement": {
-            "position": {
-              "x": -1,
-              "z": 1
-            },
-            "rotation": {
-              "y": 0.03
-            }
-          }
-        },
-        {
           "color": "#a9d",
           "geometryName": "parametric",
           "geometryHelper": "basket",
@@ -420,6 +391,117 @@
             "rotation": {
               "x": 1.7,
               "z": 0.1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "renderer": {
+        "alpha": true
+      },
+      "scene": {
+        "background": {
+          "color": "#aaaa44"
+        },
+        "fog": {
+          "color": "#a23"
+        }
+      },
+      "camera": {
+        "aspect": 1.333333333,
+        "near": 1,
+        "far": 3000,
+        "position": {
+          "x": 200,
+          "y": 2,
+          "z": 900
+        },
+        "frameMovement": {
+          "rotation": {
+            "x": 0.001
+          }
+        }
+      },
+      "light": {
+        "color": "#fff"
+      },
+      "meshes": [
+        {
+          "color": "#a9d",
+          "geometryName": "parametric",
+          "geometryHelper": "bentPicture",
+          "geometry": {
+            "width": 250,
+            "height": 280,
+            "curvature": 50
+          },
+          "properties": {
+            "position": {
+              "x": -180,
+              "y": -80
+            },
+            "rotation": {
+              "x": 1.7,
+              "z": 0.1
+            }
+          }
+        },
+        {
+          "image": "kuca.jpg",
+          "geometryName": "box",
+          "geometry": {
+            "width": 400,
+            "height": 400,
+            "depth": 200
+          },
+          "properties": {
+            "position": {
+              "x": -30,
+              "y": -40,
+              "z": 100
+            },
+            "rotation": {
+              "x": -0.7,
+              "z": -0.1
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "y": 1
+            },
+            "rotation": {
+              "x": 0.001,
+              "z": 0.002
+            }
+          }
+        },
+        {
+          "geometryName": "box",
+          "geometry": {
+            "width": 200,
+            "height": 200,
+            "depth": 200
+          },
+          "image": "periswijk.jpg",
+          "properties": {
+            "position": {
+              "x": 380,
+              "y": 80,
+              "z": 400
+            },
+            "rotation": {
+              "x": -0.04,
+              "z": 0.2
+            }
+          },
+          "frameMovement": {
+            "position": {
+              "x": -1,
+              "z": 1
+            },
+            "rotation": {
+              "y": 0.03
             }
           }
         }
