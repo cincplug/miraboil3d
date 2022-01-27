@@ -109,6 +109,6 @@
     "deepmerge": "^4.2.2",
     "eligrey-classlist-js-polyfill": "^1.2.20180112",
     "normalize-scss": "^7.0.1",
-    "three": "^0.111.0"
+    "three": "^0.137.0"
   }
 }
